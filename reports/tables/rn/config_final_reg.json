@@ -1,0 +1,20 @@
+{
+  "config": {
+    "neurons": 16,
+    "layers": 3,
+    "activation": "ReLU",
+    "optimizer": "RMSprop",
+    "lr": 0.00474,
+    "batch": 32,
+    "epochs": 200,
+    "patience": 20,
+    "weight_decay": 0.001,
+    "dropout": 0.1,
+    "loss": "padrao",
+    "scale": true
+  },
+  "val_media": 13.776368532689622,
+  "val_desvio": 0.043753984269857625,
+  "treino_media": 13.461531748262017,
+  "id_busca": 11
+}

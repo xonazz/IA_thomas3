@@ -1,0 +1,21 @@
+Age,Height_cm,Weight_kg,BMI,Income_USD,Heart_Rate,Body_Temperature,Oxygen_Saturation,Respiratory_Rate,Daily_Water_Intake_L,Screen_Time_Hours,Sleep_Hours,Gender,Blood_Group,Occupation,Marital_Status,Education,Country,City_Type,Smoking,Family_History,Hypertension,Diabetes,Stress_Level,Physical_Activity,Alcohol
+70,174.5,93.6,30.7,132112,66.0,37.1,98,18,1.6,3.1,6.2,Male,O+,Doctor,Single,Bachelor,Germany,Suburban,No,Yes,Yes,Yes,Moderate,Light,Frequently
+18,167.4,76.6,27.3,160777,71.0,36.0,96,19,2.7,3.4,5.3,Female,AB+,Freelancer,Single,Diploma,USA,Suburban,No,No,No,No,High,Moderate,Never
+59,168.7,69.9,24.6,84455,63.0,37.4,94,12,3.0,1.3,5.9,Male,A-,Lawyer,Single,High School,Canada,Urban,No,No,No,No,Low,Active,Occasionally
+80,165.9,53.2,19.3,60086,70.0,37.2,94,20,2.2,8.3,5.0,Male,O+,Freelancer,Married,High School,USA,Suburban,No,No,No,No,Moderate,Light,Never
+27,168.9,89.3,31.3,40829,86.0,36.8,95,15,2.9,2.1,7.4,Male,AB-,Government Employee,Single,High School,USA,Urban,No,Yes,No,No,High,Moderate,Occasionally
+88,161.6,56.2,21.5,109388,61.0,36.9,99,21,1.9,8.8,5.9,Male,AB-,Student,Single,Bachelor,USA,Rural,No,No,No,No,Low,Sedentary,Occasionally
+75,161.0,72.9,28.1,92728,80.0,35.9,97,17,2.9,11.1,6.4,Female,O+,Business,Married,Bachelor,Pakistan,Suburban,Yes,Yes,Yes,No,High,Light,Occasionally
+49,178.5,66.5,20.9,126663,77.0,36.8,97,18,4.4,2.7,8.3,Female,O+,Teacher,Married,Bachelor,Germany,Urban,No,Yes,No,No,Moderate,Light,Never
+52,165.7,69.5,25.3,139378,85.0,36.9,95,20,1.5,6.1,7.3,Female,O+,Lawyer,Single,PhD,UAE,Rural,No,No,No,No,High,Light,Occasionally
+75,178.5,71.6,22.5,76985,60.0,37.3,98,12,1.5,8.1,4.5,Male,O-,Business,Married,Master,UK,Rural,Yes,No,No,No,Low,Sedentary,Never
+88,163.3,81.2,30.4,46653,74.0,37.0,97,12,4.3,11.1,6.8,Male,A-,Doctor,Married,Bachelor,Japan,Urban,Yes,Yes,Yes,No,Moderate,Light,Occasionally
+66,173.6,73.5,24.4,107386,66.0,36.3,99,14,2.4,4.7,8.6,Female,AB-,Designer,Married,Master,UK,Urban,No,Yes,No,No,Low,Light,Occasionally
+78,169.0,40.9,14.3,91851,85.0,36.5,94,16,1.1,1.6,8.2,Male,B-,Nurse,Married,Master,Japan,Urban,No,No,No,No,Moderate,Moderate,Occasionally
+37,154.1,96.8,40.8,148746,98.0,36.2,94,18,3.4,2.8,5.2,Female,AB-,Teacher,Married,Master,Singapore,Suburban,No,No,No,No,High,Active,Frequently
+19,176.9,53.6,17.1,74014,79.0,36.9,98,15,1.2,7.4,6.8,Female,AB-,Student,Single,Diploma,UK,Urban,No,No,No,Yes,Low,Moderate,Never
+67,158.1,67.1,26.8,187239,82.0,37.0,98,18,1.6,9.4,5.3,Male,O-,Student,Married,Bachelor,Japan,Suburban,Yes,Yes,No,Yes,Moderate,Active,Occasionally
+58,153.2,80.3,34.2,95742,,36.5,96,21,2.3,4.5,9.0,Male,AB+,Lawyer,Married,High School,Germany,Urban,Yes,Yes,No,Yes,Moderate,Light,Occasionally
+65,171.0,68.0,23.3,150637,88.0,36.3,98,19,,9.2,4.8,Female,A+,Retired,Single,Bachelor,Germany,Suburban,No,No,No,No,High,Light,Occasionally
+25,168.9,67.9,23.8,91588,81.0,37.0,95,21,2.7,4.7,7.0,Male,A+,Freelancer,Married,High School,Germany,Urban,Yes,No,No,No,High,Light,Never
+74,175.4,51.9,,125076,65.0,36.7,97,21,4.5,6.7,6.3,Male,O-,Designer,Married,Bachelor,Pakistan,Suburban,No,No,No,No,Moderate,Light,Never

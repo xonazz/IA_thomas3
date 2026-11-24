@@ -1,0 +1,808 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[brazilian]{babel}
+\usepackage{graphicx,booktabs,float,hyperref,geometry,amsmath,amssymb,enumitem}\geometry{margin=2.2cm}
+\graphicspath{{../reports/figures/rn/}}
+\begin{document}
+\begin{titlepage}\centering
+{\large UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE\\Departamento de Computação e Tecnologia\\DCT1401 -- Inteligência Artificial (2026.2)\\Professor: Thommas K. S. Flores\\}\vspace{2cm}
+{\LARGE\bfseries Redes Neurais Artificiais com PyTorch:\\Classificação e Regressão\par}
+\vspace{2cm}Aluno: Jonas Jeronimo Cirilo Silva \quad Matrícula: 20240026090\\[1ex]
+Dataset: \url{https://www.kaggle.com/datasets/mobeenfatimah/human-digital-twin-dataset-for-ai-and-healthcare}\\[1ex]
+Repositório: \url{https://github.com/xonazz/IA_thomas2}
+\end{titlepage}
+\tableofcontents\newpage
+
+\section{Introdução}
+Este relatório avalia se redes neurais do tipo perceptron multicamadas (MLP), implementadas em PyTorch, são uma alternativa viável
+aos modelos da atividade anterior e, principalmente, como os hiperparâmetros afetam o desempenho, a generalização e o custo.
+Usamos o mesmo conjunto \emph{Human Digital Twin} (Kaggle, arquivo \texttt{digital\_twin\_profile.csv}: 5000 indivíduos sintéticos e
+30 colunas), os mesmos targets e as mesmas features:
+\textbf{Classificação:} \texttt{Hypertension} (Yes/No; 17,2\% de Yes), 24 features, sem as colunas de pressão arterial e sem diagnósticos
+(a pressão define a hipertensão). \textbf{Regressão:} \texttt{Blood\_Pressure\_Systolic} (mmHg), 26 features (as mesmas, mais os
+diagnósticos \texttt{Hypertension} e \texttt{Diabetes}; sem a pressão diastólica). Após a codificação, a entrada da rede tem
+63 colunas na
+classificação e 67 na regressão (12 numéricas, one-hot das categóricas e 3 ordinais).
+
+\section{Protocolo Experimental}
+\begin{itemize}
+\item \textbf{Divisão:} a mesma da atividade anterior: 80\% treino / 20\% teste, \texttt{random\_state=42}, estratificada na classificação
+(4000 treino e 1000 teste). Dentro do treino, 20\% viram validação (estratificada na classificação): 3200 amostras para
+ajuste e 800 para validação. A validação é usada para comparar hiperparâmetros, para o early stopping e para escolher o limiar;
+o teste é usado uma única vez, com o modelo final carregado do arquivo.
+\item \textbf{Pré-processamento (ajustado só no treino):} imputação pela mediana (numéricas) e moda (categóricas), one-hot, códigos
+ordinais para \texttt{Stress\_Level}, \texttt{Physical\_Activity} e \texttt{Alcohol}, e padronização (média e desvio do treino),
+aplicada também à validação, ao teste e à inferência. Na regressão, o target também é padronizado e as previsões voltam para mmHg antes das métricas.
+\item \textbf{Tensores:} \texttt{torch.float32}, \texttt{TensorDataset} e \texttt{DataLoader} (embaralhamento com gerador semeado).
+\item \textbf{Reprodutibilidade:} sementes fixas de \texttt{random}, \texttt{numpy} e \texttt{torch}; cada configuração foi treinada com
+3 sementes (42, 43, 44) e reportamos média $\pm$ desvio padrão. Todas as execuções estão em \texttt{logs/hiperparametros.csv}.
+\item \textbf{Ambiente:} Linux-7.0.0-42-generic-x86\_64-with-glibc2.43; CPU AMD Ryzen 5 7430U (6 núcleos / 12 threads, TDP 15 W) (12 núcleos lógicos, 6 threads do PyTorch);
+14.0 GB de RAM; GPU: nenhuma (treino em CPU). Python 3.14.4, PyTorch 2.15.0+cpu, NumPy 2.5.5,
+pandas 3.1.1, scikit-learn 1.9.1.
+\end{itemize}
+
+\section{Redes Neurais Implementadas}
+A classe \texttt{MLP} (\texttt{src/rn\_models.py}) é parametrizável: recebe a dimensão de entrada, a lista de camadas ocultas, a
+ativação (\texttt{getattr(nn, nome)}) e a taxa de dropout, e empilha \texttt{Linear $\to$ ativação ($\to$ Dropout)}, terminando
+em uma camada \texttt{Linear} de 1 neurônio. O laço de treinamento (\texttt{src/rn\_train.py}) usa autograd
+(\texttt{zero\_grad}, \texttt{backward}, \texttt{step}), mede a perda de validação a cada época e faz early stopping guardando o melhor
+\texttt{state\_dict}; perdas NaN/infinitas interrompem o treino (divergência).
+\begin{itemize}
+\item \textbf{Regressão:} saída linear de 1 neurônio, sem ativação, pois a pressão é um valor real sem limite; perda
+\texttt{nn.MSELoss}, que corresponde à máxima verossimilhança com ruído gaussiano e otimiza diretamente o RMSE.
+\item \textbf{Classificação binária:} 1 neurônio de saída sem sigmoide (logit) e \texttt{nn.BCEWithLogitsLoss}, que combina sigmoide
+e entropia cruzada de forma numericamente estável (\emph{log-sum-exp}); a probabilidade é obtida com \texttt{torch.sigmoid} só na
+inferência e no cálculo de ROC/PR. Como há desbalanceamento (17\% de Yes), o baseline usa \texttt{pos\_weight} $= n_{neg}/n_{pos}$
+$\approx$ 4,8; o efeito de retirá-lo é avaliado no estudo da função de perda.
+\end{itemize}
+
+\section{Estudo de Hiperparâmetros}\label{sec:hp}
+\textbf{Configuração de referência (baseline):} 2 camada(s) oculta(s) de 32 neurônios, ReLU, Adam, $\eta$ = 1.0e-03, batch 32, weight decay 0, dropout 0, até 200 épocas com paciência 20, perda MSE (regressão) ou BCE com \texttt{pos\_weight} (classificação),
+com padronização. Cada estudo altera \emph{um} hiperparâmetro por vez, com as mesmas sementes e o mesmo limite de épocas.
+Métrica de comparação na validação: F1 macro com limiar 0,5 (classificação) e RMSE em mmHg (regressão). Todos os seis obrigatórios
+foram avaliados nos dois problemas, além de quatro opcionais (weight decay, dropout, função de perda e padronização).
+Diferenças menores que a soma dos desvios entre sementes do melhor e do pior valor não são tratadas como efeito real.
+
+\subsection{Neurônios por camada}
+Valores testados: 2, 4, 8, 16, 32, 64, 128.
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+2 & 137 & 0,556 $\pm$ 0,090 & 0,545 $\pm$ 0,080 & 0,011 & 14,0 & 2,3 & bem ajustado \\
+4 & 281 & 0,615 $\pm$ 0,007 & 0,583 $\pm$ 0,021 & 0,032 & 12,0 & 2,1 & bem ajustado \\
+8 & 593 & 0,631 $\pm$ 0,021 & 0,602 $\pm$ 0,022 & 0,029 & 7,0 & 1,6 & bem ajustado \\
+16 & 1313 & 0,601 $\pm$ 0,026 & 0,578 $\pm$ 0,022 & 0,023 & 3,3 & 1,4 & bem ajustado \\
+32 & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+64 & 8321 & 0,636 $\pm$ 0,011 & 0,591 $\pm$ 0,028 & 0,045 & 3,0 & 1,5 & bem ajustado \\
+128 & 24833 & 0,641 $\pm$ 0,032 & 0,593 $\pm$ 0,024 & 0,048 & 2,3 & 1,5 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Neurônios por camada -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_neurons}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+2 & 145 & 13,522 $\pm$ 0,112 & 13,864 $\pm$ 0,169 & 0,342 & 12,0 & 2,0 & bem ajustado \\
+4 & 297 & 13,360 $\pm$ 0,117 & 14,179 $\pm$ 0,260 & 0,819 & 14,0 & 2,1 & bem ajustado \\
+8 & 625 & 13,432 $\pm$ 0,068 & 13,949 $\pm$ 0,041 & 0,517 & 4,3 & 1,6 & bem ajustado \\
+16 & 1377 & 13,365 $\pm$ 0,074 & 13,955 $\pm$ 0,034 & 0,591 & 3,3 & 1,5 & bem ajustado \\
+32 & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+64 & 8577 & 13,094 $\pm$ 0,142 & 13,975 $\pm$ 0,032 & 0,881 & 2,3 & 1,5 & bem ajustado \\
+128 & 25345 & 13,225 $\pm$ 0,296 & 13,913 $\pm$ 0,053 & 0,688 & 1,3 & 1,6 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Neurônios por camada -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_neurons}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_neurons}\caption{Neurônios por camada -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_neurons}\caption{Neurônios por camada -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} Poucos neurônios dão baixa capacidade (alto viés, underfitting); muitos neurônios reduzem o viés, mas aumentam a variância e o gap entre treino e validação.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,602 $\pm$ 0,022 (8) e o pior 0,545 $\pm$ 0,080 (2); a diferença de 0,057 é menor que a soma dos desvios (0,102), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,011 (2) a 0,048 (128). A melhor época média foi de 2 (128) a 14 (2), e o tempo médio de treino de 1,4 s a 2,3 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,864 $\pm$ 0,169 (2) e o pior 14,179 $\pm$ 0,260 (4); a diferença de 0,315 é menor que a soma dos desvios (0,430), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,342 (2) a 0,881 (64). A melhor época média foi de 1 (128) a 14 (4), e o tempo médio de treino de 1,5 s a 2,1 s.
+
+\paragraph{(c) Mecanismo.} O número de parâmetros cresce aproximadamente com o quadrado dos neurônios por camada; mais parâmetros permitem memorizar ruído do treino (variância), o que aparece como aumento do gap. Com sinal fraco (como neste conjunto sintético), a capacidade extra rende pouco na validação.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (8) foram: 2, 4, 8, 16, 32, 64, 128. Com 2 neurônios o diagnóstico foi \emph{bem ajustado} (validação 0,545), e com 128 o gap foi 0,048 contra 0,011 com 2: a hipótese de que mais capacidade abre o gap se confirmou neste dataset. Na regressão, os valores estatisticamente empatados com o melhor (2) foram: 2, 4, 8, 16, 32, 64, 128. Com 2 neurônios o diagnóstico foi \emph{bem ajustado} (validação 13,864), e com 128 o gap foi 0,688 contra 0,342 com 2: a hipótese de que mais capacidade abre o gap se confirmou neste dataset.
+% REVISAR
+
+\subsection{Camadas ocultas}
+Valores testados: 1, 2, 3, 5.
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+1 & 2081 & 0,607 $\pm$ 0,009 & 0,573 $\pm$ 0,008 & 0,034 & 4,0 & 1,2 & bem ajustado \\
+2 & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+3 & 4193 & 0,638 $\pm$ 0,007 & 0,599 $\pm$ 0,003 & 0,039 & 3,0 & 1,6 & bem ajustado \\
+5 & 6305 & 0,654 $\pm$ 0,014 & 0,608 $\pm$ 0,017 & 0,045 & 2,7 & 2,0 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Camadas ocultas -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_layers}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+1 & 2209 & 13,273 $\pm$ 0,148 & 13,949 $\pm$ 0,056 & 0,676 & 3,0 & 1,2 & bem ajustado \\
+2 & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+3 & 4321 & 13,367 $\pm$ 0,090 & 13,916 $\pm$ 0,068 & 0,549 & 2,3 & 1,7 & bem ajustado \\
+5 & 6433 & 13,402 $\pm$ 0,159 & 13,901 $\pm$ 0,082 & 0,499 & 2,3 & 2,2 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Camadas ocultas -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_layers}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_layers}\caption{Camadas ocultas -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_layers}\caption{Camadas ocultas -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} Mais camadas aumentam a capacidade e o número de parâmetros, mas tornam a otimização mais difícil (gradientes atravessam mais derivadas encadeadas); para dados tabulares com sinal fraco, redes rasas devem bastar.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,608 $\pm$ 0,017 (5) e o pior 0,573 $\pm$ 0,008 (1); a diferença de 0,035 é maior que a soma dos desvios (0,025), logo o efeito é real. O gap variou de 0,028 (2) a 0,045 (5). A melhor época média foi de 3 (5) a 4 (1), e o tempo médio de treino de 1,2 s a 2,0 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,901 $\pm$ 0,082 (5) e o pior 13,949 $\pm$ 0,056 (1); a diferença de 0,048 é menor que a soma dos desvios (0,138), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,499 (5) a 0,676 (1). A melhor época média foi de 2 (3) a 3 (1), e o tempo médio de treino de 1,2 s a 2,2 s.
+
+\paragraph{(c) Mecanismo.} Cada camada a mais compõe uma transformação não linear; o gradiente das primeiras camadas é produto de várias derivadas, podendo encolher. O early stopping limita o overfitting, mas não compensa a otimização mais difícil.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (5) foram: 2, 3, 5. Passar de 1 para 5 camada(s) multiplicou os parâmetros de 2081 para 6305 e não piorou a validação (0,573 $\to$ 0,608). Na regressão, os valores estatisticamente empatados com o melhor (5) foram: 1, 2, 3, 5. Passar de 1 para 5 camada(s) multiplicou os parâmetros de 2209 para 6433 e não piorou a validação (13,949 $\to$ 13,901).
+% REVISAR
+
+\subsection{Função de ativação}
+Valores testados: ReLU, LeakyReLU, Tanh, Sigmoid, GELU.
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+ReLU & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+LeakyReLU & 3137 & 0,625 $\pm$ 0,008 & 0,596 $\pm$ 0,011 & 0,030 & 3,0 & 1,4 & bem ajustado \\
+Tanh & 3137 & 0,605 $\pm$ 0,015 & 0,576 $\pm$ 0,005 & 0,029 & 7,3 & 1,7 & bem ajustado \\
+Sigmoid & 3137 & 0,660 $\pm$ 0,007 & 0,623 $\pm$ 0,004 & 0,037 & 55,0 & 4,6 & bem ajustado \\
+GELU & 3137 & 0,607 $\pm$ 0,019 & 0,580 $\pm$ 0,021 & 0,027 & 2,7 & 1,6 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Função de ativação -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_activation}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+ReLU & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+LeakyReLU & 3265 & 13,288 $\pm$ 0,142 & 13,940 $\pm$ 0,058 & 0,652 & 2,7 & 1,5 & bem ajustado \\
+Tanh & 3265 & 13,318 $\pm$ 0,218 & 13,820 $\pm$ 0,024 & 0,502 & 9,7 & 2,0 & bem ajustado \\
+Sigmoid & 3265 & 13,595 $\pm$ 0,054 & 13,846 $\pm$ 0,008 & 0,251 & 16,0 & 2,3 & bem ajustado \\
+GELU & 3265 & 13,307 $\pm$ 0,105 & 13,920 $\pm$ 0,025 & 0,613 & 3,3 & 1,7 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Função de ativação -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_activation}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_activation}\caption{Função de ativação -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_activation}\caption{Função de ativação -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} Sigmoid e Tanh saturam (derivada próxima de zero para entradas grandes) e devem convergir mais devagar; ReLU, LeakyReLU e GELU não saturam para entradas positivas.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,623 $\pm$ 0,004 (Sigmoid) e o pior 0,576 $\pm$ 0,005 (Tanh); a diferença de 0,046 é maior que a soma dos desvios (0,009), logo o efeito é real. O gap variou de 0,027 (GELU) a 0,037 (Sigmoid). A melhor época média foi de 3 (GELU) a 55 (Sigmoid), e o tempo médio de treino de 1,4 s a 4,6 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,820 $\pm$ 0,024 (Tanh) e o pior 13,948 $\pm$ 0,050 (ReLU); a diferença de 0,128 é maior que a soma dos desvios (0,073), logo o efeito é real. O gap variou de 0,251 (Sigmoid) a 0,664 (ReLU). A melhor época média foi de 3 (ReLU) a 16 (Sigmoid), e o tempo médio de treino de 1,5 s a 2,3 s.
+
+\paragraph{(c) Mecanismo.} A derivada da sigmoide é no máximo 0,25 e a da tanh no máximo 1, ambas tendendo a zero na saturação; ao multiplicar essas derivadas entre camadas, o gradiente enfraquece. A ReLU tem derivada 1 para entradas positivas (mas zero para negativas, o que pode \emph{matar} neurônios), e a LeakyReLU/GELU mantêm gradiente também para entradas negativas.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (Sigmoid) foram: Sigmoid. A Sigmoid levou 55 épocas até o melhor ponto, contra 3 da ReLU, com validação 0,623 contra 0,596; a hipótese de convergência mais lenta por saturação se confirmou. Na regressão, os valores estatisticamente empatados com o melhor (Tanh) foram: Tanh, Sigmoid. A Sigmoid levou 16 épocas até o melhor ponto, contra 3 da ReLU, com validação 13,846 contra 13,948; a hipótese de convergência mais lenta por saturação se confirmou.
+% REVISAR
+
+\subsection{Otimizador}
+Valores testados: SGD, SGD\_momentum, RMSprop, Adam, AdamW.
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+SGD & 3137 & 0,623 $\pm$ 0,013 & 0,591 $\pm$ 0,004 & 0,032 & 165,3 & 8,5 & bem ajustado \\
+SGD\_momentum & 3137 & 0,620 $\pm$ 0,017 & 0,587 $\pm$ 0,012 & 0,033 & 17,0 & 1,8 & bem ajustado \\
+RMSprop & 3137 & 0,617 $\pm$ 0,015 & 0,588 $\pm$ 0,016 & 0,030 & 2,0 & 1,2 & bem ajustado \\
+Adam & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+AdamW & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,012 & 0,029 & 3,0 & 1,4 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Otimizador -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_optimizer}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+SGD & 3265 & 13,440 $\pm$ 0,095 & 13,869 $\pm$ 0,039 & 0,429 & 88,0 & 5,2 & bem ajustado \\
+SGD\_momentum & 3265 & 13,460 $\pm$ 0,057 & 13,859 $\pm$ 0,039 & 0,399 & 9,0 & 1,5 & bem ajustado \\
+RMSprop & 3265 & 13,292 $\pm$ 0,068 & 13,925 $\pm$ 0,041 & 0,634 & 2,0 & 1,5 & bem ajustado \\
+Adam & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+AdamW & 3265 & 13,213 $\pm$ 0,047 & 13,943 $\pm$ 0,051 & 0,730 & 3,0 & 1,5 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Otimizador -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_optimizer}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_optimizer}\caption{Otimizador -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_optimizer}\caption{Otimizador -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} SGD sem momento com $\eta=10^{-3}$ deve convergir lentamente; momento acelera a descida em direções consistentes, e RMSprop/Adam/AdamW adaptam o passo por parâmetro e convergem mais rápido.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,596 $\pm$ 0,009 (Adam) e o pior 0,587 $\pm$ 0,012 (SGD\_momentum); a diferença de 0,009 é menor que a soma dos desvios (0,022), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,028 (Adam) a 0,033 (SGD\_momentum). A melhor época média foi de 2 (RMSprop) a 165 (SGD), e o tempo médio de treino de 1,2 s a 8,5 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,859 $\pm$ 0,039 (SGD\_momentum) e o pior 13,948 $\pm$ 0,050 (Adam); a diferença de 0,089 é maior que a soma dos desvios (0,089), logo o efeito é real. O gap variou de 0,399 (SGD\_momentum) a 0,730 (AdamW). A melhor época média foi de 2 (RMSprop) a 88 (SGD), e o tempo médio de treino de 1,5 s a 5,2 s.
+
+\paragraph{(c) Mecanismo.} O SGD usa o mesmo passo para todos os parâmetros; o momento acumula uma média dos gradientes anteriores; RMSprop e Adam dividem o passo pela raiz da média dos gradientes ao quadrado, adaptando-o a cada parâmetro; o AdamW aplica o decaimento de pesos de forma desacoplada (aqui com o padrão do PyTorch, 0,01).
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (Adam) foram: SGD, SGD\_momentum, RMSprop, Adam, AdamW. O SGD simples ficou em 0,591 (melhor época 165) contra 0,596 do Adam (época 3); a hipótese de que o SGD sem momento converge mais devagar com $\eta=10^{-3}$ se confirmou. Na regressão, os valores estatisticamente empatados com o melhor (SGD\_momentum) foram: SGD, SGD\_momentum, RMSprop, AdamW. O SGD simples ficou em 13,869 (melhor época 88) contra 13,948 do Adam (época 3); a hipótese de que o SGD sem momento converge mais devagar com $\eta=10^{-3}$ se confirmou.
+% REVISAR
+
+\subsection{Taxa de aprendizado}
+Valores testados: 0,0001, 0,001, 0,01, 0,1, 1.
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+0,0001 & 3137 & 0,618 $\pm$ 0,011 & 0,591 $\pm$ 0,012 & 0,027 & 23,0 & 2,6 & bem ajustado \\
+0,001 & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+0,01 & 3137 & 0,638 $\pm$ 0,014 & 0,615 $\pm$ 0,006 & 0,022 & 1,3 & 1,3 & bem ajustado \\
+0,1 & 3137 & 0,255 $\pm$ 0,187 & 0,253 $\pm$ 0,183 & 0,002 & 4,7 & 1,5 & underfitting \\
+1 & 3137 & 0,249 $\pm$ 0,177 & 0,250 $\pm$ 0,176 & -0,001 & 20,3 & 2,5 & underfitting \\
+\bottomrule\end{tabular}}
+\caption{Taxa de aprendizado -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_lr}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+0,0001 & 3265 & 13,338 $\pm$ 0,087 & 13,938 $\pm$ 0,034 & 0,600 & 20,3 & 2,5 & bem ajustado \\
+0,001 & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+0,01 & 3265 & 13,207 $\pm$ 0,479 & 13,915 $\pm$ 0,064 & 0,708 & 2,3 & 1,6 & bem ajustado \\
+0,1 & 3265 & 15,099 $\pm$ 0,030 & 15,333 $\pm$ 0,009 & 0,234 & 16,0 & 2,2 & underfitting \\
+1 & 3265 & 41,700 $\pm$ 46,049 & 20,880 $\pm$ 9,596 & -20,819 & 17,3 & 2,4 & underfitting \\
+\bottomrule\end{tabular}}
+\caption{Taxa de aprendizado -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_lr}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_lr}\caption{Taxa de aprendizado -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_lr}\caption{Taxa de aprendizado -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} $\eta$ muito alto faz a atualização $\theta \leftarrow \theta - \eta\nabla_\theta L$ ultrapassar o mínimo (oscilação ou divergência); $\eta$ muito baixo faz a perda cair devagar e o treino pode terminar antes de convergir.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,615 $\pm$ 0,006 (0,01) e o pior 0,250 $\pm$ 0,176 (1); a diferença de 0,365 é maior que a soma dos desvios (0,182), logo o efeito é real. O gap variou de -0,001 (1) a 0,028 (0,001). A melhor época média foi de 1 (0,01) a 23 (0,0001), e o tempo médio de treino de 1,3 s a 2,6 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,915 $\pm$ 0,064 (0,01) e o pior 20,880 $\pm$ 9,596 (1); a diferença de 6,965 é menor que a soma dos desvios (9,661), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de -20,819 (1) a 0,708 (0,01). A melhor época média foi de 2 (0,01) a 20 (0,0001), e o tempo médio de treino de 1,5 s a 2,5 s.
+
+\paragraph{(c) Mecanismo.} O tamanho do passo controla o equilíbrio entre velocidade e estabilidade: passos grandes amplificam o erro de cada atualização (a perda explode e vira NaN), passos pequenos precisam de muitas épocas e o limite de épocas é atingido antes da convergência.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (0,01) foram: 0,01. Com $\eta$ = 0,0001 o treino rodou em média 43 de 200 épocas (parou antes do limite); com $\eta$ = 1 não houve divergência, mas a validação foi 0,250. Na regressão, os valores estatisticamente empatados com o melhor (0,01) foram: 0,0001, 0,001, 0,01, 1. Com $\eta$ = 0,0001 o treino rodou em média 40 de 200 épocas (parou antes do limite); com $\eta$ = 1 não houve divergência, mas a validação foi 20,880.
+% REVISAR
+
+\subsection{Tamanho do batch}
+Valores testados: 8, 32, 128, 512, total (lote inteiro).
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+8 & 3137 & 0,623 $\pm$ 0,011 & 0,583 $\pm$ 0,004 & 0,039 & 2,0 & 4,7 & bem ajustado \\
+32 & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+128 & 3137 & 0,611 $\pm$ 0,020 & 0,585 $\pm$ 0,024 & 0,026 & 5,3 & 0,6 & bem ajustado \\
+512 & 3137 & 0,616 $\pm$ 0,010 & 0,581 $\pm$ 0,007 & 0,036 & 12,3 & 0,5 & bem ajustado \\
+total (lote inteiro) & 3137 & 0,618 $\pm$ 0,011 & 0,570 $\pm$ 0,013 & 0,048 & 52,3 & 0,9 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Tamanho do batch -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_batch}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+8 & 3265 & 13,408 $\pm$ 0,207 & 13,899 $\pm$ 0,045 & 0,491 & 1,3 & 4,7 & bem ajustado \\
+32 & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+128 & 3265 & 13,258 $\pm$ 0,055 & 13,976 $\pm$ 0,057 & 0,718 & 5,3 & 0,6 & bem ajustado \\
+512 & 3265 & 13,182 $\pm$ 0,062 & 14,027 $\pm$ 0,065 & 0,845 & 13,7 & 0,6 & bem ajustado \\
+total (lote inteiro) & 3265 & 12,837 $\pm$ 0,194 & 14,136 $\pm$ 0,042 & 1,299 & 62,0 & 1,1 & overfitting \\
+\bottomrule\end{tabular}}
+\caption{Tamanho do batch -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_batch}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_batch}\caption{Tamanho do batch -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_batch}\caption{Tamanho do batch -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} Batches pequenos dão gradientes ruidosos e muitas atualizações por época (mais tempo por época, algum efeito regularizador); batches grandes dão gradientes estáveis, mas poucas atualizações por época, exigindo mais épocas ou $\eta$ maior.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,596 $\pm$ 0,009 (32) e o pior 0,570 $\pm$ 0,013 (total (lote inteiro)); a diferença de 0,026 é maior que a soma dos desvios (0,023), logo o efeito é real. O gap variou de 0,026 (128) a 0,048 (total (lote inteiro)). A melhor época média foi de 2 (8) a 52 (total (lote inteiro)), e o tempo médio de treino de 0,5 s a 4,7 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,899 $\pm$ 0,045 (8) e o pior 14,136 $\pm$ 0,042 (total (lote inteiro)); a diferença de 0,237 é maior que a soma dos desvios (0,087), logo o efeito é real. O gap variou de 0,491 (8) a 1,299 (total (lote inteiro)). A melhor época média foi de 1 (8) a 62 (total (lote inteiro)), e o tempo médio de treino de 0,6 s a 4,7 s.
+
+\paragraph{(c) Mecanismo.} Com $n$ amostras de treino e batch $B$, há $\lceil n/B \rceil$ atualizações por época: o batch pequeno faz mais atualizações (mais tempo por época, pois cada passo tem custo fixo) com gradiente ruidoso; o batch grande aproveita melhor o paralelismo, mas dá poucos passos por época.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (32) foram: 8, 32, 128, 512. Com batch 8 o treino levou 4,7 s (muitas atualizações por época) e com total (lote inteiro) 0,9 s; a validação foi 0,583 e 0,570, respectivamente, e a melhor época passou de 2 para 52. Na regressão, os valores estatisticamente empatados com o melhor (8) foram: 8, 32, 128. Com batch 8 o treino levou 4,7 s (muitas atualizações por época) e com total (lote inteiro) 1,1 s; a validação foi 13,899 e 14,136, respectivamente, e a melhor época passou de 1 para 62.
+% REVISAR
+
+\subsection{Weight decay (L2)}
+Valores testados: 0, 1e-05, 0,0001, 0,001, 0,01 (opcional).
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+0 & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+1e-05 & 3137 & 0,625 $\pm$ 0,008 & 0,597 $\pm$ 0,010 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+0,0001 & 3137 & 0,625 $\pm$ 0,010 & 0,595 $\pm$ 0,012 & 0,030 & 3,0 & 1,4 & bem ajustado \\
+0,001 & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,012 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+0,01 & 3137 & 0,627 $\pm$ 0,012 & 0,600 $\pm$ 0,011 & 0,027 & 3,3 & 1,5 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Weight decay (L2) -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_weight_decay}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+0 & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+1e-05 & 3265 & 13,281 $\pm$ 0,145 & 13,945 $\pm$ 0,053 & 0,665 & 2,7 & 1,4 & bem ajustado \\
+0,0001 & 3265 & 13,281 $\pm$ 0,143 & 13,948 $\pm$ 0,049 & 0,668 & 2,7 & 1,4 & bem ajustado \\
+0,001 & 3265 & 13,218 $\pm$ 0,049 & 13,940 $\pm$ 0,052 & 0,722 & 3,0 & 1,4 & bem ajustado \\
+0,01 & 3265 & 13,301 $\pm$ 0,058 & 13,900 $\pm$ 0,045 & 0,598 & 3,0 & 1,4 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Weight decay (L2) -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_weight_decay}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_weight_decay}\caption{Weight decay (L2) -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_weight_decay}\caption{Weight decay (L2) -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} A penalização L2 encolhe os pesos, reduz a variância e o gap; valores altos demais causam underfitting.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,600 $\pm$ 0,011 (0,01) e o pior 0,595 $\pm$ 0,012 (0,0001); a diferença de 0,005 é menor que a soma dos desvios (0,023), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,027 (0,01) a 0,030 (0,0001). A melhor época média foi de 3 (0) a 3 (0,01), e o tempo médio de treino de 1,4 s a 1,5 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,900 $\pm$ 0,045 (0,01) e o pior 13,948 $\pm$ 0,049 (0,0001); a diferença de 0,049 é menor que a soma dos desvios (0,095), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,598 (0,01) a 0,722 (0,001). A melhor época média foi de 3 (0) a 3 (0,001), e o tempo médio de treino de 1,4 s a 1,5 s.
+
+\paragraph{(c) Mecanismo.} O termo $\lambda\lVert\theta\rVert^2$ soma $2\lambda\theta$ ao gradiente, puxando os pesos para zero e suavizando a função aprendida (menos variância, mais viés).
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (0,01) foram: 0, 1e-05, 0,0001, 0,001, 0,01. Do menor (0) para o maior valor (0,01), o desempenho de treino foi de 0,625 para 0,627 e o gap de 0,028 para 0,027: a hipótese de redução da variância se confirmou (diagnóstico com o maior valor: bem ajustado). Na regressão, os valores estatisticamente empatados com o melhor (0,01) foram: 0, 1e-05, 0,0001, 0,001, 0,01. Do menor (0) para o maior valor (0,01), o desempenho de treino foi de 13,283 para 13,301 e o gap de 0,664 para 0,598: a hipótese de redução da variância se confirmou (diagnóstico com o maior valor: bem ajustado).
+% REVISAR
+
+\subsection{Dropout}
+Valores testados: 0, 0,1, 0,3, 0,5 (opcional).
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+0 & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+0,1 & 3137 & 0,622 $\pm$ 0,018 & 0,594 $\pm$ 0,014 & 0,028 & 3,3 & 1,6 & bem ajustado \\
+0,3 & 3137 & 0,613 $\pm$ 0,011 & 0,584 $\pm$ 0,011 & 0,028 & 4,7 & 1,7 & bem ajustado \\
+0,5 & 3137 & 0,625 $\pm$ 0,024 & 0,589 $\pm$ 0,017 & 0,036 & 8,0 & 1,9 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Dropout -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_dropout}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+0 & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+0,1 & 3265 & 13,317 $\pm$ 0,041 & 13,910 $\pm$ 0,051 & 0,593 & 3,0 & 1,6 & bem ajustado \\
+0,3 & 3265 & 13,432 $\pm$ 0,054 & 13,847 $\pm$ 0,022 & 0,415 & 4,0 & 1,6 & bem ajustado \\
+0,5 & 3265 & 13,331 $\pm$ 0,203 & 13,861 $\pm$ 0,031 & 0,530 & 13,0 & 2,3 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Dropout -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_dropout}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_dropout}\caption{Dropout -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_dropout}\caption{Dropout -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} Desligar neurônios aleatoriamente durante o treino é uma regularização estocástica: reduz o desempenho de treino e o gap; em excesso, causa underfitting. Na inferência o dropout é desativado com \texttt{eval()}.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,596 $\pm$ 0,009 (0) e o pior 0,584 $\pm$ 0,011 (0,3); a diferença de 0,012 é menor que a soma dos desvios (0,021), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,028 (0,1) a 0,036 (0,5). A melhor época média foi de 3 (0) a 8 (0,5), e o tempo médio de treino de 1,4 s a 1,9 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,847 $\pm$ 0,022 (0,3) e o pior 13,948 $\pm$ 0,050 (0); a diferença de 0,101 é maior que a soma dos desvios (0,072), logo o efeito é real. O gap variou de 0,415 (0,3) a 0,664 (0). A melhor época média foi de 3 (0) a 13 (0,5), e o tempo médio de treino de 1,5 s a 2,3 s.
+
+\paragraph{(c) Mecanismo.} Cada passo treina uma sub-rede diferente, o que impede a coadaptação de neurônios e funciona como um conjunto (ensemble) implícito; o desempenho de treino cai porque a rede é avaliada com ruído durante o ajuste.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (0) foram: 0, 0,1, 0,3, 0,5. Do menor (0) para o maior valor (0,5), o desempenho de treino foi de 0,625 para 0,625 e o gap de 0,028 para 0,036: a hipótese de redução da variância não se confirmou (diagnóstico com o maior valor: bem ajustado). Na regressão, os valores estatisticamente empatados com o melhor (0,3) foram: 0,1, 0,3, 0,5. Do menor (0) para o maior valor (0,5), o desempenho de treino foi de 13,283 para 13,331 e o gap de 0,664 para 0,530: a hipótese de redução da variância se confirmou (diagnóstico com o maior valor: bem ajustado).
+% REVISAR
+
+\subsection{Função de perda}
+Valores testados: BCE, BCE\_pos\_weight (classificação) e MSE, MAE, Huber (regressão) (opcional).
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+BCE & 3137 & 0,526 $\pm$ 0,047 & 0,511 $\pm$ 0,039 & 0,015 & 5,7 & 1,5 & bem ajustado \\
+BCE\_pos\_weight & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Função de perda -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_loss}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+MSE & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+MAE & 3265 & 13,362 $\pm$ 0,043 & 13,929 $\pm$ 0,037 & 0,567 & 3,0 & 1,4 & bem ajustado \\
+Huber & 3265 & 13,233 $\pm$ 0,057 & 13,942 $\pm$ 0,058 & 0,710 & 3,0 & 1,4 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Função de perda -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_loss}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_loss}\caption{Função de perda -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_loss}\caption{Função de perda -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} Regressão: MSE penaliza resíduos grandes quadraticamente (sensível a outliers), MAE linearmente e Huber combina os dois. Classificação: com 17\% de positivos, a BCE sem peso tende a prever a classe majoritária; \texttt{pos\_weight} $= n_{neg}/n_{pos}$ equilibra o gradiente das duas classes.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,596 $\pm$ 0,009 (BCE\_pos\_weight) e o pior 0,511 $\pm$ 0,039 (BCE); a diferença de 0,085 é maior que a soma dos desvios (0,048), logo o efeito é real. O gap variou de 0,015 (BCE) a 0,028 (BCE\_pos\_weight). A melhor época média foi de 3 (BCE\_pos\_weight) a 6 (BCE), e o tempo médio de treino de 1,4 s a 1,5 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,929 $\pm$ 0,037 (MAE) e o pior 13,948 $\pm$ 0,050 (MSE); a diferença de 0,018 é menor que a soma dos desvios (0,087), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de 0,567 (MAE) a 0,710 (Huber). A melhor época média foi de 3 (MSE) a 3 (MAE), e o tempo médio de treino de 1,4 s a 1,5 s.
+
+\paragraph{(c) Mecanismo.} A perda define a direção do gradiente: no MSE, o gradiente de cada amostra é proporcional ao resíduo; no MAE é constante em módulo; o Huber é quadrático perto de zero e linear longe. Na BCE com \texttt{pos\_weight}, o gradiente das amostras positivas é multiplicado pelo peso.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (BCE\_pos\_weight) foram: BCE\_pos\_weight. Com limiar fixo de 0,5, a BCE sem peso obteve F1 macro 0,511 contra 0,596 com \texttt{pos\_weight}; o peso ajudou a classe minoritária. Na regressão, os valores estatisticamente empatados com o melhor (MAE) foram: MSE, MAE, Huber. Como a métrica principal é o RMSE, a perda MSE (que otimiza o mesmo critério) é favorecida; MAE e Huber reduzem o peso dos resíduos grandes (outliers de pressão).
+% REVISAR
+
+\subsection{Padronização das features}
+Valores testados: 1, 0 (opcional).
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & F1 macro treino & F1 macro validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+com & 3137 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & 3,0 & 1,4 & bem ajustado \\
+sem & 3137 & 0,587 $\pm$ 0,010 & 0,591 $\pm$ 0,010 & -0,004 & 40,7 & 3,8 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Padronização das features -- classificação (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação).}\label{tab:clf_scale}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+valor & parâm. & RMSE (mmHg) treino & RMSE (mmHg) validação & gap & época parada & tempo (s) & diagnóstico \\\midrule
+com & 3265 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & 2,7 & 1,5 & bem ajustado \\
+sem & 3265 & 15,062 $\pm$ 0,163 & 15,223 $\pm$ 0,199 & 0,161 & 44,7 & 4,0 & underfitting \\
+\bottomrule\end{tabular}}
+\caption{Padronização das features -- regressão (média $\pm$ desvio entre 3 sementes; gap = treino $-$ validação em erro: validação $-$ treino).}\label{tab:reg_scale}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_clf_scale}\caption{Padronização das features -- classificação: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{hp_reg_scale}\caption{Padronização das features -- regressão: métrica final por valor (esq.) e perda de validação por época (dir., semente 1).}\end{figure}
+\paragraph{(a) Hipótese.} Sem padronização, features em escalas muito diferentes (ex.: \texttt{Income\_USD} na casa de $10^5$ e variáveis one-hot em $\{0,1\}$) produzem gradientes desbalanceados e saturação, prejudicando ou impedindo o treino.
+
+\paragraph{(b) Evidência.} Na classificação, o melhor F1 macro de validação foi 0,596 $\pm$ 0,009 (com) e o pior 0,591 $\pm$ 0,010 (sem); a diferença de 0,006 é menor que a soma dos desvios (0,019), logo o efeito está dentro do ruído entre sementes e não deve ser tratado como real. O gap variou de -0,004 (sem) a 0,028 (com). A melhor época média foi de 3 (com) a 41 (sem), e o tempo médio de treino de 1,4 s a 3,8 s. Na regressão, o melhor RMSE (mmHg) de validação foi 13,948 $\pm$ 0,050 (com) e o pior 15,223 $\pm$ 0,199 (sem); a diferença de 1,275 é maior que a soma dos desvios (0,249), logo o efeito é real. O gap variou de 0,161 (sem) a 0,664 (com). A melhor época média foi de 3 (com) a 45 (sem), e o tempo médio de treino de 1,5 s a 4,0 s.
+
+\paragraph{(c) Mecanismo.} A descida do gradiente usa o mesmo $\eta$ para todos os pesos; features com variância enorme dominam o produto $w^\top x$, saturam as ativações e tornam a superfície de perda mal condicionada.
+% REVISAR: relacione o mecanismo com as curvas acima.
+
+\paragraph{(d) Conclusão prática.} Na classificação, os valores estatisticamente empatados com o melhor (com) foram: com, sem. Sem padronização a validação foi 0,591 contra 0,596 com padronização: a hipótese se confirmou. Na regressão, os valores estatisticamente empatados com o melhor (com) foram: com. Sem padronização a validação foi 15,223 contra 13,948 com padronização: a hipótese se confirmou.
+% REVISAR
+
+
+
+\subsection{Interação entre hiperparâmetros: taxa de aprendizado $\times$ batch}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}\toprule
+$\eta$ \textbackslash{} batch & 8 & 32 & 128 & 512 \\\midrule
+0,0001 & 0,590 $\pm$ 0,007 & 0,591 $\pm$ 0,012 & 0,590 $\pm$ 0,013 & 0,581 $\pm$ 0,015 \\
+0,001 & 0,583 $\pm$ 0,004 & 0,596 $\pm$ 0,009 & 0,585 $\pm$ 0,024 & 0,581 $\pm$ 0,007 \\
+0,01 & 0,611 $\pm$ 0,030 & 0,615 $\pm$ 0,006 & 0,599 $\pm$ 0,033 & 0,585 $\pm$ 0,031 \\
+0,1 & 0,354 $\pm$ 0,172 & 0,253 $\pm$ 0,183 & 0,634 $\pm$ 0,017 & 0,560 $\pm$ 0,117 \\
+\bottomrule\end{tabular}}
+\caption{Mapa de calor (classificação): F1 macro de validação, média $\pm$ desvio.}\label{tab:hm_clf}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.6\linewidth]{heatmap_clf}\caption{Interação taxa de aprendizado $\times$ batch -- classificação.}\end{figure}
+Na classificação, o melhor $\eta$ para cada batch foi: batch 8: $\eta$ = 0,01 (0,611); batch 32: $\eta$ = 0,01 (0,615); batch 128: $\eta$ = 0,1 (0,634); batch 512: $\eta$ = 0,01 (0,585). O $\eta$ ótimo muda com o batch, ou seja, há interação: com batches maiores há menos atualizações por época, e um passo maior compensa (regra de escala linear $\eta \propto B$); com batches pequenos o gradiente é ruidoso e um $\eta$ alto amplifica esse ruído. 
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}\toprule
+$\eta$ \textbackslash{} batch & 8 & 32 & 128 & 512 \\\midrule
+0,0001 & 13,910 $\pm$ 0,031 & 13,938 $\pm$ 0,034 & 13,982 $\pm$ 0,037 & 14,018 $\pm$ 0,036 \\
+0,001 & 13,899 $\pm$ 0,045 & 13,948 $\pm$ 0,050 & 13,976 $\pm$ 0,057 & 14,027 $\pm$ 0,065 \\
+0,01 & 13,791 $\pm$ 0,018 & 13,915 $\pm$ 0,064 & 13,926 $\pm$ 0,095 & 14,022 $\pm$ 0,031 \\
+0,1 & 15,340 $\pm$ 0,000 & 15,333 $\pm$ 0,009 & 13,963 $\pm$ 0,179 & 13,960 $\pm$ 0,096 \\
+\bottomrule\end{tabular}}
+\caption{Mapa de calor (regressão): RMSE (mmHg) de validação, média $\pm$ desvio.}\label{tab:hm_reg}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.6\linewidth]{heatmap_reg}\caption{Interação taxa de aprendizado $\times$ batch -- regressão.}\end{figure}
+Na regressão, o melhor $\eta$ para cada batch foi: batch 8: $\eta$ = 0,01 (13,791); batch 32: $\eta$ = 0,01 (13,915); batch 128: $\eta$ = 0,01 (13,926); batch 512: $\eta$ = 0,1 (13,960). O $\eta$ ótimo muda com o batch, ou seja, há interação: com batches maiores há menos atualizações por época, e um passo maior compensa (regra de escala linear $\eta \propto B$); com batches pequenos o gradiente é ruidoso e um $\eta$ alto amplifica esse ruído. 
+
+
+
+\subsection{Busca final}
+Com base nos estudos isolados, fizemos uma busca aleatória com 20 configurações (3 sementes cada) em um espaço
+que exclui os valores que divergiram ou foram claramente piores (ex.: $\eta \in [3\cdot10^{-4}, 10^{-2}]$ log-uniforme, sem Sigmoid
+e sem SGD simples, 1 a 3 camadas). A escolha usa apenas a média na validação.
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrrrrr}\toprule
+id & neurônios & camadas & ativação & otimizador & $\eta$ & batch & w. decay & dropout & F1 macro val. & gap \\\midrule
+0 & 16 & 3 & GELU & AdamW & 6.1e-03 & 32 & 0.0001 & 0 & 0,612 $\pm$ 0,015 & 0,018 \\
+7 & 128 & 2 & LeakyReLU & RMSprop & 1.6e-03 & 64 & 0.001 & 0 & 0,604 $\pm$ 0,022 & 0,034 \\
+12 & 32 & 3 & LeakyReLU & RMSprop & 1.5e-03 & 64 & 0.0001 & 0 & 0,602 $\pm$ 0,008 & 0,035 \\
+11 & 16 & 3 & ReLU & RMSprop & 4.7e-03 & 32 & 0.001 & 0.1 & 0,602 $\pm$ 0,033 & 0,015 \\
+16 & 128 & 3 & ReLU & Adam & 3.7e-04 & 128 & 1e-05 & 0.3 & 0,597 $\pm$ 0,008 & 0,042 \\
+2 & 128 & 2 & GELU & AdamW & 7.7e-03 & 128 & 0.0001 & 0.1 & 0,595 $\pm$ 0,030 & 0,021 \\
+4 & 128 & 3 & LeakyReLU & AdamW & 4.3e-03 & 128 & 1e-05 & 0 & 0,592 $\pm$ 0,017 & 0,049 \\
+3 & 128 & 2 & LeakyReLU & AdamW & 2.1e-03 & 32 & 0.001 & 0 & 0,591 $\pm$ 0,026 & 0,038 \\
+\bottomrule\end{tabular}}
+\caption{Busca aleatória (20 configurações, 3 sementes cada) -- classificação: 8 melhores na validação.}\label{tab:busca_clf}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrrrrr}\toprule
+id & neurônios & camadas & ativação & otimizador & $\eta$ & batch & w. decay & dropout & RMSE (mmHg) val. & gap \\\midrule
+11 & 16 & 3 & ReLU & RMSprop & 4.7e-03 & 32 & 0.001 & 0.1 & 13,776 $\pm$ 0,044 & 0,315 \\
+5 & 128 & 2 & Tanh & RMSprop & 5.9e-04 & 128 & 1e-05 & 0.1 & 13,820 $\pm$ 0,018 & 0,455 \\
+12 & 32 & 3 & LeakyReLU & RMSprop & 1.5e-03 & 64 & 0.0001 & 0 & 13,832 $\pm$ 0,027 & 0,290 \\
+9 & 32 & 1 & Tanh & AdamW & 9.0e-04 & 128 & 0.001 & 0.3 & 13,838 $\pm$ 0,030 & 0,531 \\
+1 & 16 & 2 & Tanh & RMSprop & 4.7e-03 & 128 & 0.0001 & 0 & 13,846 $\pm$ 0,012 & 0,541 \\
+10 & 32 & 3 & Tanh & AdamW & 8.2e-04 & 32 & 0.0001 & 0.1 & 13,851 $\pm$ 0,017 & 0,406 \\
+0 & 16 & 3 & GELU & AdamW & 6.1e-03 & 32 & 0.0001 & 0 & 13,856 $\pm$ 0,025 & 0,405 \\
+16 & 128 & 3 & ReLU & Adam & 3.7e-04 & 128 & 1e-05 & 0.3 & 13,860 $\pm$ 0,045 & 0,617 \\
+\bottomrule\end{tabular}}
+\caption{Busca aleatória (20 configurações, 3 sementes cada) -- regressão: 8 melhores na validação.}\label{tab:busca_reg}\end{table}
+
+\textbf{Configuração final -- classificação:} 3 camada(s) oculta(s) de 16 neurônios, GELU, AdamW, $\eta$ = 6.1e-03, batch 32, weight decay 0.0001, dropout 0, até 200 épocas com paciência 20; validação 0,612 $\pm$ 0,015.\\
+\textbf{Configuração final -- regressão:} 3 camada(s) oculta(s) de 16 neurônios, ReLU, RMSprop, $\eta$ = 4.7e-03, batch 32, weight decay 0.001, dropout 0.1, até 200 épocas com paciência 20; validação 13,776 $\pm$ 0,044 mmHg.
+
+\section{Persistência e Inferência}
+\subsection{state\_dict $\times$ modelo inteiro}
+Há duas formas de salvar uma rede em PyTorch. (i) \texttt{torch.save(modelo.state\_dict(), caminho)} grava só os tensores de pesos e
+vieses; para carregar, recria-se a arquitetura (\texttt{MLP(...)}) e chama-se \texttt{load\_state\_dict}. Não depende da estrutura de
+pastas do código e pode ser lido com \texttt{torch.load(..., weights\_only=True)}, que só aceita tensores e tipos simples e por isso
+não executa código arbitrário. (ii) \texttt{torch.save(modelo, caminho)} serializa o objeto inteiro com \emph{pickle}: fica acoplado
+ao nome da classe e ao caminho do módulo (\texttt{src.rn\_models.MLP}), quebra se o código mudar de lugar e exige
+\texttt{weights\_only=False}, o que é inseguro com arquivos desconhecidos (um pickle malicioso executa código ao ser carregado).
+\textbf{Adotamos o state\_dict}, dentro de um checkpoint completo.
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}\toprule
+problema & checkpoint (KB) & modelo inteiro (KB) & inteiro c/ weights\_only=True & parâmetros & parâm. $\times$ 4 B (KB) & overhead (KB) \\\midrule
+classificação & 14,6 & 11,7 & falhou (UnpicklingError) & 1585 & 6,2 & 8,4 \\
+regressão & 15,0 & 12,5 & falhou (UnpicklingError) & 1649 & 6,4 & 8,6 \\
+\bottomrule\end{tabular}}
+\caption{Tamanho em disco e relação com o número de parâmetros (float32). O overhead do checkpoint inclui média/desvio do scaler, nomes das features, codificação das categóricas e metadados do formato.}\label{tab:tam}\end{table}
+\subsection{Conteúdo do checkpoint}
+Cada arquivo (\texttt{models/modelo\_classificacao.pt} e \texttt{models/modelo\_regressao.pt}) é um dicionário com:
+\texttt{state\_dict}; \texttt{arch} (dimensão de entrada, camadas ocultas, ativação, dropout -- para recriar a rede);
+\texttt{config\_treino} (todos os hiperparâmetros); \texttt{x\_media} e \texttt{x\_desvio} (StandardScaler ajustado no treino);
+\texttt{features} (nomes das colunas na ordem de entrada); \texttt{encoder} (medianas, modas e categorias do treino, para imputar e
+codificar amostras novas a partir das colunas originais); \texttt{y\_media}/\texttt{y\_desvio} (target padronizado, regressão);
+\texttt{classes} e \texttt{limiar} (classificação). Sem o pré-processamento, o modelo carregado receberia entradas em outra escala e
+produziria previsões erradas.
+
+\subsection{Carregamento em ambiente limpo e fidelidade}
+O script \texttt{src/inference.py} é executado em um \emph{processo Python separado} (não compartilha nenhuma variável do treino):
+carrega o arquivo com \texttt{map\_location="cpu"} e \texttt{weights\_only=True}, recria a arquitetura, aplica o pré-processamento
+salvo, chama \texttt{modelo.eval()} e prevê dentro de \texttt{torch.inference\_mode()}. Saída obtida (classificação):
+\begin{verbatim}
+$ python src/inference.py --modelo models/modelo_classificacao.pt --entrada data/novas_amostras_clf.csv
+modelo: models/modelo_classificacao.pt | problema: clf | arquitetura: {'in_dim': 63, 'out_dim': 1, 'hidden': [16, 16, 16], 'activation': 'GELU', 'dropout': 0.0}
+limiar de decisão (escolhido na validação): 0.63
+    prob_Yes Hypertension_previsto
+0   0.421183                    No
+1   0.401926                    No
+2   0.404594                    No
+3   0.652073                   Yes
+4   0.454222                    No
+5   0.322508                    No
+6   0.513935                    No
+7   0.344785                    No
+8   0.504676                    No
+\end{verbatim}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}\toprule
+problema & modelo & torch.allclose & dif. máx. abs. & métrica antes de salvar & métrica do carregado & idênticas \\\midrule
+classificação & Baseline RN & sim & 0.00e+00 & 0,627095 & 0,627095 & sim \\
+classificação & RN final & sim & 0.00e+00 & 0,623221 & 0,623221 & sim \\
+classificação & processo separado (20 amostras) & -- & 4.82e-08 & -- & -- & -- \\
+regressão & Baseline RN & sim & 0.00e+00 & 13,863369 & 13,863369 & sim \\
+regressão & RN final & sim & 0.00e+00 & 13,891533 & 13,891533 & sim \\
+regressão & processo separado (20 amostras) & -- & 6.36e-06 & -- & -- & -- \\
+\bottomrule\end{tabular}}
+\caption{Verificação de fidelidade no teste: saídas do modelo em memória $\times$ modelo carregado do .pt (métrica principal).}\label{tab:fid}\end{table}
+\paragraph{E se esquecer o \texttt{eval()}?} Em modo de treino o dropout continua sorteando neurônios a cada chamada: a mesma
+entrada gera saídas diferentes e o desempenho cai, porque a rede é avaliada com ruído (e, se houvesse BatchNorm, usaria as estatísticas
+do lote em vez das acumuladas). \texttt{eval()} desliga o dropout; \texttt{torch.no\_grad()}/\texttt{inference\_mode()} apenas evitam
+guardar o grafo do autograd (menos memória e tempo), não substituem o \texttt{eval()}.
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrr}\toprule
+problema & modelo usado & com eval() & sem eval() (5 passadas) & dif. máx. entre 2 passadas \\\midrule
+classificação & configuração final com dropout = 0,3 (o modelo final não tem dropout) & 0,578 & 0,577 $\pm$ 0,008 & 3.410 \\
+regressão & modelo final & 13,745 & 13,898 $\pm$ 0,021 & 1.243 \\
+\bottomrule\end{tabular}}
+\caption{Efeito de esquecer \texttt{eval()} (métrica principal na validação).}\label{tab:eval}\end{table}
+\paragraph{Portabilidade.} O treino foi feito em CPU. Se fosse feito em GPU, os tensores do \texttt{state\_dict} ficariam
+salvos como tensores CUDA; \texttt{map\_location="cpu"} os remapeia para a CPU ao carregar, permitindo usar o modelo em uma máquina sem
+GPU (sem ele, o carregamento falha com erro de dispositivo CUDA).
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrr}\toprule
+problema & versão & disco (KB) & ms/amostra (lote) & amostras/s & métrica principal (teste) \\\midrule
+classificação & torchscript & 20,6 & 0,00010 & 10056339 & 0,623 \\
+classificação & quantizado\_int8 & 7,7 & 0,00020 & 5104789 & 0,623 \\
+classificação & original & 14,6 & 0,00011 & 9219142 & 0,623 \\
+regressão & torchscript & 25,3 & 0,00006 & 15495267 & 13,892 \\
+regressão & quantizado\_int8 & 7,8 & 0,00017 & 5884197 & 13,883 \\
+regressão & original & 15,0 & 0,00010 & 10360815 & 13,892 \\
+\bottomrule\end{tabular}}
+\caption{Desafio opcional: TorchScript (\texttt{torch.jit.trace}) e quantização dinâmica int8 (\texttt{quantize\_dynamic}).}\label{tab:extras}\end{table}
+
+
+\section{Resultados}
+\subsection{Desempenho -- classificação}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrrrrrr}\toprule
+modelo & conjunto & Accuracy & Precision\_macro & Recall\_macro & F1\_macro & Precision\_pos & Recall\_pos & F1\_pos & ROC\_AUC & PR\_AUC \\\midrule
+Baseline RN & treino & 0,823 & 0,684 & 0,669 & 0,676 & 0,484 & 0,435 & 0,458 & 0,756 & 0,407 \\
+Baseline RN & validacao & 0,833 & 0,702 & 0,678 & 0,688 & 0,517 & 0,442 & 0,477 & 0,700 & 0,410 \\
+Baseline RN & teste & 0,797 & 0,634 & 0,622 & 0,627 & 0,399 & 0,355 & 0,375 & 0,673 & 0,338 \\
+RN final & treino & 0,789 & 0,639 & 0,651 & 0,644 & 0,397 & 0,440 & 0,418 & 0,730 & 0,368 \\
+RN final & validacao & 0,799 & 0,662 & 0,686 & 0,672 & 0,430 & 0,514 & 0,469 & 0,709 & 0,398 \\
+RN final & teste & 0,779 & 0,620 & 0,627 & 0,623 & 0,368 & 0,395 & 0,381 & 0,675 & 0,340 \\
+\bottomrule\end{tabular}}
+\caption{Métricas da Aula 08 (classificação), calculadas com o modelo \emph{carregado do arquivo .pt}. \emph{pos} = classe Yes; limiar escolhido na validação.}\label{tab:met_clf}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.75\linewidth]{matrizes_confusao_clf}\caption{Matrizes de confusão no teste.}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{roc_pr_clf}\caption{Curvas ROC e Precision-Recall no teste (probabilidades da rede, \texttt{torch.sigmoid}).}\end{figure}
+\begin{figure}[H]\centering\includegraphics[width=0.6\linewidth]{limiar_clf}\caption{Precision, Recall e F1 macro em função do limiar, na validação (modelo final).}\end{figure}
+\paragraph{Limiar de decisão.} O limiar foi escolhido na \emph{validação}, maximizando o F1 macro: 0,63 no modelo final e 0,64 no baseline. Na validação, com limiar 0,5 a Precision/Recall da classe Yes foram 0,302/0,616, e com o limiar escolhido 0,430/0,514: subir o limiar troca Recall por Precision. Como só 17,2\% dos casos são positivos, um classificador que sempre responde \emph{No} já teria Accuracy de 0,828, sem detectar nenhum hipertenso; por isso a Accuracy é enganosa aqui. \textbf{Métrica principal:} F1 macro (equilibra as duas classes), acompanhada de Recall da classe Yes, já que um falso negativo (hipertenso não identificado) custa mais que um falso positivo (que só gera um exame de confirmação). ROC-AUC e PR-AUC no teste: 0,675 e 0,340 (PR-AUC de um classificador aleatório = prevalência $\approx$ 0,172).
+
+\subsection{Generalização -- classificação}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+modelo & treino & validação & teste & gap & gap rel. & época parada & diagnóstico \\\midrule
+Baseline RN & 0,676 & 0,688 & 0,627 & 0,049 & 7,2\% & 3 & bem ajustado \\
+RN final & 0,644 & 0,672 & 0,623 & 0,021 & 3,3\% & 1 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{F1 macro e gap de generalização (gap = treino $-$ teste). Overfitting se gap relativo $>$ 10\%; underfitting se o treino fica a menos de 0,05 do modelo constante.}\label{tab:gen_clf}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{curvas_aprendizado_clf}\caption{Curvas de aprendizado (perda por época) e ponto do early stopping -- classificação.}\end{figure}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrr}\toprule
+fold & F1\_macro & ROC\_AUC & PR\_AUC \\\midrule
+1 & 0,642 & 0,690 & 0,324 \\
+2 & 0,599 & 0,645 & 0,331 \\
+3 & 0,613 & 0,671 & 0,347 \\
+4 & 0,642 & 0,672 & 0,312 \\
+5 & 0,628 & 0,656 & 0,350 \\
+média $\pm$ desvio & 0,625 $\pm$ 0,019 & 0,667 $\pm$ 0,017 & 0,333 $\pm$ 0,016 \\
+\bottomrule\end{tabular}}
+\caption{Validação cruzada 5-fold da configuração final no conjunto de treino (classificação).}\label{tab:cv_clf}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrr}\toprule
+hiperparâmetro & valor & treino & validação & gap & diagnóstico \\\midrule
+Neurônios por camada & 2 & 0,556 $\pm$ 0,090 & 0,545 $\pm$ 0,080 & 0,011 & bem ajustado \\
+Neurônios por camada & 128 & 0,641 $\pm$ 0,032 & 0,593 $\pm$ 0,024 & 0,048 & bem ajustado \\
+Camadas ocultas & 1 & 0,607 $\pm$ 0,009 & 0,573 $\pm$ 0,008 & 0,034 & bem ajustado \\
+Camadas ocultas & 5 & 0,654 $\pm$ 0,014 & 0,608 $\pm$ 0,017 & 0,045 & bem ajustado \\
+Taxa de aprendizado & 0,0001 & 0,618 $\pm$ 0,011 & 0,591 $\pm$ 0,012 & 0,027 & bem ajustado \\
+Taxa de aprendizado & 1 & 0,249 $\pm$ 0,177 & 0,250 $\pm$ 0,176 & -0,001 & underfitting \\
+Weight decay (L2) & 0 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & bem ajustado \\
+Weight decay (L2) & 0,01 & 0,627 $\pm$ 0,012 & 0,600 $\pm$ 0,011 & 0,027 & bem ajustado \\
+Dropout & 0 & 0,625 $\pm$ 0,009 & 0,596 $\pm$ 0,009 & 0,028 & bem ajustado \\
+Dropout & 0,5 & 0,625 $\pm$ 0,024 & 0,589 $\pm$ 0,017 & 0,036 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Configurações extremas do estudo (classificação): classificação em under/overfitting.}\label{tab:ext_clf}\end{table}
+O modelo final tem gap de 0,021 (3,3\%) e foi classificado como \emph{bem ajustado}; na validação cruzada, F1 macro = 0,625 $\pm$ 0,019. \textbf{Viés e variância:} aumentar neurônios/camadas reduziu o desempenho de treino perdido (menos viés) e, quando o gap cresceu, aumentou a variância; weight decay e dropout fazem o caminho inverso. % REVISAR com os números das Tabelas.
+
+\subsection{Eficiência computacional -- classificação}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrr}\toprule
+medida & Baseline RN & RN final \\\midrule
+treino (s) & 1,41 & 1,76 \\
+épocas & 23 & 21 \\
+RAM pico treino (MB) & 681 & 682 \\
+inf. lote (ms/amostra) & 0,00007 & 0,00013 \\
+vazão lote (amostras/s) & 14745515 & 7943428 \\
+inf. individual (ms) & 0,0218 & 0,0726 \\
+c/ pré-proc. (ms/amostra) & 0,0074 & 0,0075 \\
+parâmetros & 3137 & 1585 \\
+MACs/amostra & 3072 & 1536 \\
+disco (KB) & 20,0 & 14,6 \\
+energia treino (kWh) & 0,0000059 & 0,0000074 \\
+CO$_2$ treino (g) & 0,00027 & 0,00034 \\
+\bottomrule\end{tabular}}
+\caption{Eficiência (classificação). Energia estimada como potência assumida (15 W) $\times$ tempo; CO$_2$ = kWh $\times$ 45,8 g/kWh (fator do Brasil, Aula 08).}\label{tab:ef_clf}\end{table}
+A inferência em lote (0,00013 ms/amostra) é muito mais rápida por amostra que a individual (0,0726 ms), pois o custo fixo de cada chamada (despacho do Python e do PyTorch) é dividido entre todas as amostras e a multiplicação de matrizes aproveita a vetorização da CPU.
+
+
+\subsection{Desempenho -- regressão}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrrr}\toprule
+modelo & conjunto & MAE & MSE & RMSE & MAPE\_\% & R2 & MedAE \\\midrule
+Baseline RN & treino & 10,509 & 173,126 & 13,158 & 8,690 & 0,242 & 8,928 \\
+Baseline RN & validacao & 11,168 & 194,175 & 13,935 & 9,266 & 0,175 & 9,281 \\
+Baseline RN & teste & 11,185 & 192,193 & 13,863 & 9,170 & 0,190 & 9,490 \\
+RN final & treino & 10,920 & 186,722 & 13,665 & 9,013 & 0,182 & 9,313 \\
+RN final & validacao & 11,023 & 188,925 & 13,745 & 9,120 & 0,197 & 9,495 \\
+RN final & teste & 11,238 & 192,975 & 13,892 & 9,193 & 0,186 & 9,684 \\
+\bottomrule\end{tabular}}
+\caption{Métricas da Aula 08 (regressão), calculadas com o modelo \emph{carregado do arquivo .pt}. Erros em mmHg; MAPE em \%.}\label{tab:met_reg}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{real_vs_previsto_residuos_reg}\caption{Real $\times$ previsto e resíduos $e_i = y_i - \hat y_i$ no teste, em mmHg.}\end{figure}
+\paragraph{Métrica principal e resíduos.} Usamos o RMSE (em mmHg, mesma unidade do target) como métrica principal porque erros grandes de pressão são clinicamente mais graves e o RMSE os penaliza mais; o MAE (11,238 mmHg no teste) é reportado junto por ser menos sensível a outliers. A diferença RMSE $-$ MAE (2,654) indica a presença de resíduos grandes. R$^2$ no teste = 0,186. % REVISAR: descreva o padrão dos resíduos (faixas, viés para valores extremos).
+
+\subsection{Generalização -- regressão}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrr}\toprule
+modelo & treino & validação & teste & gap & gap rel. & época parada & diagnóstico \\\midrule
+Baseline RN & 13,158 & 13,935 & 13,863 & 0,706 & 5,4\% & 3 & bem ajustado \\
+RN final & 13,665 & 13,745 & 13,892 & 0,227 & 1,7\% & 1 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{RMSE (mmHg) e gap de generalização (gap = treino $-$ teste; para erro, teste $-$ treino). Overfitting se gap relativo $>$ 10\%; underfitting se o treino fica a menos de 0,05 do modelo constante.}\label{tab:gen_reg}\end{table}
+\begin{figure}[H]\centering\includegraphics[width=0.95\linewidth]{curvas_aprendizado_reg}\caption{Curvas de aprendizado (perda por época) e ponto do early stopping -- regressão.}\end{figure}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrr}\toprule
+fold & RMSE & MAE & R2 \\\midrule
+1 & 14,456 & 11,680 & 0,177 \\
+2 & 13,553 & 10,775 & 0,108 \\
+3 & 13,915 & 11,135 & 0,183 \\
+4 & 14,319 & 11,445 & 0,145 \\
+5 & 13,409 & 10,759 & 0,148 \\
+média $\pm$ desvio & 13,930 $\pm$ 0,459 & 11,159 $\pm$ 0,407 & 0,152 $\pm$ 0,030 \\
+\bottomrule\end{tabular}}
+\caption{Validação cruzada 5-fold da configuração final no conjunto de treino (regressão).}\label{tab:cv_reg}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrr}\toprule
+hiperparâmetro & valor & treino & validação & gap & diagnóstico \\\midrule
+Neurônios por camada & 2 & 13,522 $\pm$ 0,112 & 13,864 $\pm$ 0,169 & 0,342 & bem ajustado \\
+Neurônios por camada & 128 & 13,225 $\pm$ 0,296 & 13,913 $\pm$ 0,053 & 0,688 & bem ajustado \\
+Camadas ocultas & 1 & 13,273 $\pm$ 0,148 & 13,949 $\pm$ 0,056 & 0,676 & bem ajustado \\
+Camadas ocultas & 5 & 13,402 $\pm$ 0,159 & 13,901 $\pm$ 0,082 & 0,499 & bem ajustado \\
+Taxa de aprendizado & 0,0001 & 13,338 $\pm$ 0,087 & 13,938 $\pm$ 0,034 & 0,600 & bem ajustado \\
+Taxa de aprendizado & 1 & 41,700 $\pm$ 46,049 & 20,880 $\pm$ 9,596 & -20,819 & underfitting \\
+Weight decay (L2) & 0 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & bem ajustado \\
+Weight decay (L2) & 0,01 & 13,301 $\pm$ 0,058 & 13,900 $\pm$ 0,045 & 0,598 & bem ajustado \\
+Dropout & 0 & 13,283 $\pm$ 0,142 & 13,948 $\pm$ 0,050 & 0,664 & bem ajustado \\
+Dropout & 0,5 & 13,331 $\pm$ 0,203 & 13,861 $\pm$ 0,031 & 0,530 & bem ajustado \\
+\bottomrule\end{tabular}}
+\caption{Configurações extremas do estudo (regressão): classificação em under/overfitting.}\label{tab:ext_reg}\end{table}
+O modelo final tem gap de 0,227 (1,7\%) e foi classificado como \emph{bem ajustado}; na validação cruzada, RMSE (mmHg) = 13,930 $\pm$ 0,459. \textbf{Viés e variância:} aumentar neurônios/camadas reduziu o desempenho de treino perdido (menos viés) e, quando o gap cresceu, aumentou a variância; weight decay e dropout fazem o caminho inverso. % REVISAR com os números das Tabelas.
+
+\subsection{Eficiência computacional -- regressão}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrr}\toprule
+medida & Baseline RN & RN final \\\midrule
+treino (s) & 1,44 & 1,53 \\
+épocas & 23 & 21 \\
+RAM pico treino (MB) & 700 & 700 \\
+inf. lote (ms/amostra) & 0,00011 & 0,00009 \\
+vazão lote (amostras/s) & 8897663 & 11347853 \\
+inf. individual (ms) & 0,0252 & 0,0371 \\
+c/ pré-proc. (ms/amostra) & 0,0076 & 0,0072 \\
+parâmetros & 3265 & 1649 \\
+MACs/amostra & 3200 & 1600 \\
+disco (KB) & 20,6 & 15,0 \\
+energia treino (kWh) & 0,0000060 & 0,0000064 \\
+CO$_2$ treino (g) & 0,00028 & 0,00029 \\
+\bottomrule\end{tabular}}
+\caption{Eficiência (regressão). Energia estimada como potência assumida (15 W) $\times$ tempo; CO$_2$ = kWh $\times$ 45,8 g/kWh (fator do Brasil, Aula 08).}\label{tab:ef_reg}\end{table}
+A inferência em lote (0,00009 ms/amostra) é muito mais rápida por amostra que a individual (0,0371 ms), pois o custo fixo de cada chamada (despacho do Python e do PyTorch) é dividido entre todas as amostras e a multiplicação de matrizes aproveita a vetorização da CPU.
+
+
+\subsection{Efeito dos hiperparâmetros no custo e implantação}
+Na classificação: de 2 para 128 neurônios, os parâmetros foram de 137 para 24833 (arquivo $\approx$ parâmetros $\times$ 4 bytes) e o tempo médio de 2,3 s para 1,5 s; de 1 para 5 camadas, de 2081 para 6305 parâmetros; o batch não altera os parâmetros, mas o tempo foi de 4,7 s (batch 8) a 0,9 s (total (lote inteiro)). Na regressão: de 2 para 128 neurônios, os parâmetros foram de 145 para 25345 (arquivo $\approx$ parâmetros $\times$ 4 bytes) e o tempo médio de 2,0 s para 1,6 s; de 1 para 5 camadas, de 2209 para 6433 parâmetros; o batch não altera os parâmetros, mas o tempo foi de 4,7 s (batch 8) a 1,1 s (total (lote inteiro)). 
+As redes finais têm poucos milhares de parâmetros e ocupam dezenas de KB: cabem com folga em um dispositivo de borda (ex.: Raspberry Pi
+ou microcontrolador com alguns MB de RAM). Para reduzir ainda mais, é possível usar menos neurônios (o estudo mostra que a capacidade
+extra rende pouco), quantização int8 (Tabela~\ref{tab:extras}) e poda de pesos pequenos. % REVISAR
+
+\section{Análise e Discussão}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrrrrrr}\toprule
+problema & modelo & treino & validação & teste & gap & diagnóstico & K-fold & parâm. & treino (s) & ms/amostra & KB \\\midrule
+classificação & Baseline RN & 0,676 & 0,688 & 0,627 & 0,049 & bem ajustado & -- & 3137 & 1,4 & 0,00007 & 20,0 \\
+classificação & RN final & 0,644 & 0,672 & 0,623 & 0,021 & bem ajustado & 0,625 $\pm$ 0,019 & 1585 & 1,8 & 0,00013 & 14,6 \\
+regressão & Baseline RN & 13,158 & 13,935 & 13,863 & 0,706 & bem ajustado & -- & 3265 & 1,4 & 0,00011 & 20,6 \\
+regressão & RN final & 13,665 & 13,745 & 13,892 & 0,227 & bem ajustado & 13,930 $\pm$ 0,459 & 1649 & 1,5 & 0,00009 & 15,0 \\
+\bottomrule\end{tabular}}
+\caption{Tabela-resumo final (métrica principal: F1 macro na classificação, RMSE em mmHg na regressão). Arquivo: \texttt{reports/tables/rn/resumo\_final.csv}.}\label{tab:resumo}\end{table}
+
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrrrr}\toprule
+problema & hiperparâmetro & melhor & val. & pior & val. & amplitude & soma desvios & efeito real \\\midrule
+classificação & Taxa de aprendizado & 0,01 & 0,615 & 1 & 0,250 & 0,365 & 0,182 & sim \\
+classificação & Função de perda & BCE\_pos\_weight & 0,596 & BCE & 0,511 & 0,085 & 0,048 & sim \\
+classificação & Neurônios por camada & 8 & 0,602 & 2 & 0,545 & 0,057 & 0,102 & não \\
+classificação & Função de ativação & Sigmoid & 0,623 & Tanh & 0,576 & 0,046 & 0,009 & sim \\
+classificação & Camadas ocultas & 5 & 0,608 & 1 & 0,573 & 0,035 & 0,025 & sim \\
+classificação & Tamanho do batch & 32 & 0,596 & total (lote inteiro) & 0,570 & 0,026 & 0,023 & sim \\
+classificação & Dropout & 0 & 0,596 & 0,3 & 0,584 & 0,012 & 0,021 & não \\
+classificação & Otimizador & Adam & 0,596 & SGD\_momentum & 0,587 & 0,009 & 0,022 & não \\
+classificação & Padronização das features & com & 0,596 & sem & 0,591 & 0,006 & 0,019 & não \\
+classificação & Weight decay (L2) & 0,01 & 0,600 & 0,0001 & 0,595 & 0,005 & 0,023 & não \\
+regressão & Taxa de aprendizado & 0,01 & 13,915 & 1 & 20,880 & 6,965 & 9,661 & não \\
+regressão & Padronização das features & com & 13,948 & sem & 15,223 & 1,275 & 0,249 & sim \\
+regressão & Neurônios por camada & 2 & 13,864 & 4 & 14,179 & 0,315 & 0,430 & não \\
+regressão & Tamanho do batch & 8 & 13,899 & total (lote inteiro) & 14,136 & 0,237 & 0,087 & sim \\
+regressão & Função de ativação & Tanh & 13,820 & ReLU & 13,948 & 0,128 & 0,073 & sim \\
+regressão & Dropout & 0,3 & 13,847 & 0 & 13,948 & 0,101 & 0,072 & sim \\
+regressão & Otimizador & SGD\_momentum & 13,859 & Adam & 13,948 & 0,089 & 0,089 & sim \\
+regressão & Weight decay (L2) & 0,01 & 13,900 & 0,0001 & 13,948 & 0,049 & 0,095 & não \\
+regressão & Camadas ocultas & 5 & 13,901 & 1 & 13,949 & 0,048 & 0,138 & não \\
+regressão & Função de perda & MAE & 13,929 & MSE & 13,948 & 0,018 & 0,087 & não \\
+\bottomrule\end{tabular}}
+\caption{Sensibilidade: hiperparâmetros ordenados pelo impacto na validação (melhor $-$ pior valor testado).}\label{tab:sens}\end{table}
+
+\subsection{Respostas -- classificação}
+\begin{enumerate}[label=(\alph*)]
+\item Taxa de aprendizado (amplitude 0,365, efeito real); Função de perda (amplitude 0,085, efeito real); Neurônios por camada (amplitude 0,057, dentro do ruído). Os mecanismos estão na Seção~\ref{sec:hp}. Hiperparâmetros com efeito desprezível (dentro do desvio entre sementes): Neurônios por camada, Dropout, Otimizador, Padronização das features, Weight decay (L2). % REVISAR
+\item Ver Tabela~\ref{tab:hm_clf} e o texto que a acompanha.
+\item F1 macro treino/validação/teste = 0,644/0,672/0,623; gap = 0,021 (3,3\%), diagnóstico: \emph{bem ajustado}; K-fold: 0,625 $\pm$ 0,019.
+\item Sim: diferença máxima absoluta entre as saídas = 0.00e+00 (\texttt{torch.allclose} = True). Cuidados: salvar média/desvio do scaler (e do target), a codificação das categóricas e a ordem das features; recriar a mesma arquitetura a partir de \texttt{arch}; chamar \texttt{eval()}; usar \texttt{map\_location} e \texttt{weights\_only=True}.
+\item 1585 parâmetros, 1536 MACs por amostra, 14,6 KB em disco, 1,8 s de treino e 0,00013 ms por amostra em lote: custo desprezível para uso em clínica, em servidor ou em dispositivo de borda. % REVISAR conforme o contexto do cliente
+\item No teste, a rede final obteve F1 macro = 0,623, contra 0,682 do melhor modelo da atividade anterior (Random Forest). A rede não superou os modelos anteriores, com diferença de 0,059; como árvores e ensembles são mais simples de ajustar e de interpretar, \textbf{não recomendamos} a rede para este problema. % REVISAR
+\end{enumerate}
+
+\subsection{Respostas -- regressão}
+\begin{enumerate}[label=(\alph*)]
+\item Taxa de aprendizado (amplitude 6,965, dentro do ruído); Padronização das features (amplitude 1,275, efeito real); Neurônios por camada (amplitude 0,315, dentro do ruído). Os mecanismos estão na Seção~\ref{sec:hp}. Hiperparâmetros com efeito desprezível (dentro do desvio entre sementes): Taxa de aprendizado, Neurônios por camada, Weight decay (L2), Camadas ocultas, Função de perda. % REVISAR
+\item Ver Tabela~\ref{tab:hm_reg} e o texto que a acompanha.
+\item RMSE (mmHg) treino/validação/teste = 13,665/13,745/13,892; gap = 0,227 (1,7\%), diagnóstico: \emph{bem ajustado}; K-fold: 13,930 $\pm$ 0,459.
+\item Sim: diferença máxima absoluta entre as saídas = 0.00e+00 (\texttt{torch.allclose} = True). Cuidados: salvar média/desvio do scaler (e do target), a codificação das categóricas e a ordem das features; recriar a mesma arquitetura a partir de \texttt{arch}; chamar \texttt{eval()}; usar \texttt{map\_location} e \texttt{weights\_only=True}.
+\item 1649 parâmetros, 1600 MACs por amostra, 15,0 KB em disco, 1,5 s de treino e 0,00009 ms por amostra em lote: custo desprezível para uso em clínica, em servidor ou em dispositivo de borda. % REVISAR conforme o contexto do cliente
+\item No teste, a rede final obteve RMSE (mmHg) = 13,892, contra 13,739 do melhor modelo da atividade anterior (Gradient Boosting). A rede não superou os modelos anteriores, com diferença de 0,153; como árvores e ensembles são mais simples de ajustar e de interpretar, \textbf{não recomendamos} a rede para este problema. % REVISAR
+\end{enumerate}
+
+\subsection{Comparação com a atividade anterior}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}\toprule
+modelo & F1\_macro & ROC\_AUC & PR\_AUC & Accuracy & treino\_tempo\_medio\_s & tamanho\_disco\_kb \\\midrule
+Árvore (ajustada) & 0,682 & 0,674 & 0,318 & 0,825 & 0,066 & 9,020 \\
+Random Forest & 0,682 & 0,682 & 0,370 & 0,824 & 1,664 & 3703,261 \\
+Gradient Boosting & 0,606 & 0,685 & 0,387 & 0,830 & 1,407 & 252,169 \\
+Baseline RN & 0,627 & 0,673 & 0,338 & 0,797 & 1,408 & 20,030 \\
+RN final & 0,623 & 0,675 & 0,340 & 0,779 & 1,765 & 14,583 \\
+\bottomrule\end{tabular}}
+\caption{Teste (classificação): modelos da atividade anterior $\times$ redes neurais, mesmos conjuntos de treino e teste. Tempos medidos em execuções diferentes.}\label{tab:comp_clf}\end{table}
+\begin{table}[H]\centering\scriptsize\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lrrrrrr}\toprule
+modelo & RMSE & MAE & R2 & MAPE\_\% & treino\_tempo\_medio\_s & tamanho\_disco\_kb \\\midrule
+Árvore (ajustada) & 13,748 & 11,111 & 0,203 & 9,106 & 0,057 & 9,887 \\
+Random Forest & 13,798 & 11,161 & 0,197 & 9,146 & 0,984 & 4308,862 \\
+Gradient Boosting & 13,739 & 11,095 & 0,204 & 9,094 & 0,941 & 90,388 \\
+Baseline RN & 13,863 & 11,185 & 0,190 & 9,170 & 1,441 & 20,601 \\
+RN final & 13,892 & 11,238 & 0,186 & 9,193 & 1,527 & 15,021 \\
+\bottomrule\end{tabular}}
+\caption{Teste (regressão): modelos da atividade anterior $\times$ redes neurais, mesmos conjuntos de treino e teste. Tempos medidos em execuções diferentes.}\label{tab:comp_reg}\end{table}
+
+\subsection{Vantagens e desvantagens das redes neurais para estes dados}
+\textbf{Vantagens:} modelam relações não lineares e interações sem que precisemos especificá-las; o mesmo código serve para
+regressão e classificação; o modelo final é pequeno e rápido na inferência. \textbf{Desvantagens:} são sensíveis à escala das
+features (Seção~\ref{sec:hp}, padronização) e aos hiperparâmetros (taxa de aprendizado e batch mudam o resultado e até causam
+divergência); exigem pré-processamento salvo junto com o modelo; são pouco interpretáveis (ao contrário da árvore de decisão e das regras
+do sistema especialista); e, em um conjunto tabular pequeno (5000 linhas) e de sinal fraco, não há dados suficientes para a capacidade
+extra fazer diferença.
+
+\subsection{Limitações}
+Conjunto sintético e pequeno, com sinal fraco (AUC e R$^2$ baixos para todos os modelos); uma única divisão treino/teste; 3
+sementes por configuração; o estudo de um fator por vez não cobre todas as interações (só lr $\times$ batch foi varrido em 2D); a busca
+aleatória com 20 configurações é limitada; o limiar 0,5 no estudo de hiperparâmetros (o limiar ótimo só foi escolhido para o
+modelo final); a energia foi estimada por potência assumida (15 W), não medida; os tempos dependem do hardware.
+
+\section{Considerações Finais}
+\textbf{TODO (aluno):} dificuldades encontradas, o que aprendeu sobre hiperparâmetros e sobre salvar/carregar modelos.
+
+\section{Referência ao Repositório}
+Código: \url{https://github.com/xonazz/IA_thomas2}. Estrutura: \texttt{src/rn\_models.py} (classe MLP), \texttt{src/rn\_train.py}
+(treino, early stopping, sementes, métricas), \texttt{src/rn\_prep.py} (pré-processamento exportável), \texttt{src/rn\_study.py}
+(estudo de hiperparâmetros), \texttt{src/rn\_final.py} (modelo final, persistência, métricas, generalização e eficiência),
+\texttt{src/inference.py} (inferência independente), \texttt{src/rn\_report.py} (este relatório), \texttt{run\_rn.py} (executa tudo),
+\texttt{models/} (arquivos .pt), \texttt{logs/hiperparametros.csv} (todas as execuções), \texttt{reports/tables/rn} e
+\texttt{reports/figures/rn} (tabelas e gráficos) e \texttt{notebooks/rn/} (notebooks 03 a 08).
+\end{document}

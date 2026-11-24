@@ -1,0 +1,105 @@
+{
+  "ambiente": {
+    "so": "Linux-7.0.0-42-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "cpu": "AMD Ryzen 5 7430U (6 n\u00facleos / 12 threads, TDP 15 W)",
+    "cpu_detectada": "x86_64",
+    "nucleos_logicos": 12,
+    "ram_gb": 14.0,
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "threads_torch": 6,
+    "gpu": "nenhuma (treino em CPU)",
+    "potencia_assumida_w": 15.0
+  },
+  "config_final": {
+    "neurons": 16,
+    "layers": 3,
+    "activation": "GELU",
+    "optimizer": "AdamW",
+    "lr": 0.00609,
+    "batch": 32,
+    "epochs": 200,
+    "patience": 20,
+    "weight_decay": 0.0001,
+    "dropout": 0.0,
+    "loss": "BCE_pos_weight",
+    "scale": true
+  },
+  "baseline": {
+    "neurons": 32,
+    "layers": 2,
+    "activation": "ReLU",
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "batch": 32,
+    "epochs": 200,
+    "patience": 20,
+    "weight_decay": 0.0,
+    "dropout": 0.0,
+    "loss": "BCE_pos_weight",
+    "scale": true
+  },
+  "busca_val_media": 0.6123885345832654,
+  "busca_val_desvio": 0.014758944734443316,
+  "sementes": [
+    42,
+    43,
+    44
+  ],
+  "inferencia_ambiente_limpo": {
+    "comando": "python src/inference.py --modelo models/modelo_classificacao.pt --entrada data/novas_amostras_clf.csv",
+    "codigo_saida": 0,
+    "stdout": "modelo: models/modelo_classificacao.pt | problema: clf | arquitetura: {'in_dim': 63, 'out_dim': 1, 'hidden': [16, 16, 16], 'activation': 'GELU', 'dropout': 0.0}\nlimiar de decis\u00e3o (escolhido na valida\u00e7\u00e3o): 0.63\n    prob_Yes Hypertension_previsto\n0   0.421183                    No\n1   0.401926                    No\n2   0.404594                    No\n3   0.652073                   Yes\n4   0.454222                    No\n5   0.322508                    No\n6   0.513935                    No\n7   0.344785                    No\n8   0.504676                    No\n9   0.480711                    No\n10  0.404421                    No\n11  0.554666                    No\n12  0.345730                    No\n13  0.386641                    No\n14  0.570127                    No\n15  0.375216                    No\n16  0.560749                    No\n17  0.517645                    No\n18  0.428861                    No\n19  0.364928                    No\nprevis\u00f5es salvas em /tmp/tmpsk4eht8c/prev.csv (20 linhas)\n",
+    "stderr": "",
+    "dif_max_abs_vs_memoria": 4.822695487405326e-08
+  },
+  "persistencia": {
+    "state_dict_kb": 14.5830078125,
+    "tamanho_inteiro_kb": 11.6708984375,
+    "weights_only_true": "falhou (UnpicklingError)",
+    "inteiro_carrega_com_weights_only_false": true,
+    "n_params": 1585,
+    "bytes_float32_teorico_kb": 6.19140625,
+    "baseline_kb": 20.0302734375,
+    "baseline_n_params": 3137
+  },
+  "cv": {
+    "media": 0.6247441813690144,
+    "desvio": 0.018818948885553882
+  },
+  "demo_eval": {
+    "origem": "configura\u00e7\u00e3o final com dropout = 0,3 (o modelo final n\u00e3o tem dropout)",
+    "metrica": "F1_macro",
+    "val_com_eval": 0.5775646757731799,
+    "val_sem_eval_media": 0.57695885725587,
+    "val_sem_eval_desvio": 0.008340417262937612,
+    "dif_max_entre_passadas": 3.4095505475997925
+  },
+  "extras": {
+    "torchscript": {
+      "tamanho_kb": 20.5908203125,
+      "tempo_por_amostra_ms": 9.943976662422453e-05,
+      "vazao_amostras_s": 10056338.967275793,
+      "F1_macro": 0.6232211691736951
+    },
+    "quantizado_int8": {
+      "tamanho_kb": 7.6962890625,
+      "tempo_por_amostra_ms": 0.00019589450015094673,
+      "vazao_amostras_s": 5104788.542962915,
+      "F1_macro": 0.6232211691736951
+    },
+    "original": {
+      "tamanho_kb": null,
+      "tempo_por_amostra_ms": 0.00010846996647160268,
+      "vazao_amostras_s": 9219141.782087661,
+      "F1_macro": 0.6232211691736951
+    }
+  },
+  "limiar": {
+    "Baseline RN": 0.64,
+    "RN final": 0.63
+  }
+}

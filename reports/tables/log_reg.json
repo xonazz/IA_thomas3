@@ -1,0 +1,36 @@
+{
+  "tree": {
+    "best_params": {
+      "ccp_alpha": 0.0,
+      "criterion": "squared_error",
+      "max_depth": 3,
+      "min_samples_leaf": 5
+    },
+    "best_cv": -13.766569845314487
+  },
+  "rf": {
+    "best_params": {
+      "n_estimators": 200,
+      "min_samples_leaf": 5,
+      "max_features": "sqrt",
+      "max_depth": 10
+    },
+    "best_cv": -13.787552318444872
+  },
+  "gb": {
+    "best_params": {
+      "subsample": 1.0,
+      "n_estimators": 100,
+      "max_depth": 2,
+      "learning_rate": 0.05
+    },
+    "best_cv": -13.755615260016407
+  },
+  "ambiente": {
+    "so": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+    "python": "3.13.17",
+    "cpu": "x86_64",
+    "nucleos": 2,
+    "ram_gb": 7.8
+  }
+}

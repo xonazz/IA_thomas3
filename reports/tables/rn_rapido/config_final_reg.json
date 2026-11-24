@@ -1,0 +1,20 @@
+{
+  "config": {
+    "neurons": 16,
+    "layers": 2,
+    "activation": "Tanh",
+    "optimizer": "RMSprop",
+    "lr": 0.00472,
+    "batch": 128,
+    "epochs": 4,
+    "patience": 2,
+    "weight_decay": 0.0001,
+    "dropout": 0.0,
+    "loss": "padrao",
+    "scale": true
+  },
+  "val_media": 13.846031170860282,
+  "val_desvio": 0.01721145127484384,
+  "treino_media": 13.402090747981077,
+  "id_busca": 1
+}

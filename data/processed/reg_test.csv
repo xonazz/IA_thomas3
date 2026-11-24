@@ -1,0 +1,1001 @@
+Digital_ID,Age,Height_cm,Weight_kg,BMI,Income_USD,Heart_Rate,Body_Temperature,Oxygen_Saturation,Respiratory_Rate,Daily_Water_Intake_L,Screen_Time_Hours,Sleep_Hours,Gender,Blood_Group,Occupation,Marital_Status,Education,Country,City_Type,Smoking,Family_History,Hypertension,Diabetes,Stress_Level,Physical_Activity,Alcohol,Blood_Pressure_Systolic
+101502,70,174.5,93.6,30.7,132112,66.0,37.1,98,18,1.6,3.1,6.2,Male,O+,Doctor,Single,Bachelor,Germany,Suburban,No,Yes,Yes,Yes,Moderate,Light,Frequently,137
+102587,18,167.4,76.6,27.3,160777,71.0,36.0,96,19,2.7,3.4,5.3,Female,AB+,Freelancer,Single,Diploma,USA,Suburban,No,No,No,No,High,Moderate,Never,106
+102654,59,168.7,69.9,24.6,84455,63.0,37.4,94,12,3.0,1.3,5.9,Male,A-,Lawyer,Single,High School,Canada,Urban,No,No,No,No,Low,Active,Occasionally,154
+101056,80,165.9,53.2,19.3,60086,70.0,37.2,94,20,2.2,8.3,5.0,Male,O+,Freelancer,Married,High School,USA,Suburban,No,No,No,No,Moderate,Light,Never,114
+100706,27,168.9,89.3,31.3,40829,86.0,36.8,95,15,2.9,2.1,7.4,Male,AB-,Government Employee,Single,High School,USA,Urban,No,Yes,No,No,High,Moderate,Occasionally,119
+100107,88,161.6,56.2,21.5,109388,61.0,36.9,99,21,1.9,8.8,5.9,Male,AB-,Student,Single,Bachelor,USA,Rural,No,No,No,No,Low,Sedentary,Occasionally,103
+100590,75,161.0,72.9,28.1,92728,80.0,35.9,97,17,2.9,11.1,6.4,Female,O+,Business,Married,Bachelor,Pakistan,Suburban,Yes,Yes,Yes,No,High,Light,Occasionally,148
+102469,49,178.5,66.5,20.9,126663,77.0,36.8,97,18,4.4,2.7,8.3,Female,O+,Teacher,Married,Bachelor,Germany,Urban,No,Yes,No,No,Moderate,Light,Never,106
+102414,52,165.7,69.5,25.3,139378,85.0,36.9,95,20,1.5,6.1,7.3,Female,O+,Lawyer,Single,PhD,UAE,Rural,No,No,No,No,High,Light,Occasionally,130
+101601,75,178.5,71.6,22.5,76985,60.0,37.3,98,12,1.5,8.1,4.5,Male,O-,Business,Married,Master,UK,Rural,Yes,No,No,No,Low,Sedentary,Never,103
+102465,88,163.3,81.2,30.4,46653,74.0,37.0,97,12,4.3,11.1,6.8,Male,A-,Doctor,Married,Bachelor,Japan,Urban,Yes,Yes,Yes,No,Moderate,Light,Occasionally,125
+100229,66,173.6,73.5,24.4,107386,66.0,36.3,99,14,2.4,4.7,8.6,Female,AB-,Designer,Married,Master,UK,Urban,No,Yes,No,No,Low,Light,Occasionally,114
+100916,78,169.0,40.9,14.3,91851,85.0,36.5,94,16,1.1,1.6,8.2,Male,B-,Nurse,Married,Master,Japan,Urban,No,No,No,No,Moderate,Moderate,Occasionally,126
+100795,37,154.1,96.8,40.8,148746,98.0,36.2,94,18,3.4,2.8,5.2,Female,AB-,Teacher,Married,Master,Singapore,Suburban,No,No,No,No,High,Active,Frequently,114
+103022,19,176.9,53.6,17.1,74014,79.0,36.9,98,15,1.2,7.4,6.8,Female,AB-,Student,Single,Diploma,UK,Urban,No,No,No,Yes,Low,Moderate,Never,101
+103544,67,158.1,67.1,26.8,187239,82.0,37.0,98,18,1.6,9.4,5.3,Male,O-,Student,Married,Bachelor,Japan,Suburban,Yes,Yes,No,Yes,Moderate,Active,Occasionally,122
+101074,58,153.2,80.3,34.2,95742,,36.5,96,21,2.3,4.5,9.0,Male,AB+,Lawyer,Married,High School,Germany,Urban,Yes,Yes,No,Yes,Moderate,Light,Occasionally,107
+103352,65,171.0,68.0,23.3,150637,88.0,36.3,98,19,,9.2,4.8,Female,A+,Retired,Single,Bachelor,Germany,Suburban,No,No,No,No,High,Light,Occasionally,130
+101745,25,168.9,67.9,23.8,91588,81.0,37.0,95,21,2.7,4.7,7.0,Male,A+,Freelancer,Married,High School,Germany,Urban,Yes,No,No,No,High,Light,Never,111
+101085,74,175.4,51.9,,125076,65.0,36.7,97,21,4.5,6.7,6.3,Male,O-,Designer,Married,Bachelor,Pakistan,Suburban,No,No,No,No,Moderate,Light,Never,138
+100927,61,154.8,67.7,28.3,70836,83.0,37.4,98,12,3.2,7.9,8.5,Male,O+,Government Employee,Married,Bachelor,USA,Urban,No,No,No,No,Low,Active,Occasionally,108
+103050,24,168.5,70.2,24.7,53897,78.0,36.4,96,13,4.0,5.3,6.6,Female,A-,Freelancer,Married,High School,UK,Urban,Yes,No,No,No,Low,Light,Never,118
+101118,57,155.3,51.8,21.5,24145,73.0,36.8,97,17,3.1,11.7,6.5,Male,B-,Business,Single,Bachelor,Canada,Urban,No,No,No,No,Low,Light,Occasionally,106
+100643,22,165.0,61.7,,176112,73.0,36.7,95,18,2.6,2.3,6.3,Male,AB-,Freelancer,Married,Bachelor,India,Rural,Yes,Yes,No,No,High,Active,Never,119
+104768,51,171.8,83.4,28.3,69016,,37.0,95,16,3.3,5.6,,Female,A-,Nurse,Single,Bachelor,UAE,Rural,No,No,Yes,Yes,Moderate,Sedentary,Frequently,131
+100502,53,152.7,97.0,41.6,115042,75.0,37.2,99,12,3.9,11.2,8.5,Female,B+,Retired,Married,Master,Singapore,Urban,No,No,No,Yes,Moderate,Sedentary,Never,121
+104067,60,173.3,81.4,27.1,121852,89.0,37.4,96,17,3.3,8.2,6.7,Female,A-,Software Engineer,Single,Bachelor,Germany,Rural,Yes,No,Yes,No,High,Moderate,Occasionally,144
+100334,34,178.0,66.6,21.0,147506,97.0,37.0,95,19,2.4,3.0,6.9,Male,AB-,Software Engineer,Single,Bachelor,Canada,Urban,Yes,No,No,No,High,Sedentary,Occasionally,112
+104685,74,164.5,82.8,30.6,188161,56.0,36.6,94,16,3.8,11.0,4.6,Female,O+,Scientist,Single,Bachelor,UAE,Rural,Yes,Yes,No,No,Low,Light,Frequently,102
+100487,52,155.2,72.9,30.3,29201,50.0,36.6,94,20,3.2,11.1,6.2,Female,AB+,Designer,Divorced,Diploma,Singapore,Urban,No,No,Yes,No,Moderate,Light,Occasionally,138
+101963,69,158.8,66.6,26.4,17978,75.0,36.2,94,13,3.7,9.4,6.4,Male,B+,Lawyer,Divorced,High School,Pakistan,Urban,No,No,No,No,High,Moderate,Occasionally,111
+100394,42,168.0,66.4,23.5,131193,66.0,36.4,96,18,2.6,4.3,7.5,Male,A+,Teacher,Married,Diploma,UK,Suburban,No,No,Yes,No,Low,Sedentary,Never,134
+104843,46,162.4,67.0,25.4,26474,63.0,36.3,94,18,3.5,8.9,5.8,Female,A+,Retired,Single,PhD,Singapore,Urban,No,No,No,No,Moderate,Light,Occasionally,119
+104867,89,164.9,84.6,31.1,27560,75.0,37.0,98,20,2.8,2.3,7.6,Male,B-,Scientist,Married,High School,UK,Suburban,No,Yes,No,Yes,High,Moderate,Frequently,122
+101756,44,146.0,64.1,30.1,17321,64.0,37.4,94,16,3.0,8.9,7.4,Female,AB+,Teacher,Married,Bachelor,Japan,Urban,Yes,No,No,Yes,Low,Moderate,Never,110
+102516,72,178.7,41.7,13.1,129248,82.0,36.4,96,18,2.4,2.9,8.2,Female,O+,Teacher,Single,Master,Germany,Suburban,Yes,No,Yes,No,Moderate,Moderate,Never,133
+103586,61,169.2,54.1,18.9,176795,60.0,37.0,95,12,2.1,6.2,5.7,Female,B+,Business,Widowed,PhD,India,Urban,No,Yes,No,No,Low,Moderate,Occasionally,107
+104316,85,165.5,80.0,29.2,81341,65.0,36.6,95,21,2.4,4.5,8.5,Male,A+,Software Engineer,Single,Master,USA,Rural,Yes,No,Yes,No,Low,Light,Occasionally,133
+104967,72,168.3,75.1,26.5,158742,77.0,36.7,98,21,2.7,2.1,5.4,Female,O+,Designer,Married,Bachelor,UAE,Rural,No,No,Yes,No,Moderate,Moderate,Never,137
+102100,19,174.5,79.3,26.0,197189,89.0,37.0,95,15,4.3,3.6,7.5,Male,A+,Student,Single,Bachelor,India,Suburban,No,No,No,No,High,Sedentary,Never,138
+103600,38,163.8,72.3,26.9,151745,73.0,36.4,97,15,1.1,8.2,7.0,Male,AB+,Software Engineer,Single,High School,Australia,Suburban,No,No,Yes,No,Moderate,Light,Never,157
+104122,64,161.7,77.1,29.5,64000,80.0,36.5,94,16,2.9,2.7,6.1,Female,AB-,Designer,Married,High School,Japan,Rural,No,No,Yes,No,Low,Moderate,Never,116
+100030,33,159.9,70.5,27.6,32090,82.0,37.1,95,21,4.1,2.3,6.7,Female,A-,Government Employee,Married,Bachelor,Canada,Urban,No,Yes,No,No,Moderate,Moderate,Never,105
+100066,76,175.3,92.5,30.1,32580,87.0,37.0,94,15,,2.3,7.7,Male,O+,Nurse,Married,Bachelor,Singapore,Urban,No,No,Yes,No,Low,Sedentary,Never,130
+100839,31,170.9,61.9,21.2,26798,,36.4,95,21,4.5,12.0,6.9,Male,AB+,Designer,Married,Bachelor,Pakistan,Suburban,No,Yes,No,No,Moderate,Sedentary,Occasionally,119
+103907,54,185.2,53.0,15.5,78874,73.0,36.4,99,20,1.3,2.8,5.6,Female,AB-,Teacher,Single,Bachelor,Australia,Suburban,No,No,No,No,Moderate,Light,Occasionally,127
+103774,55,182.5,51.4,15.4,36447,76.0,37.1,99,20,2.4,5.6,7.0,Female,AB+,Student,Married,High School,Pakistan,Urban,No,No,No,No,Moderate,Sedentary,Frequently,159
+104636,78,176.1,77.1,24.9,129864,70.0,37.3,96,19,1.3,8.9,5.1,Female,AB+,Software Engineer,Single,Master,UK,Rural,No,No,Yes,No,Low,Active,Never,150
+103162,33,163.0,86.6,32.6,122742,82.0,36.8,98,13,3.7,11.9,6.8,Female,B+,Scientist,Single,High School,USA,Urban,No,No,No,No,Moderate,Active,Never,116
+102660,84,165.0,71.5,26.3,168317,65.0,36.4,95,14,2.5,9.6,5.5,Female,A-,Scientist,Single,PhD,India,Suburban,No,No,No,No,Moderate,Moderate,Never,116
+104616,80,151.4,94.5,41.2,192092,65.0,36.2,96,20,3.0,8.9,4.3,Female,O-,Scientist,Married,Bachelor,Japan,Urban,Yes,No,No,No,Moderate,Sedentary,Occasionally,132
+104629,27,177.3,79.0,25.1,105676,78.0,37.7,98,15,3.4,6.1,6.9,Female,O-,Nurse,Divorced,Bachelor,Japan,Rural,No,No,No,No,Moderate,Light,Never,110
+102452,24,169.3,78.4,27.4,158386,88.0,36.9,94,20,3.0,8.5,5.9,Male,O+,Government Employee,Married,PhD,Japan,Urban,Yes,No,No,No,Low,Moderate,Occasionally,129
+102847,65,163.6,58.0,21.7,196077,79.0,37.1,99,18,2.8,4.2,6.0,Female,B-,Doctor,Married,High School,Pakistan,Urban,No,No,No,No,Moderate,Light,Never,142
+101145,52,164.2,62.6,23.2,186044,76.0,36.3,99,21,3.0,3.8,6.8,Female,AB-,Doctor,Married,Bachelor,Germany,Urban,No,No,No,No,High,Light,Occasionally,106
+103079,29,149.5,72.5,32.4,61713,78.0,36.5,94,13,2.2,3.5,7.0,Male,A-,Government Employee,Married,PhD,Japan,Rural,No,No,No,No,Moderate,Moderate,Frequently,123
+101104,28,171.6,65.8,22.3,94532,76.0,36.3,96,13,1.6,10.6,6.3,Male,AB-,Doctor,Married,Bachelor,Pakistan,Urban,No,No,No,No,Low,Light,Never,142
+100169,55,183.3,78.4,23.3,90495,69.0,36.4,98,18,2.3,5.4,7.7,Male,O+,Designer,Single,PhD,UK,Suburban,No,Yes,No,No,Low,Moderate,Never,144
+101671,89,178.1,87.6,27.6,64711,74.0,36.4,94,21,2.4,3.0,7.5,Male,A-,Lawyer,Married,High School,Canada,Rural,No,Yes,No,No,Moderate,Light,Never,130
+102571,36,167.7,86.7,30.8,140589,78.0,37.3,94,14,1.6,11.7,6.6,Female,A-,Teacher,Single,Bachelor,USA,Urban,No,No,No,Yes,Low,Sedentary,Occasionally,128
+102378,71,161.6,48.2,18.5,115404,77.0,36.8,99,15,2.4,3.6,6.1,Male,A-,Retired,Single,Bachelor,UAE,Suburban,No,No,No,Yes,Moderate,Moderate,Occasionally,123
+104396,19,166.0,71.7,26.0,140221,92.0,36.5,94,15,3.7,5.3,5.6,Male,B+,Scientist,Widowed,High School,UK,Rural,No,No,No,No,Low,Light,Frequently,120
+104258,31,167.6,40.0,14.2,127874,57.0,36.7,96,12,4.0,11.4,6.3,Male,O+,Teacher,Single,Bachelor,Australia,Rural,No,No,No,No,Moderate,Light,Never,141
+103863,67,165.9,77.5,28.2,167560,64.0,37.0,99,18,3.4,7.1,6.7,Male,B-,Freelancer,Single,Diploma,Australia,Urban,No,No,No,Yes,Low,Sedentary,Occasionally,119
+100024,44,163.4,100.0,37.5,52417,73.0,36.3,96,21,1.0,5.0,8.1,Female,B+,Doctor,Single,Diploma,Australia,Urban,No,No,No,No,Moderate,Active,Never,142
+102634,39,158.3,57.1,22.8,43781,93.0,36.2,95,15,2.8,3.2,7.3,Male,B+,Designer,Single,Master,India,Rural,No,Yes,No,No,Moderate,Moderate,Occasionally,135
+103341,30,162.6,41.8,15.8,23077,82.0,37.1,99,21,2.2,4.2,4.2,Female,A-,Business,Divorced,Diploma,Japan,Urban,No,Yes,No,No,High,Moderate,Frequently,121
+102216,89,166.7,81.0,29.1,157809,77.0,37.2,95,16,2.3,2.7,8.0,Male,AB+,Designer,Widowed,Master,UAE,Urban,No,No,No,No,Moderate,Light,Occasionally,132
+103683,18,161.0,58.5,22.6,193004,75.0,35.5,98,17,1.8,1.3,6.8,Male,O-,Scientist,Married,Diploma,USA,Suburban,No,No,No,No,Low,Sedentary,Frequently,112
+104725,40,146.3,77.3,36.1,166869,69.0,37.1,98,12,3.1,7.2,7.7,Male,AB-,Business,Married,Bachelor,Canada,Suburban,Yes,Yes,No,No,High,Light,Occasionally,122
+101908,82,153.9,83.6,35.3,105190,102.0,37.4,98,15,3.9,1.8,6.9,Male,O-,Teacher,Single,Bachelor,Canada,Urban,No,Yes,Yes,No,High,Light,Frequently,128
+100085,44,172.1,82.5,27.9,94251,67.0,37.0,94,21,3.5,7.5,8.3,Male,O+,Nurse,Single,Diploma,Pakistan,Suburban,No,Yes,No,Yes,Moderate,Moderate,Never,135
+100228,76,186.7,77.5,22.2,177856,84.0,36.3,94,12,3.4,5.0,7.4,Female,B+,Designer,Single,Diploma,Singapore,Suburban,No,No,Yes,No,High,Light,Occasionally,150
+100297,72,183.3,76.1,22.6,130257,55.0,36.6,98,13,1.6,1.8,6.3,Female,B-,Doctor,Widowed,Master,USA,Urban,No,No,No,No,Moderate,Light,Frequently,113
+101002,21,171.8,81.3,27.5,74574,68.0,37.1,98,18,2.0,5.3,7.2,Female,B+,Teacher,Single,Bachelor,Pakistan,Urban,No,No,No,No,Low,Active,Occasionally,128
+102139,59,174.8,73.4,,179383,80.0,36.7,94,14,3.9,5.6,8.4,Male,B+,Teacher,Married,Diploma,Germany,Urban,Yes,No,No,No,Moderate,Active,Occasionally,127
+100712,90,185.3,67.9,19.8,93209,76.0,37.0,96,16,4.1,11.1,6.0,Female,O+,Software Engineer,Single,Bachelor,India,Rural,No,No,No,No,Moderate,Sedentary,Occasionally,100
+102802,22,185.8,67.6,19.6,138364,69.0,36.4,98,14,2.4,3.9,8.6,Male,A-,Government Employee,Single,Bachelor,UK,Urban,No,No,Yes,No,Low,Sedentary,Occasionally,129
+102528,77,157.9,57.4,23.0,92997,85.0,37.1,95,14,4.1,11.2,7.800000000000001,Male,A+,Teacher,Divorced,Master,UAE,Suburban,Yes,No,No,No,High,Light,Occasionally,127
+103753,20,162.5,78.0,29.5,152871,73.0,36.2,99,16,4.1,5.9,6.3,Male,O+,Freelancer,Married,High School,UAE,Urban,Yes,No,No,No,Moderate,Active,Never,129
+103322,24,170.1,73.8,25.5,173382,68.0,36.9,94,19,4.4,10.3,5.4,Female,O-,Scientist,Married,PhD,Canada,Urban,Yes,Yes,No,No,Low,Moderate,Occasionally,100
+103182,48,170.3,71.0,24.5,160660,84.0,36.9,99,15,1.1,8.9,6.0,Male,O-,Designer,Married,Diploma,Japan,Suburban,No,No,No,No,Moderate,Light,Never,132
+104184,50,162.0,73.0,27.8,22193,58.0,37.0,94,12,4.5,5.9,5.2,Female,A-,Government Employee,Single,High School,Japan,Urban,No,No,No,No,High,Sedentary,Never,138
+101616,46,154.2,57.6,24.2,62763,88.0,36.7,95,14,3.3,3.9,8.4,Male,A+,Government Employee,Married,Diploma,Singapore,Urban,No,No,No,Yes,Low,Sedentary,Occasionally,123
+103025,67,188.2,111.8,31.6,72470,60.0,37.0,97,12,3.9,10.0,5.9,Male,A-,Lawyer,Married,Bachelor,UK,Urban,No,No,Yes,No,Low,Moderate,Never,118
+101414,58,166.1,85.3,30.9,16214,74.0,37.5,94,14,2.0,10.4,8.0,Female,AB-,Nurse,Single,Bachelor,Australia,Urban,No,No,Yes,Yes,Moderate,Sedentary,Occasionally,141
+100764,32,181.1,75.4,23.0,29949,75.0,36.6,98,14,3.2,10.9,6.2,Male,O-,Student,Married,Diploma,Canada,Urban,No,No,No,No,Low,Light,Never,120
+100656,85,165.7,63.6,23.2,126978,68.0,36.7,97,21,4.0,1.9,9.2,Male,B+,Government Employee,Divorced,High School,Pakistan,Rural,No,No,No,No,Moderate,Light,Occasionally,115
+104798,78,157.5,77.1,31.1,35476,69.0,37.2,94,20,3.5,3.2,8.3,Male,AB-,Freelancer,Single,Bachelor,UK,Urban,No,Yes,Yes,Yes,Moderate,Moderate,Occasionally,154
+103850,30,174.5,88.0,28.9,76113,84.0,36.8,95,12,2.9,9.4,6.8,Female,O-,Doctor,Married,Bachelor,UAE,Rural,No,No,No,No,Moderate,Moderate,Never,105
+104154,76,166.6,64.1,23.1,58859,71.0,36.0,97,20,2.9,5.5,9.2,Male,O+,Government Employee,Married,Bachelor,Germany,Urban,No,No,Yes,No,Low,Moderate,Occasionally,158
+100469,25,176.5,51.8,16.6,153450,73.0,36.5,97,15,3.6,5.2,8.7,Male,O-,Government Employee,Single,High School,India,Urban,No,Yes,No,No,Low,Moderate,Occasionally,94
+100158,89,157.3,83.1,33.6,52041,77.0,36.9,94,15,4.4,11.2,3.5,Male,O+,Teacher,Married,Bachelor,USA,Suburban,No,Yes,Yes,No,Moderate,Moderate,Never,148
+101296,69,173.1,87.4,29.2,196494,81.0,36.6,94,15,1.1,11.9,6.3,Male,A+,Nurse,Divorced,Bachelor,Germany,Urban,No,No,No,Yes,Moderate,Light,Occasionally,122
+100498,31,176.1,67.1,21.6,164485,87.0,36.3,99,18,4.1,1.6,6.9,Female,A-,Teacher,Married,Bachelor,UK,Suburban,No,No,No,No,High,Light,Never,150
+104741,53,159.2,82.6,32.6,25132,54.0,36.5,99,15,3.1,2.3,6.0,Female,O-,Scientist,Single,Master,Germany,Urban,No,No,Yes,No,Low,Moderate,Occasionally,146
+102941,63,157.5,91.2,36.8,49021,69.0,36.5,95,16,3.4,3.7,7.9,Male,B-,Retired,Single,Bachelor,UAE,Suburban,No,Yes,Yes,No,Low,Active,Occasionally,133
+103457,64,168.7,66.0,23.2,132288,77.0,36.0,98,14,3.4,5.1,8.3,Female,A+,Retired,Single,Diploma,UAE,Urban,No,No,No,No,High,Sedentary,Never,121
+100374,34,152.3,67.7,29.2,123600,94.0,37.0,96,16,4.1,8.0,,Male,B-,Student,Single,Master,Pakistan,Rural,Yes,No,No,No,High,Moderate,Occasionally,122
+100080,28,156.9,84.3,34.2,61805,88.0,36.7,99,12,1.5,9.0,6.8,Female,AB-,Student,Single,Master,Australia,Rural,No,No,No,No,High,Light,Occasionally,130
+101554,40,165.7,69.8,25.4,182951,56.0,37.0,96,17,2.4,10.6,4.6,Female,AB+,Government Employee,Married,Master,Canada,Urban,No,No,No,No,Low,,Occasionally,129
+101670,39,162.7,81.4,30.8,148858,67.0,37.1,98,21,2.0,5.3,6.2,Male,A+,Lawyer,Single,High School,India,Urban,No,No,No,No,Moderate,Moderate,Never,106
+102132,52,154.8,73.0,30.5,113527,75.0,36.7,97,21,2.0,5.8,5.8,Male,O+,Freelancer,Married,Bachelor,Pakistan,Urban,No,No,Yes,Yes,Moderate,Active,Occasionally,180
+104440,43,156.9,88.1,35.8,107643,58.0,35.7,95,21,2.5,9.4,6.0,Male,O-,Lawyer,Married,Bachelor,Germany,Suburban,No,No,No,No,High,Active,Occasionally,108
+100466,71,149.2,79.1,35.5,144768,78.0,37.1,97,14,1.5,3.9,8.4,Male,AB+,Doctor,Single,Master,Australia,Suburban,Yes,Yes,No,Yes,High,Light,Never,130
+100249,43,177.7,71.7,22.7,193336,75.0,36.8,98,12,3.4,9.8,4.7,Male,A+,Government Employee,Widowed,Bachelor,Australia,Urban,No,No,No,No,Moderate,Moderate,Occasionally,106
+100932,81,173.3,72.5,24.1,161250,80.0,36.8,96,14,2.8,3.3,8.3,Male,O+,Nurse,Single,Bachelor,UK,Suburban,No,No,No,Yes,Low,Moderate,Never,140
+101336,76,166.5,71.6,25.8,65684,57.0,36.6,96,18,2.3,11.7,8.4,Male,B+,Scientist,Divorced,Bachelor,Canada,Urban,No,Yes,No,No,Low,Active,Occasionally,134
+104525,30,161.2,79.8,30.7,19015,75.0,36.4,98,18,3.6,7.1,6.8,Female,O+,Scientist,Single,Bachelor,UK,Suburban,Yes,No,No,No,Low,Light,Occasionally,90
+101339,37,169.5,107.9,37.6,50860,83.0,36.3,98,21,4.0,7.4,7.1,Male,B-,Government Employee,Married,Master,USA,Urban,No,Yes,No,No,Moderate,Sedentary,Frequently,121
+101407,71,171.3,69.3,,23359,64.0,37.2,99,20,2.6,10.5,9.0,Male,B-,Business,Married,Bachelor,Australia,Rural,No,No,No,No,Moderate,Moderate,Frequently,98
+101091,54,164.0,86.3,32.1,31648,77.0,36.9,97,13,4.2,8.5,7.800000000000001,Male,O+,Scientist,Married,Master,Canada,Rural,No,No,Yes,No,High,Sedentary,Occasionally,146
+104210,37,157.8,73.1,29.4,105236,79.0,37.3,97,14,3.3,8.3,5.5,Female,A+,Student,Married,High School,UAE,Urban,No,No,No,No,High,Active,Frequently,123
+100743,26,180.8,40.0,12.2,140301,78.0,37.1,95,21,1.9,3.0,8.0,Male,O+,Designer,Married,Master,Germany,Rural,No,Yes,No,No,Moderate,Sedentary,Occasionally,124
+102324,58,177.4,53.8,17.1,27484,65.0,36.2,98,13,3.3,1.3,7.5,Male,B-,Student,Widowed,High School,UAE,Urban,Yes,Yes,No,No,Moderate,Light,Occasionally,104
+103602,47,171.3,81.6,27.8,12317,66.0,37.2,96,16,1.3,3.7,5.8,Female,O+,Software Engineer,Married,Bachelor,Singapore,Rural,No,Yes,Yes,No,High,Moderate,Never,145
+102124,33,166.6,79.2,28.5,37824,67.0,36.8,94,21,2.0,11.1,5.5,Male,B-,Student,Married,Bachelor,USA,Rural,No,No,No,No,Low,Moderate,Occasionally,114
+102095,20,163.8,75.8,28.3,141724,84.0,36.2,94,20,3.6,6.5,7.0,Female,B-,Student,Single,High School,Pakistan,Urban,No,Yes,No,No,Moderate,Light,Occasionally,131
+100241,89,155.2,81.1,33.7,87712,72.0,36.8,99,15,2.7,4.1,6.5,Female,O-,Business,Married,Bachelor,Australia,Suburban,No,No,No,No,Moderate,Sedentary,Never,113
+102352,50,161.2,74.3,28.6,193721,88.0,37.3,99,17,3.3,1.3,7.6,Male,AB+,Student,Divorced,Master,Canada,Urban,No,No,No,No,High,Moderate,Never,119
+101371,75,176.7,85.5,27.4,184039,75.0,36.6,95,16,1.2,3.7,7.3,Female,AB+,Doctor,Divorced,Master,Japan,Suburban,No,No,Yes,No,Moderate,Light,Occasionally,137
+101058,52,157.1,90.0,36.5,131226,80.0,36.1,98,21,3.7,6.7,9.1,Female,A-,Lawyer,Single,High School,UAE,Rural,No,No,No,No,Moderate,Light,Frequently,110
+104817,53,170.0,70.3,24.3,166058,74.0,37.3,96,21,3.2,6.9,6.5,Male,A-,Designer,Married,High School,Singapore,Suburban,No,No,No,Yes,Moderate,Light,Never,112
+100200,31,184.7,71.8,21.0,76102,88.0,36.4,96,16,4.2,11.9,6.3,Male,AB-,Software Engineer,Single,Bachelor,UK,Rural,Yes,Yes,No,No,High,Light,Occasionally,138
+102281,54,168.7,76.2,26.8,32172,59.0,37.0,95,21,1.8,11.2,5.0,Male,AB+,Software Engineer,Married,Master,USA,Rural,No,No,Yes,No,Moderate,Sedentary,Occasionally,164
+104750,22,165.5,66.7,,51764,75.0,37.1,99,16,1.8,2.9,6.9,Male,O-,Lawyer,Married,Bachelor,USA,Rural,Yes,No,No,No,High,Moderate,Never,113
+102221,34,158.1,40.0,16.0,142276,72.0,36.5,96,19,2.8,10.6,7.1,Female,AB+,Software Engineer,Married,Master,Germany,Urban,No,No,No,No,Moderate,Light,Occasionally,119
+104772,49,179.6,70.4,21.8,62987,62.0,36.6,96,15,3.6,6.4,5.0,Female,AB+,Teacher,Single,Diploma,Australia,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,115
+102820,82,166.9,56.3,20.2,50671,75.0,37.0,95,18,1.7,11.2,5.6,Female,B-,Software Engineer,Married,Bachelor,USA,Urban,No,No,No,No,Moderate,Moderate,Frequently,125
+103151,88,186.3,85.3,24.6,91675,73.0,36.5,96,16,2.5,10.5,4.8,Female,B+,Retired,Married,Diploma,UAE,Urban,No,Yes,No,Yes,Moderate,Light,Occasionally,113
+104257,81,173.4,85.1,28.3,80245,80.0,36.7,96,21,2.0,1.1,6.7,Male,O+,Scientist,Married,Master,India,Urban,No,No,No,No,Low,Active,Never,130
+103108,74,159.4,84.1,33.1,77879,84.0,35.8,96,21,1.3,6.7,5.3,Male,AB-,Designer,Single,Bachelor,Pakistan,Urban,No,No,No,No,Moderate,Light,Never,117
+101974,85,167.9,69.9,24.8,143848,76.0,36.5,98,13,1.9,2.3,7.3,Female,AB+,Government Employee,Divorced,Master,UK,Suburban,No,No,No,No,Low,Light,Occasionally,149
+101376,52,156.5,79.5,32.5,51412,84.0,37.2,94,12,3.6,4.5,9.0,Female,B+,Scientist,Married,Master,Pakistan,Urban,Yes,No,No,No,Moderate,Moderate,Occasionally,106
+103969,84,172.6,61.4,20.6,67931,59.0,36.1,96,19,2.3,3.2,6.6,Female,B-,Freelancer,Married,Master,Japan,Urban,No,No,No,No,Moderate,Moderate,Never,94
+104063,63,170.8,88.8,30.4,196342,82.0,37.5,99,21,3.3,10.8,7.4,Male,AB+,Teacher,Married,Bachelor,India,Rural,No,Yes,Yes,Yes,Low,Light,Occasionally,165
+104446,50,169.9,83.8,29.0,58207,87.0,36.9,98,16,3.3,12.0,6.1,Male,O-,Freelancer,Widowed,Diploma,Pakistan,Rural,No,No,No,No,Moderate,Moderate,Never,123
+103558,63,154.4,76.9,32.3,103315,71.0,37.2,96,14,2.8,8.1,7.800000000000001,Female,AB-,Retired,Married,Bachelor,Singapore,Urban,No,Yes,No,No,High,Light,Never,134
+100965,40,149.5,64.8,29.0,199401,71.0,37.1,99,17,2.7,3.7,8.8,Male,A-,Government Employee,Married,Bachelor,UK,Suburban,No,Yes,No,No,High,Light,Never,121
+100180,66,177.0,53.2,17.0,84261,62.0,37.2,98,19,3.8,8.7,7.800000000000001,Female,A-,Software Engineer,Single,Bachelor,Canada,Rural,No,No,No,No,Low,Moderate,Frequently,114
+103699,88,185.9,40.0,11.6,71467,87.0,36.7,95,17,2.8,3.5,8.2,Female,B-,Software Engineer,Married,Bachelor,Japan,Urban,No,No,No,No,Low,Moderate,Never,129
+103822,34,176.0,40.0,12.9,33931,77.0,37.0,95,20,3.8,4.7,6.1,Male,AB+,Designer,Single,Bachelor,Singapore,Suburban,No,No,No,No,Moderate,Active,Occasionally,115
+104879,38,171.6,65.9,22.4,68492,72.0,37.2,95,16,1.8,5.5,5.7,Male,A+,Teacher,Married,Bachelor,USA,Rural,No,No,Yes,No,Low,Light,Occasionally,145
+103900,43,180.5,64.3,19.7,50789,91.0,37.1,94,16,2.1,3.7,8.2,Male,B-,Business,Single,High School,Singapore,Suburban,No,No,No,No,High,Sedentary,Occasionally,123
+104488,43,168.2,57.8,20.4,180986,71.0,36.1,99,15,1.8,11.8,7.5,Female,AB-,Software Engineer,Married,Bachelor,UAE,Suburban,No,No,No,No,Moderate,Light,Occasionally,119
+103239,70,173.5,86.7,28.8,103892,61.0,36.7,95,20,4.1,2.0,8.7,Male,A+,Business,Single,Diploma,UAE,Urban,Yes,No,Yes,No,Low,Light,Never,154
+102975,29,185.0,77.4,22.6,130839,73.0,36.6,95,19,2.3,8.9,7.0,Female,AB-,Retired,Single,Bachelor,Japan,Urban,No,No,No,No,Moderate,Light,Never,126
+103581,80,160.1,69.9,27.3,19654,65.0,37.0,96,19,1.6,1.5,8.6,Male,A-,Scientist,Single,High School,Singapore,Rural,No,No,No,No,Low,Moderate,Never,101
+102888,57,174.2,52.9,17.4,78524,65.0,37.4,94,15,3.4,2.5,8.1,Female,A+,Software Engineer,Married,Master,Germany,Suburban,No,No,No,No,Moderate,Light,Occasionally,110
+102576,86,172.1,55.7,18.8,18181,51.0,36.9,97,17,1.3,6.2,6.8,Female,B+,Designer,Married,Bachelor,Singapore,Urban,No,No,No,Yes,Low,Sedentary,Never,128
+101420,50,177.4,80.6,25.6,68285,85.0,36.2,94,16,3.3,6.5,7.4,Male,B+,Retired,Single,Master,Germany,Rural,No,No,No,No,High,Sedentary,Never,112
+103908,36,167.4,63.9,22.8,114527,81.0,35.9,97,14,1.6,11.2,6.6,Female,AB-,Scientist,Married,High School,Pakistan,Urban,No,No,No,No,Moderate,Light,Occasionally,109
+104674,78,179.8,95.0,29.4,77285,96.0,37.1,95,16,1.4,2.9,,Male,B+,Designer,Married,Diploma,Pakistan,Urban,No,No,Yes,No,High,Moderate,Never,136
+104903,60,152.2,60.3,,122651,73.0,36.6,99,16,3.5,8.9,9.0,Male,A+,Student,Divorced,Bachelor,India,Rural,No,Yes,No,No,High,Moderate,Occasionally,151
+101861,30,172.6,64.5,21.7,59009,74.0,37.4,94,15,1.1,1.3,8.6,Male,AB+,Student,Married,Diploma,Canada,Urban,No,No,No,No,Moderate,Moderate,Occasionally,135
+100009,72,153.3,40.0,17.0,184883,62.0,37.1,97,21,2.1,11.3,,Male,B+,Government Employee,Single,PhD,India,Suburban,No,No,No,No,Moderate,,Frequently,123
+102895,90,179.0,72.6,22.7,112474,62.0,37.5,94,13,2.4,11.5,3.2,Female,A-,Designer,Married,Bachelor,UAE,Suburban,No,No,No,Yes,Low,Light,Never,102
+102848,21,167.5,48.1,17.1,114716,,36.9,95,15,1.5,8.5,7.1,Female,B-,Nurse,Married,Master,UK,Urban,No,Yes,No,No,High,Sedentary,Occasionally,92
+103665,41,149.2,93.8,42.1,187241,71.0,36.6,97,13,4.2,11.7,5.5,Female,AB-,Student,Widowed,Master,UAE,Urban,No,No,No,No,Low,Moderate,Occasionally,119
+100145,27,175.0,74.2,24.2,73856,63.0,37.5,97,16,2.8,10.5,4.3,Male,O-,Software Engineer,Single,Bachelor,USA,Suburban,No,No,Yes,No,Moderate,Sedentary,Occasionally,152
+102105,18,175.7,63.6,20.6,188829,68.0,35.8,98,21,4.4,6.7,,Female,O+,Government Employee,Married,Bachelor,UAE,Urban,No,No,No,No,Low,Moderate,Occasionally,104
+103144,76,153.2,65.2,27.8,92095,89.0,37.0,95,18,1.7,6.9,7.3,Male,AB+,Lawyer,Married,Bachelor,UAE,Rural,No,Yes,No,No,Moderate,Sedentary,Never,121
+100842,53,171.7,93.7,31.8,91676,84.0,36.9,95,18,2.8,8.1,7.4,Male,B-,Business,Single,High School,Pakistan,Rural,No,No,Yes,No,Low,Sedentary,Occasionally,152
+101129,54,162.6,80.3,30.4,53733,71.0,36.6,98,14,3.3,5.9,5.2,Female,AB-,Software Engineer,Divorced,Bachelor,Australia,Urban,No,No,Yes,No,Moderate,Moderate,Occasionally,121
+100152,40,186.4,59.3,17.1,129739,78.0,37.2,94,14,2.9,5.8,7.3,Male,O-,Teacher,Divorced,Bachelor,UAE,Urban,No,No,No,No,Moderate,Moderate,Frequently,154
+103592,48,168.0,87.6,31.0,87895,71.0,36.6,96,12,3.1,5.4,8.4,Female,AB+,Business,Single,High School,Singapore,Suburban,No,No,No,No,Moderate,Sedentary,Never,140
+101053,78,157.1,70.2,28.4,67125,70.0,37.1,98,19,2.1,2.4,6.6,Female,B-,Student,Single,PhD,Pakistan,Urban,No,No,Yes,No,High,Light,Never,114
+101591,51,162.7,55.8,21.1,149421,70.0,36.2,96,21,4.0,11.3,5.9,Female,O+,Freelancer,Single,Diploma,India,Urban,No,No,No,No,Low,Light,Occasionally,114
+103009,26,153.4,65.1,27.7,195269,60.0,36.1,96,15,3.4,8.3,3.9000000000000004,Female,B-,Student,Single,Master,Japan,Suburban,No,Yes,No,No,Low,Active,Occasionally,114
+102030,37,171.3,67.0,22.8,149849,81.0,37.3,97,12,2.5,9.2,5.3,Female,A+,Lawyer,Married,Master,USA,Urban,Yes,No,No,No,Low,Moderate,Occasionally,109
+103419,85,162.1,82.7,31.5,182440,76.0,37.0,95,18,2.3,10.8,7.5,Female,AB-,Doctor,Married,High School,UAE,Suburban,No,No,No,Yes,Low,Light,Never,136
+101808,51,154.6,112.8,47.2,185720,88.0,35.9,96,17,2.4,1.0,6.8,Female,B-,Student,Single,Bachelor,India,Urban,Yes,Yes,No,No,High,Moderate,Never,110
+102697,60,165.5,60.9,22.2,159205,70.0,37.3,95,20,4.3,1.2,6.4,Female,A+,Retired,Single,High School,Pakistan,Urban,No,No,No,No,Low,Light,Frequently,134
+103040,87,162.0,62.7,23.9,122610,71.0,36.8,98,12,3.7,1.2,8.0,Male,B-,Doctor,Married,High School,Japan,Urban,No,No,No,No,High,Moderate,Occasionally,146
+100473,69,172.2,47.8,16.1,83603,77.0,37.2,96,19,3.5,1.9,,Male,O+,Retired,Married,Diploma,Germany,Suburban,No,No,No,No,High,Light,Never,121
+103290,67,151.1,63.3,27.7,123075,82.0,36.8,94,17,2.1,10.6,5.0,Male,A-,Freelancer,Married,Master,Germany,Urban,No,No,No,No,Low,Sedentary,Never,111
+104075,54,158.0,94.9,38.0,54083,51.0,37.3,94,18,1.1,8.5,9.0,Male,O+,Retired,Married,Diploma,UAE,Rural,Yes,No,Yes,No,Low,Moderate,Never,133
+103497,48,169.3,74.0,25.8,163584,62.0,36.9,97,18,3.1,6.3,,Male,A+,Lawyer,Single,Bachelor,Singapore,Urban,No,No,No,No,Moderate,Moderate,Never,124
+100280,59,168.2,83.6,29.5,98622,77.0,36.9,98,14,3.2,11.1,7.0,Male,O-,Government Employee,Married,Diploma,Germany,Rural,No,No,No,No,Low,Light,Occasionally,122
+101742,68,194.6,49.9,13.2,106309,79.0,36.9,95,18,2.7,10.0,4.0,Male,AB-,Freelancer,Single,Bachelor,Germany,Suburban,No,Yes,No,No,High,Moderate,Never,105
+104625,85,154.8,106.1,44.3,57680,81.0,36.7,96,18,1.2,2.0,5.7,Female,AB+,Teacher,Single,Master,USA,Suburban,No,No,No,No,High,Sedentary,Occasionally,141
+102887,49,180.8,67.7,20.7,69905,77.0,36.7,98,12,,3.7,7.8,Female,O+,Doctor,Single,Master,Germany,Suburban,No,Yes,No,Yes,Moderate,Moderate,Never,116
+101942,28,171.1,72.7,24.8,76343,67.0,36.8,98,12,3.8,9.9,,Male,O+,Business,Single,Bachelor,Canada,Urban,No,No,No,No,Moderate,Moderate,Frequently,111
+100101,47,159.8,75.2,29.4,169555,68.0,36.9,97,14,3.0,9.6,6.0,Female,B+,Government Employee,Divorced,High School,UK,Rural,Yes,No,No,No,Low,,Occasionally,140
+102805,75,155.2,40.0,16.6,128731,89.0,37.0,99,18,3.2,11.4,6.6,Female,B+,Designer,Divorced,Master,Japan,Urban,No,No,No,No,High,Moderate,Occasionally,155
+103571,61,172.4,78.0,26.2,83738,61.0,37.2,97,13,2.4,7.0,6.4,Male,AB+,Doctor,Married,Master,USA,Urban,No,No,No,No,Moderate,Sedentary,Never,123
+103685,70,164.6,66.6,24.6,73365,74.0,36.6,96,17,1.5,1.8,4.4,Male,B-,Designer,Widowed,Master,Germany,Urban,No,No,No,No,Low,Light,Occasionally,129
+103662,86,171.2,72.9,24.9,37275,73.0,36.0,94,16,1.4,4.3,6.6,Male,O-,Designer,Single,Master,Germany,Suburban,Yes,Yes,No,No,Low,Light,Never,105
+100531,21,167.9,73.8,26.2,88349,87.0,37.4,98,20,2.2,6.5,8.4,Male,AB-,Government Employee,Divorced,Bachelor,Australia,Rural,No,No,No,No,Moderate,Sedentary,Occasionally,137
+101887,34,164.2,87.2,32.3,82624,85.0,36.8,97,18,3.2,10.0,5.4,Male,A-,Student,Single,Bachelor,USA,Urban,Yes,Yes,No,No,Low,Light,Never,110
+100682,31,147.5,70.1,32.2,17143,62.0,37.1,97,18,3.4,10.4,4.7,Male,AB+,Business,Single,High School,UAE,Urban,No,Yes,No,No,Low,Sedentary,Never,131
+103795,50,179.8,69.2,21.4,64598,70.0,36.7,94,20,4.2,10.2,7.300000000000001,Male,AB+,Software Engineer,Married,Bachelor,USA,Suburban,No,Yes,No,Yes,Moderate,Moderate,Frequently,117
+103945,38,164.6,89.3,33.0,59757,78.0,36.8,96,14,2.2,3.1,6.4,Male,A-,Software Engineer,Married,Master,UK,Urban,Yes,Yes,Yes,No,High,Moderate,Never,122
+104667,34,163.2,94.3,35.4,132297,108.0,36.7,96,14,3.1,4.3,8.4,Female,O+,Retired,Married,High School,UAE,Suburban,No,No,No,No,High,,Never,122
+102019,30,179.3,90.2,28.1,142483,71.0,37.1,99,18,3.7,6.0,6.5,Male,B-,Student,Married,Bachelor,Canada,Urban,No,Yes,No,No,High,Active,Occasionally,116
+101097,22,157.4,77.5,31.3,166163,83.0,36.5,94,15,2.4,6.1,8.0,Female,A-,Scientist,Married,Bachelor,UAE,Suburban,No,No,No,No,Moderate,Moderate,Never,118
+100830,42,172.1,72.5,24.5,153797,88.0,37.1,99,20,2.3,9.4,6.1,Female,AB+,Teacher,Married,Bachelor,Singapore,Suburban,No,Yes,No,No,Low,,Frequently,130
+102806,83,179.0,61.6,19.2,71086,79.0,36.5,99,21,2.2,10.0,6.4,Male,A-,Freelancer,Divorced,High School,Germany,Urban,No,No,No,No,High,Moderate,Occasionally,140
+103830,19,160.2,68.7,26.8,181699,71.0,36.5,96,15,2.6,7.9,9.2,Male,O+,Retired,Married,Bachelor,India,Urban,Yes,No,No,No,Low,Sedentary,Never,119
+104382,49,160.3,59.3,23.1,178799,75.0,36.9,96,17,3.3,6.0,6.6,Female,B-,Designer,Married,Bachelor,USA,Suburban,No,Yes,No,No,Moderate,Sedentary,Occasionally,136
+103892,25,161.4,91.4,35.1,108826,66.0,36.5,96,17,3.0,6.6,8.2,Male,AB-,Retired,Married,Master,India,Suburban,No,No,No,Yes,Moderate,Light,Never,144
+100765,80,172.1,69.2,23.4,84728,70.0,36.9,96,18,3.8,5.1,7.3,Male,O+,Software Engineer,Married,Bachelor,UK,Urban,No,Yes,No,No,Moderate,Sedentary,Never,156
+102768,49,168.8,80.7,28.3,190986,76.0,37.4,99,20,1.0,1.0,5.0,Female,B-,Nurse,Single,Bachelor,USA,Urban,No,No,No,No,Low,Moderate,Never,137
+104329,60,177.6,59.1,18.7,77331,65.0,36.9,99,13,3.6,1.6,,Male,AB+,Government Employee,Married,PhD,Singapore,Urban,No,Yes,No,No,Moderate,Moderate,Never,145
+103296,32,181.5,60.1,18.2,120720,73.0,36.7,97,21,2.7,7.7,8.1,Male,O+,Lawyer,Divorced,Bachelor,Pakistan,Urban,No,No,No,No,Moderate,Moderate,Occasionally,125
+102195,44,180.5,73.6,22.6,38129,81.0,35.9,94,16,4.2,6.7,8.1,Female,AB+,Retired,Widowed,Master,UAE,Urban,Yes,No,No,No,Low,Light,Never,114
+102358,66,156.6,86.9,35.4,114253,77.0,37.1,99,14,2.6,3.0,8.6,Male,B+,Freelancer,Single,Bachelor,UAE,Suburban,No,No,No,Yes,Low,Moderate,Never,130
+103426,76,179.2,87.0,27.1,198035,66.0,36.2,99,19,1.5,4.4,7.0,Female,AB-,Doctor,Married,Diploma,Pakistan,Rural,No,Yes,No,Yes,Low,Light,Never,139
+103980,82,153.5,73.1,31.0,127326,77.0,37.0,95,21,3.0,6.9,6.3,Male,AB+,Retired,Single,Diploma,UAE,Suburban,No,No,Yes,No,High,Moderate,Occasionally,149
+100912,72,165.0,76.9,28.2,194731,92.0,37.0,94,20,3.5,9.2,5.5,Female,O+,Business,Married,Diploma,Pakistan,Urban,No,No,No,Yes,High,Moderate,Frequently,130
+103146,49,176.6,75.8,24.3,22801,67.0,36.9,99,16,3.3,10.5,6.1,Female,AB-,Retired,Single,Diploma,Japan,Urban,No,No,No,No,Moderate,Light,Occasionally,112
+101000,35,145.0,70.8,33.7,91988,70.0,36.8,95,20,1.5,4.1,7.2,Male,O+,Doctor,Married,Master,Pakistan,Urban,No,No,No,No,Moderate,Moderate,Never,130
+103654,62,168.5,67.8,23.9,109387,65.0,37.0,96,16,3.1,7.3,8.3,Female,B-,Student,Single,High School,Germany,Urban,No,No,No,No,Moderate,,Occasionally,116
+102484,52,165.5,81.9,29.9,181692,80.0,36.7,99,18,2.7,11.6,5.2,Male,O+,Lawyer,Single,Master,Japan,Suburban,Yes,No,No,No,High,Light,Never,108
+104077,45,181.0,57.7,17.6,158385,52.0,36.6,96,14,3.5,3.7,,Female,A+,Government Employee,Divorced,Bachelor,UAE,Urban,No,No,No,No,Low,Moderate,Occasionally,115
+102371,68,165.5,110.3,40.3,174531,80.0,37.2,96,16,1.8,1.3,7.6,Male,O-,Freelancer,Single,Diploma,Canada,Urban,Yes,No,Yes,No,Moderate,Sedentary,Never,146
+104839,78,166.7,61.2,22.0,127791,85.0,36.8,96,21,1.3,7.4,7.6,Female,A-,Business,Married,High School,UK,Suburban,Yes,Yes,No,No,High,Moderate,Occasionally,106
+100034,39,181.3,73.8,22.5,152949,76.0,36.1,97,16,2.9,9.8,6.0,Male,B-,Student,Divorced,Diploma,Pakistan,Suburban,No,No,No,No,High,Moderate,Occasionally,147
+103790,28,167.5,54.7,19.5,198590,81.0,36.3,95,14,2.1,4.9,8.0,Female,AB-,Doctor,Married,High School,Japan,Rural,No,No,No,No,Moderate,Moderate,Occasionally,132
+101021,73,175.6,53.8,17.4,126166,80.0,37.5,95,12,2.7,3.2,9.5,Male,AB-,Designer,Single,High School,UK,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,111
+101648,55,164.5,41.6,15.4,180769,94.0,38.0,95,12,3.0,8.6,8.0,Female,O+,Nurse,Married,Bachelor,UAE,Suburban,No,No,Yes,No,High,Moderate,Never,145
+100734,49,172.8,59.5,19.9,116087,71.0,36.9,95,18,2.5,11.3,6.2,Male,B+,Retired,Widowed,PhD,Germany,Suburban,No,No,No,No,Moderate,Moderate,Occasionally,146
+104583,84,149.4,70.1,31.4,63592,55.0,37.3,99,21,1.9,7.6,7.8,Female,A+,Retired,Married,Master,Japan,Urban,No,Yes,Yes,Yes,Moderate,Sedentary,Occasionally,152
+103275,78,146.4,48.2,22.5,63923,66.0,37.0,97,20,3.8,4.6,10.0,Female,A-,Nurse,Single,Bachelor,USA,Urban,No,No,No,No,Moderate,Active,Frequently,130
+101621,23,187.5,71.2,20.3,138587,75.0,37.3,99,15,1.1,5.7,7.3,Female,B-,Nurse,Divorced,Bachelor,Australia,Urban,No,No,Yes,No,High,Active,Frequently,161
+103136,79,166.4,83.4,30.1,18642,79.0,36.6,94,14,1.4,4.1,7.1,Female,B-,Student,Married,Bachelor,Singapore,Urban,Yes,Yes,No,Yes,Moderate,Moderate,Occasionally,137
+102690,59,150.6,60.3,26.6,194933,,36.4,95,12,3.2,2.3,4.3,Female,AB+,Retired,Married,PhD,USA,Urban,No,No,No,No,Moderate,,Frequently,126
+102708,82,169.4,83.1,29.0,189231,73.0,36.8,94,20,3.6,7.4,6.9,Male,A+,Lawyer,Divorced,Bachelor,UK,Urban,No,No,Yes,No,Moderate,Light,Frequently,129
+100298,49,178.6,57.1,17.9,13875,72.0,37.1,97,12,2.7,10.5,6.9,Female,AB+,Teacher,Married,Master,Japan,Rural,No,No,No,No,Moderate,Moderate,Occasionally,124
+102340,21,178.6,77.7,24.4,182366,79.0,36.4,95,17,3.9,5.6,5.9,Female,B-,Nurse,Single,Bachelor,Pakistan,Urban,No,No,No,No,High,,Occasionally,131
+100654,65,183.7,71.3,21.1,155301,85.0,37.1,97,20,1.2,4.2,7.1,Male,AB+,Designer,Married,Bachelor,Singapore,Rural,No,No,No,No,Moderate,Moderate,Occasionally,138
+103775,24,197.8,65.8,16.8,126444,83.0,36.6,95,19,2.4,1.5,6.1,Female,B-,Government Employee,Widowed,Diploma,India,Urban,No,Yes,No,No,High,Moderate,Never,130
+101256,45,169.2,61.7,21.6,167212,61.0,36.3,98,13,4.3,7.2,4.9,Male,A-,Scientist,Single,Diploma,Germany,Urban,No,No,No,No,Moderate,Light,Occasionally,126
+104521,26,152.4,43.0,18.5,15891,84.0,37.1,99,19,4.3,6.3,8.8,Female,A+,Software Engineer,Married,Bachelor,Canada,Urban,Yes,No,No,No,High,Active,Occasionally,132
+100231,28,171.1,55.3,18.9,166787,73.0,37.2,96,20,3.5,3.6,8.6,Female,AB-,Student,Single,PhD,Pakistan,Urban,No,No,No,No,Moderate,Active,Occasionally,120
+103277,32,170.7,56.9,19.5,79308,78.0,36.7,94,14,2.3,8.6,6.8,Female,AB-,Doctor,Married,Bachelor,Pakistan,Suburban,No,No,No,Yes,Moderate,Moderate,Occasionally,101
+103231,22,165.2,69.5,25.5,180285,93.0,36.8,96,15,1.5,6.5,7.5,Female,AB+,Business,Married,Diploma,USA,Rural,No,No,No,No,High,Light,Occasionally,109
+100692,18,155.4,58.7,24.3,59826,75.0,36.8,98,17,2.7,10.7,6.1,Female,A-,Nurse,Single,Diploma,Pakistan,Rural,No,Yes,No,No,High,Sedentary,Occasionally,151
+102755,53,175.5,81.4,26.4,83361,80.0,36.9,96,19,3.5,10.1,7.800000000000001,Male,AB-,Lawyer,Single,Bachelor,Australia,Suburban,No,No,No,No,Low,Light,Frequently,143
+104864,57,166.4,62.5,22.6,96650,92.0,36.3,96,16,2.6,3.4,7.7,Female,A+,Freelancer,Married,Diploma,Japan,Urban,No,No,No,No,High,Light,Never,141
+100970,61,172.2,75.8,25.6,168332,84.0,37.3,97,21,3.4,7.7,6.4,Male,A+,Teacher,Married,Master,Japan,Suburban,No,No,No,No,Low,Sedentary,Never,124
+100634,69,162.8,116.9,44.1,108761,71.0,36.0,98,19,2.1,6.8,7.9,Male,A-,Retired,Single,Bachelor,Japan,Urban,No,No,Yes,Yes,Low,Light,Occasionally,122
+104093,65,172.3,55.1,18.6,187249,87.0,37.6,99,15,1.8,11.7,8.1,Male,O-,Software Engineer,Married,Bachelor,India,Urban,No,Yes,No,No,Moderate,Active,Never,101
+104078,50,165.7,69.9,25.5,65053,81.0,36.0,97,13,1.1,4.4,7.0,Male,B-,Software Engineer,Single,High School,UK,Rural,No,Yes,No,No,High,Sedentary,Occasionally,130
+101322,60,163.3,72.1,27.0,55890,78.0,36.5,94,13,4.2,4.0,7.7,Female,O+,Retired,Married,Bachelor,Germany,Urban,Yes,Yes,No,No,Low,Moderate,Occasionally,143
+101832,78,164.4,80.3,29.7,18438,76.0,36.7,95,17,4.0,3.6,6.3,Female,B-,Freelancer,Single,Master,UAE,Urban,Yes,Yes,No,Yes,Moderate,Light,Occasionally,121
+102179,39,155.3,51.0,21.1,188712,93.0,37.0,99,21,1.4,8.5,4.8,Male,A-,Doctor,Single,Master,Germany,Suburban,No,Yes,Yes,No,Moderate,Sedentary,Occasionally,138
+101418,72,146.6,64.9,30.2,99643,83.0,36.9,95,14,4.5,7.7,6.7,Male,B+,Freelancer,Divorced,PhD,UAE,Urban,No,No,Yes,Yes,Low,Active,Never,133
+101783,61,168.4,40.0,14.1,187301,87.0,37.1,95,15,1.1,9.1,6.2,Female,B+,Freelancer,Married,Bachelor,USA,Urban,Yes,Yes,Yes,No,High,Sedentary,Occasionally,143
+104716,48,174.6,41.7,13.7,116413,74.0,37.2,96,15,2.0,1.2,5.7,Female,O+,Lawyer,Married,Bachelor,UAE,Suburban,No,No,No,No,Moderate,Sedentary,Frequently,102
+104702,47,171.6,65.0,22.1,134424,57.0,36.0,97,12,1.2,2.8,5.8,Female,O+,Nurse,Married,Bachelor,USA,Urban,Yes,Yes,No,No,Low,Light,Frequently,100
+104119,90,189.4,53.9,15.0,86042,81.0,37.3,98,17,1.9,7.0,6.1,Male,O-,Software Engineer,Married,Master,India,Suburban,No,No,No,No,Low,Light,Occasionally,113
+101653,32,174.9,72.0,23.5,98233,82.0,36.4,99,21,3.9,2.5,7.3,Male,A-,Designer,Married,Bachelor,UK,Urban,No,No,No,No,Low,Light,Frequently,147
+101484,21,163.4,56.7,21.2,29016,81.0,36.1,96,15,1.1,9.3,6.8,Male,AB-,Freelancer,Single,Diploma,India,Rural,No,No,No,No,High,Moderate,Never,112
+102276,28,167.1,102.3,36.6,80848,62.0,37.3,97,12,1.7,1.4,4.2,Female,A-,Government Employee,Married,Diploma,USA,Suburban,No,No,No,No,Moderate,Active,Never,131
+100878,19,170.9,53.5,18.3,14467,93.0,36.7,95,12,3.3,4.5,7.1,Female,B+,Teacher,Married,Master,Pakistan,Urban,No,Yes,No,No,Low,Active,Occasionally,115
+103526,51,179.2,75.4,23.5,17377,59.0,36.5,99,20,1.5,5.5,6.6,Female,AB+,Designer,Single,Master,Singapore,Urban,Yes,No,No,No,Moderate,Light,Never,117
+102017,40,162.4,88.2,33.4,163368,84.0,36.5,96,20,3.3,11.2,5.1,Male,O+,Retired,Single,High School,Japan,Suburban,No,No,No,No,Moderate,Active,Never,128
+100427,66,166.8,40.0,14.4,149589,100.0,36.8,99,21,2.5,6.5,8.2,Female,B-,Government Employee,Married,Bachelor,Canada,Urban,No,No,No,No,High,Moderate,Occasionally,114
+100627,35,157.5,71.9,29.0,90071,83.0,36.6,94,21,3.7,8.2,6.8,Male,A+,Government Employee,Married,Bachelor,Canada,Urban,No,Yes,No,No,Low,Moderate,Never,123
+101590,54,171.7,98.7,33.5,199635,81.0,36.6,97,12,2.2,10.9,7.1,Male,O+,Teacher,Single,High School,UAE,Urban,No,No,No,No,Moderate,Active,Never,120
+102224,33,158.8,79.6,31.6,72077,72.0,37.2,96,14,1.3,7.2,6.1,Female,O+,Business,Married,Master,Singapore,Rural,Yes,No,Yes,No,Low,Light,Frequently,118
+102218,85,161.6,110.0,42.1,111705,71.0,36.4,94,17,4.4,7.1,7.0,Male,O-,Doctor,Married,Bachelor,India,Urban,No,No,Yes,Yes,Low,Sedentary,Never,136
+104484,33,166.6,62.6,22.6,166582,67.0,36.5,94,18,3.8,1.3,6.8,Female,AB-,Freelancer,Married,Bachelor,UK,Urban,No,No,No,No,Low,Light,Never,94
+101486,51,166.8,70.4,25.3,89937,84.0,37.5,99,15,4.4,7.8,7.7,Female,B-,Teacher,Divorced,Diploma,Pakistan,Rural,No,No,No,No,Moderate,Moderate,Occasionally,122
+101740,32,173.1,69.0,23.0,135156,77.0,36.9,99,18,2.8,3.0,5.5,Male,A+,Software Engineer,Married,Bachelor,USA,Urban,No,No,No,No,Low,Sedentary,Frequently,127
+102481,69,164.3,85.2,31.6,78679,79.0,37.0,99,19,3.1,4.7,6.2,Male,AB+,Retired,Married,Bachelor,Pakistan,Urban,Yes,No,Yes,No,High,Moderate,Never,149
+102585,37,173.2,91.9,30.6,67510,79.0,36.5,99,12,3.5,2.9,5.6,Female,A+,Scientist,Single,High School,UK,Suburban,Yes,No,No,No,High,Light,Occasionally,135
+102894,44,182.9,59.4,17.8,63386,76.0,36.8,94,21,3.5,2.2,4.8,Female,O+,Business,Divorced,Master,Pakistan,Urban,No,No,No,No,High,Active,Frequently,143
+100150,56,190.0,59.2,16.4,51136,66.0,36.4,99,13,2.1,2.4,7.3,Male,AB+,Government Employee,Married,Diploma,Pakistan,Suburban,Yes,No,No,No,Moderate,,Never,129
+100677,37,178.4,53.9,16.9,25849,,36.8,94,12,3.9,5.5,,Male,O+,Software Engineer,Married,Master,UK,Urban,Yes,No,No,No,Moderate,Active,Occasionally,118
+101262,25,163.0,72.9,27.4,175593,91.0,36.7,99,13,4.0,7.5,6.2,Female,A+,Student,Married,Bachelor,India,Urban,Yes,Yes,No,Yes,High,Moderate,Occasionally,120
+104918,56,145.0,62.1,29.5,58609,,36.8,96,16,2.4,4.2,7.5,Female,AB-,Doctor,Married,High School,Canada,Urban,Yes,Yes,Yes,No,Moderate,Moderate,Occasionally,127
+100013,57,172.5,56.1,18.9,32752,72.0,36.6,95,19,2.7,11.8,6.5,Male,B+,Government Employee,Single,Bachelor,Pakistan,Rural,No,No,No,No,Low,Moderate,Frequently,145
+101834,43,176.1,58.7,18.9,122513,64.0,36.2,99,15,4.4,7.6,7.8,Male,A-,Nurse,Widowed,Master,Pakistan,Suburban,No,Yes,Yes,No,Moderate,Moderate,Never,146
+103249,77,164.7,62.5,23.0,18402,75.0,36.9,98,13,2.2,6.0,5.3,Male,AB-,Software Engineer,Single,Master,Australia,Urban,Yes,No,No,No,Low,Sedentary,Frequently,108
+101492,50,165.1,67.2,24.7,118921,68.0,37.5,94,18,1.1,4.9,8.5,Male,B+,Retired,Married,Diploma,Singapore,Suburban,No,Yes,No,No,High,Moderate,Never,121
+102728,38,161.5,83.7,32.1,198745,85.0,37.0,99,13,2.7,9.5,5.9,Male,O-,Designer,Single,Master,Pakistan,Urban,No,No,No,No,Moderate,Moderate,Occasionally,127
+103687,79,166.3,73.2,26.5,127603,91.0,36.5,95,18,1.2,1.3,6.4,Male,A+,Designer,Married,Bachelor,USA,Suburban,No,No,No,No,High,Moderate,Occasionally,122
+101425,48,168.6,93.9,33.0,139562,63.0,37.0,94,20,3.5,10.6,5.9,Female,O-,Freelancer,Single,Master,Japan,Urban,Yes,No,No,No,Low,,Occasionally,104
+104606,39,174.4,84.0,27.6,91690,74.0,36.6,96,17,2.6,9.7,4.8,Male,AB+,Business,Married,Bachelor,Canada,Suburban,No,No,No,No,Low,Sedentary,Occasionally,90
+104596,23,167.3,56.2,20.1,33310,84.0,36.3,96,12,4.5,11.9,7.0,Female,AB+,Retired,Married,Diploma,Japan,Suburban,No,No,No,No,Moderate,Moderate,Frequently,98
+100732,85,179.8,64.2,19.9,164805,54.0,37.0,96,20,3.2,8.8,6.9,Male,A-,Software Engineer,Divorced,High School,Canada,Suburban,No,No,No,No,Moderate,Light,Never,124
+101232,52,166.2,75.4,27.3,121272,88.0,36.3,95,20,1.8,3.7,7.4,Male,B+,Business,Single,Diploma,Pakistan,Urban,No,No,No,No,High,Sedentary,Never,104
+101635,31,167.2,63.7,22.8,107712,66.0,37.0,95,12,1.1,5.0,5.9,Female,AB-,Designer,Single,High School,UK,Suburban,No,Yes,No,No,Moderate,Active,Occasionally,108
+103937,60,151.1,73.6,32.2,143248,65.0,36.9,96,13,2.0,4.0,5.1,Male,AB-,Teacher,Married,Bachelor,Germany,Suburban,No,No,No,No,Low,Light,Frequently,137
+101211,73,165.8,89.5,32.6,184627,81.0,37.1,96,12,2.3,7.3,7.8,Female,AB+,Doctor,Single,Master,Germany,Urban,No,No,Yes,Yes,Low,Moderate,Never,150
+103269,33,180.4,62.9,19.3,164879,85.0,37.3,98,12,3.9,4.6,6.1,Male,A+,Designer,Divorced,Bachelor,UK,Rural,No,Yes,No,Yes,High,Light,Never,139
+101935,66,186.1,63.3,18.3,22557,93.0,36.6,96,12,2.4,3.2,5.3,Male,AB-,Retired,Married,Master,India,Urban,No,No,No,No,Low,Moderate,Never,124
+100554,28,181.0,70.6,21.6,150823,79.0,36.5,95,18,2.9,11.1,6.8,Male,O+,Designer,Single,Bachelor,Australia,Suburban,No,No,No,No,Low,Light,Frequently,120
+100492,52,183.9,67.0,19.8,154038,84.0,37.0,98,18,1.8,1.4,6.0,Female,A+,Teacher,Single,Bachelor,India,Urban,No,No,No,No,High,Moderate,Never,128
+102963,52,171.0,51.3,17.5,80109,91.0,36.9,98,13,3.2,7.1,9.3,Female,A-,Teacher,Married,Bachelor,Singapore,Urban,No,No,No,No,High,Light,Never,140
+102330,39,197.1,78.4,20.2,116505,73.0,36.4,96,19,,2.3,7.9,Female,B-,Lawyer,Married,Master,USA,Rural,No,Yes,No,No,Moderate,Moderate,Occasionally,133
+102196,36,166.9,81.0,,84984,64.0,36.5,96,20,1.6,4.9,7.6,Female,AB-,Freelancer,Widowed,High School,Japan,Suburban,No,Yes,No,No,Low,Active,Never,140
+103065,39,157.7,58.6,23.6,198661,76.0,36.2,95,15,,5.1,8.5,Female,A-,Business,Married,Master,UK,Urban,No,No,No,No,Low,Sedentary,Never,129
+100658,25,178.1,53.3,16.8,89185,79.0,37.4,97,12,3.8,5.5,6.5,Female,A+,Software Engineer,Single,Bachelor,Singapore,Rural,No,No,No,No,Low,Light,Never,110
+102375,46,163.5,89.2,33.4,95014,68.0,36.3,96,21,2.2,9.8,5.7,Male,A+,Student,Married,Bachelor,Singapore,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,131
+102226,24,179.6,64.8,20.1,199861,67.0,37.1,98,20,2.7,2.1,8.5,Male,B+,Teacher,Single,Diploma,Japan,Suburban,No,No,No,No,Moderate,Light,Frequently,122
+104265,18,179.5,46.0,14.3,198493,75.0,37.3,94,15,4.1,1.3,7.2,Male,AB+,Doctor,Single,Master,Pakistan,Urban,No,No,No,No,Moderate,Moderate,Frequently,126
+101171,27,151.4,91.2,39.8,156972,87.0,36.6,94,17,3.7,4.0,8.7,Male,O+,Business,Single,Diploma,Pakistan,Urban,No,No,No,No,High,Moderate,Never,126
+100133,60,157.0,68.6,27.8,13596,84.0,37.3,96,18,2.7,8.8,5.5,Female,A-,Software Engineer,Married,Master,Canada,Urban,Yes,Yes,No,No,High,Active,Occasionally,118
+100472,28,175.9,63.8,20.6,17244,83.0,36.9,94,17,3.9,1.6,4.9,Female,O-,Retired,Single,High School,Japan,Suburban,No,Yes,No,No,Moderate,Moderate,Never,120
+103226,27,152.8,63.1,27.0,30488,50.0,37.0,98,15,1.6,8.7,8.5,Male,AB+,Software Engineer,Married,Master,USA,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,114
+101406,57,166.9,90.2,32.4,132350,86.0,36.5,94,13,4.5,11.0,5.0,Female,B+,Doctor,Single,Diploma,Singapore,Urban,No,Yes,Yes,Yes,Moderate,Active,Occasionally,158
+102877,31,164.3,54.5,20.2,109033,75.0,37.1,94,12,4.0,8.9,7.199999999999999,Female,B+,Student,Single,High School,UAE,Rural,No,No,No,No,Moderate,Moderate,Occasionally,122
+104505,76,163.8,53.7,20.0,119402,55.0,36.8,96,18,3.0,7.6,5.9,Female,AB+,Student,Single,Diploma,Australia,Rural,No,No,No,No,Low,Active,Occasionally,131
+104693,79,158.3,53.0,21.2,91320,95.0,37.0,98,12,1.8,8.1,5.4,Male,B-,Retired,Single,Diploma,UAE,Urban,No,No,No,No,High,Light,Never,132
+102827,53,168.9,64.8,22.7,27442,77.0,36.8,95,13,2.5,8.8,5.8,Male,A+,Teacher,Single,Diploma,UAE,Urban,No,No,Yes,Yes,Moderate,Light,Occasionally,134
+100288,55,153.8,53.1,22.4,193388,50.0,36.2,95,14,3.7,10.1,4.8,Female,O+,Designer,Single,PhD,Australia,Urban,No,No,No,No,Low,Moderate,Frequently,132
+101870,60,180.4,66.2,20.3,59197,73.0,36.3,94,18,,8.8,,Female,A-,Designer,Divorced,Master,Germany,Urban,Yes,Yes,No,No,Moderate,Active,Frequently,130
+103115,37,167.0,65.7,,104874,73.0,37.0,96,12,2.9,5.3,6.4,Female,A-,Nurse,Single,Bachelor,UAE,Urban,Yes,No,No,No,High,Sedentary,Occasionally,143
+103626,44,170.2,48.6,16.8,43534,105.0,36.6,98,20,1.9,5.7,5.5,Male,B-,Scientist,Married,Bachelor,Singapore,Urban,No,Yes,No,No,High,Light,Occasionally,101
+102313,57,174.7,60.9,20.0,127961,55.0,37.0,97,12,1.3,4.4,5.7,Female,A-,Doctor,Single,High School,Germany,Urban,No,Yes,Yes,No,Moderate,Light,Occasionally,136
+104924,36,162.8,85.1,32.1,94179,79.0,36.6,95,15,3.3,7.6,7.0,Male,O-,Business,Single,Bachelor,Germany,Urban,Yes,Yes,No,No,Low,Active,Never,117
+101619,65,186.0,61.1,,165762,,37.4,96,15,2.4,5.3,5.4,Female,B+,Business,Single,Master,India,Urban,No,No,No,No,Moderate,Moderate,Never,106
+100995,70,162.9,59.5,22.4,66890,62.0,36.7,94,21,1.8,10.0,7.199999999999999,Male,B-,Nurse,Single,Master,India,Urban,No,No,No,No,Low,Active,Occasionally,131
+101804,52,178.1,64.6,20.4,178803,100.0,37.3,94,20,1.9,10.0,6.1,Male,O-,Retired,Single,Bachelor,Japan,Urban,Yes,No,No,No,Low,Moderate,Frequently,143
+102643,64,174.4,56.1,18.4,40763,88.0,36.8,96,13,3.9,6.5,3.7,Female,O+,Software Engineer,Single,High School,Australia,Rural,No,No,No,No,Moderate,Active,Frequently,113
+104803,42,161.3,80.1,30.8,139855,88.0,37.0,95,13,2.4,2.0,8.2,Female,AB+,Lawyer,Single,PhD,Pakistan,Urban,No,No,No,No,High,Moderate,Never,140
+103536,19,166.5,52.3,18.9,120516,65.0,36.5,95,21,1.7,2.4,7.6,Female,A-,Retired,Married,High School,USA,Urban,No,Yes,No,No,Low,Moderate,Occasionally,128
+104832,53,167.3,85.8,30.7,34477,68.0,37.2,96,16,1.1,2.8,6.0,Female,B+,Doctor,Single,Bachelor,UAE,Urban,Yes,Yes,No,No,Moderate,Moderate,Frequently,132
+103912,90,182.9,56.0,16.7,69608,85.0,36.5,95,20,2.2,3.7,10.0,Male,O-,Designer,Widowed,Bachelor,UK,Suburban,No,No,No,No,Moderate,Moderate,Never,120
+102108,44,161.3,57.5,22.1,55316,87.0,37.1,95,18,3.3,8.6,5.9,Male,O-,Scientist,Married,Bachelor,India,Urban,No,No,Yes,No,Low,Sedentary,Never,149
+103045,76,166.0,66.6,24.2,112103,87.0,36.6,99,14,4.4,1.2,7.6,Male,A-,Nurse,Single,High School,UAE,Rural,No,No,No,No,Low,Moderate,Occasionally,104
+100417,29,186.4,68.6,19.7,90899,69.0,37.0,95,15,1.7,7.9,9.5,Male,A+,Software Engineer,Married,Bachelor,Australia,Urban,No,No,No,No,Low,Light,Frequently,115
+100978,70,183.3,79.1,23.5,160637,82.0,36.5,96,14,1.2,8.5,6.9,Male,AB+,Lawyer,Single,Bachelor,Pakistan,Urban,No,No,Yes,No,High,Active,Occasionally,133
+102418,62,179.0,74.6,23.3,169874,70.0,36.6,95,12,3.2,11.9,4.2,Female,AB+,Lawyer,Married,Bachelor,Australia,Urban,Yes,No,No,No,Moderate,Moderate,Occasionally,134
+100506,39,163.6,59.0,22.0,94509,78.0,37.2,94,16,2.7,2.1,6.3,Female,B-,Designer,Single,Bachelor,Japan,Rural,No,No,Yes,No,Moderate,Sedentary,Occasionally,149
+104153,22,151.0,61.6,27.0,116630,58.0,37.3,97,15,3.9,5.3,8.0,Male,O-,Freelancer,Single,Master,Japan,Urban,Yes,No,No,No,Moderate,Light,Never,132
+104256,71,170.4,64.4,22.2,90354,76.0,36.2,99,15,2.3,3.7,7.2,Male,AB+,Freelancer,Single,Master,Australia,Suburban,No,Yes,No,No,High,Moderate,Frequently,143
+103942,32,161.8,80.0,30.6,173260,78.0,37.4,95,14,4.1,3.1,7.0,Male,B+,Lawyer,Married,Bachelor,Germany,Urban,No,No,Yes,No,Moderate,Sedentary,Occasionally,130
+100415,37,163.9,58.2,21.7,173204,85.0,36.1,99,20,2.5,1.8,8.7,Male,O+,Government Employee,Divorced,Master,USA,Suburban,Yes,Yes,Yes,No,High,Light,Never,145
+104149,64,173.6,64.1,,53868,77.0,36.4,96,20,2.4,8.8,6.5,Female,A+,Designer,Divorced,Master,UK,Rural,No,No,No,No,Moderate,Active,Never,119
+101184,57,166.8,79.8,28.7,44574,86.0,36.0,94,13,2.1,1.1,9.3,Female,AB-,Designer,Single,Bachelor,Singapore,Urban,No,No,Yes,No,Moderate,Moderate,Never,147
+100486,84,174.0,52.8,17.4,119048,66.0,36.4,95,20,3.5,6.4,6.0,Female,AB-,Lawyer,Married,Diploma,Germany,Rural,No,Yes,No,Yes,Moderate,Active,Never,103
+100894,88,181.8,70.7,21.4,82619,86.0,35.8,94,12,1.7,2.3,7.5,Female,B-,Student,Married,Bachelor,Japan,Urban,Yes,No,No,Yes,Moderate,Light,Frequently,117
+100806,41,163.4,78.0,29.2,27801,87.0,36.4,99,12,3.7,7.8,8.2,Female,O-,Retired,Married,High School,Singapore,Urban,No,Yes,No,No,Moderate,Light,Never,102
+100556,64,152.8,84.5,36.2,13984,70.0,36.6,97,16,1.3,11.4,8.1,Female,A+,Designer,Married,Bachelor,UK,Suburban,No,Yes,No,Yes,High,Moderate,Frequently,109
+103826,59,174.2,67.5,22.2,76217,86.0,36.7,98,17,4.2,1.2,8.6,Male,B+,Student,Married,Master,Singapore,Urban,No,No,No,Yes,High,Sedentary,Occasionally,139
+101198,67,171.0,57.2,19.6,65741,87.0,36.5,94,13,3.0,2.3,5.9,Male,AB+,Government Employee,Single,Bachelor,UK,Urban,Yes,Yes,No,No,Low,Moderate,Occasionally,123
+104254,88,169.0,67.8,23.7,28864,73.0,36.8,97,21,3.1,4.1,7.1,Female,AB-,Software Engineer,Single,Bachelor,Australia,Suburban,No,No,No,No,Moderate,Sedentary,Occasionally,120
+104059,53,166.0,67.7,24.6,198860,62.0,36.9,95,12,1.8,6.8,7.1,Female,A-,Lawyer,Single,Bachelor,UAE,Urban,No,No,No,Yes,Moderate,Sedentary,Never,96
+101294,39,156.1,74.8,30.7,89280,75.0,36.4,96,14,2.8,7.0,,Female,B+,Freelancer,Married,High School,Japan,Suburban,No,Yes,No,No,Low,Moderate,Frequently,129
+102222,45,166.5,75.1,27.1,143296,84.0,37.3,94,20,3.6,11.8,7.0,Male,A-,Software Engineer,Single,Bachelor,India,Urban,No,No,No,No,Low,Moderate,Occasionally,123
+103505,43,180.5,80.2,24.6,113194,81.0,36.9,96,19,2.5,11.1,7.199999999999999,Male,O+,Lawyer,Single,Bachelor,Singapore,Urban,No,No,Yes,No,High,Active,Occasionally,163
+103655,43,169.7,84.1,,26531,78.0,36.7,97,19,3.1,3.3,6.8,Male,B-,Doctor,Married,Master,Germany,Urban,No,No,No,No,Low,Sedentary,Never,133
+104759,30,168.3,52.5,18.5,192909,52.0,37.9,99,21,2.7,1.7,7.9,Male,A+,Doctor,Married,Master,Singapore,Urban,Yes,No,No,No,Low,Moderate,Never,147
+103007,29,164.9,88.2,,125587,78.0,37.1,95,19,2.7,7.6,8.4,Male,A-,Retired,Widowed,Bachelor,UK,Urban,Yes,Yes,No,No,Moderate,Active,Frequently,111
+102094,45,171.3,87.1,29.7,191541,74.0,36.8,98,19,1.1,2.9,7.4,Male,O-,Nurse,Single,Master,India,Suburban,Yes,Yes,No,No,Moderate,Active,Never,126
+102188,88,165.0,88.5,32.5,114636,82.0,36.5,96,14,1.5,10.5,5.8,Female,A+,Student,Married,Bachelor,USA,Urban,No,No,No,Yes,Low,Moderate,Never,106
+103037,46,160.1,40.9,16.0,28006,,36.9,96,16,1.8,8.2,6.1,Female,A-,Teacher,Single,High School,Pakistan,Urban,No,No,No,No,Moderate,Light,Frequently,113
+103919,75,183.8,73.0,21.6,147308,114.0,36.1,94,12,3.6,3.7,6.7,Male,AB+,Doctor,Married,Diploma,USA,Suburban,No,Yes,No,No,High,Light,Occasionally,91
+101273,25,175.6,70.8,23.0,163267,94.0,36.8,95,13,4.4,3.8,7.6,Female,AB+,Scientist,Single,Master,Japan,Rural,No,No,No,No,Low,Light,Occasionally,93
+100291,64,167.0,85.6,30.7,49778,77.0,36.3,96,12,4.3,4.8,7.8,Female,A+,Designer,Single,Bachelor,UK,Urban,No,No,Yes,Yes,High,Light,Occasionally,145
+104828,30,157.3,76.4,30.9,86291,,37.3,95,21,4.1,8.1,5.4,Male,O-,Doctor,Married,Bachelor,Australia,Urban,No,No,No,Yes,Low,Active,Occasionally,116
+100253,71,164.5,91.7,33.9,174514,78.0,36.9,98,12,3.0,10.0,7.5,Male,B+,Designer,Single,High School,Australia,Urban,No,No,No,Yes,Moderate,Active,Never,98
+103246,26,172.8,70.3,23.5,114240,74.0,37.0,98,12,2.6,4.4,,Male,O+,Business,Single,High School,Germany,Urban,No,Yes,No,No,Moderate,Light,Occasionally,107
+100351,84,174.7,71.6,23.5,95470,79.0,36.9,98,21,3.7,5.3,8.6,Male,O-,Lawyer,Married,Master,Canada,Urban,No,Yes,Yes,No,Moderate,Sedentary,Never,150
+101188,84,163.4,59.7,22.4,124844,78.0,37.2,98,16,3.4,9.4,4.6,Male,A-,Teacher,Divorced,Bachelor,Pakistan,Urban,No,Yes,No,No,Low,Active,Occasionally,127
+101962,40,181.3,57.1,17.4,61235,87.0,37.2,98,14,3.2,10.3,8.0,Female,A-,Government Employee,Married,Master,UK,Suburban,No,Yes,No,No,High,Light,Never,134
+100423,27,167.4,60.1,21.4,48073,118.0,36.9,96,21,3.1,10.2,6.2,Female,AB+,Doctor,Single,Bachelor,USA,Suburban,No,No,No,No,High,Moderate,Occasionally,109
+100091,33,182.6,55.3,16.6,52407,70.0,36.9,94,13,2.8,9.6,6.5,Male,A-,Doctor,Single,Master,Canada,Suburban,No,Yes,No,No,Moderate,Sedentary,Never,125
+103730,65,181.6,84.3,25.6,46306,79.0,36.6,94,13,4.1,5.5,5.7,Female,O+,Student,Married,Master,UK,Suburban,Yes,No,Yes,No,Moderate,Sedentary,Occasionally,148
+102237,82,174.1,50.7,16.7,57175,65.0,36.5,97,14,3.9,1.2,7.1,Male,O+,Doctor,Divorced,Bachelor,UK,Urban,No,No,Yes,No,Low,Sedentary,Occasionally,134
+100671,90,184.1,69.8,20.6,70501,56.0,36.5,96,18,3.9,11.5,5.3,Female,A+,Retired,Single,High School,Pakistan,Urban,No,No,No,No,Moderate,Moderate,Frequently,125
+103041,55,158.3,73.0,29.1,50729,81.0,36.6,95,12,2.1,4.5,8.1,Male,A-,Designer,Married,Bachelor,Germany,Urban,No,Yes,Yes,No,Moderate,Moderate,Occasionally,125
+100027,20,163.9,69.6,25.9,174966,69.0,36.7,94,18,,11.9,7.6,Female,B+,Designer,Single,High School,Pakistan,Urban,No,Yes,Yes,Yes,Moderate,Light,Never,131
+100430,64,179.6,60.9,18.9,193632,71.0,36.3,99,19,1.1,6.6,7.2,Female,B-,Student,Married,Bachelor,Pakistan,Urban,No,No,No,No,Moderate,Sedentary,Occasionally,98
+100684,46,175.0,96.8,31.6,194757,73.0,36.7,96,20,1.1,8.2,4.2,Male,A+,Nurse,Single,Master,USA,Urban,Yes,No,No,No,High,Moderate,Never,140
+104464,61,186.9,61.3,17.5,97486,81.0,37.5,98,18,4.2,1.1,8.6,Male,B-,Nurse,Married,Bachelor,Singapore,Urban,Yes,No,No,No,Low,Light,Never,102
+103946,39,153.5,103.6,44.0,88528,84.0,37.3,96,17,3.9,4.9,4.8,Female,AB-,Retired,Married,High School,Australia,Urban,No,Yes,Yes,No,Moderate,Moderate,Occasionally,147
+103524,64,161.5,90.8,34.8,148938,78.0,36.6,97,16,2.3,2.2,7.2,Female,AB-,Scientist,Married,High School,UK,Suburban,No,Yes,Yes,No,High,Moderate,Occasionally,153
+101542,23,172.1,62.2,21.0,150455,73.0,36.9,99,16,3.0,4.6,6.0,Female,O+,Teacher,Married,Bachelor,UAE,Urban,No,No,No,No,Low,Light,Occasionally,110
+102032,55,156.0,58.3,24.0,144582,71.0,36.4,99,18,2.7,9.1,7.6,Female,AB+,Scientist,Single,Master,Singapore,Urban,No,No,Yes,No,Low,Sedentary,Frequently,138
+102233,57,148.9,73.0,32.9,119772,76.0,36.3,95,12,2.9,8.6,7.199999999999999,Female,B+,Teacher,Married,Bachelor,Japan,Suburban,Yes,No,Yes,Yes,Moderate,Light,Occasionally,131
+104121,73,163.3,65.4,24.5,30060,91.0,37.2,94,19,2.3,9.9,7.800000000000001,Female,AB+,Student,Single,Bachelor,Germany,Suburban,No,Yes,No,No,High,Sedentary,Occasionally,111
+103236,68,168.2,79.6,28.1,140277,74.0,37.0,97,15,4.4,7.9,6.2,Male,O+,Lawyer,Married,Master,India,Rural,No,No,Yes,No,Moderate,Sedentary,Occasionally,150
+100255,24,158.9,50.5,20.0,112742,51.0,36.4,98,20,2.0,8.6,9.0,Female,B-,Freelancer,Single,Master,Singapore,Rural,No,No,No,No,Moderate,Moderate,Occasionally,136
+101030,69,159.7,86.0,33.7,195158,87.0,36.1,98,21,3.7,8.0,5.7,Female,AB+,Freelancer,Widowed,High School,Singapore,Suburban,No,No,Yes,No,High,Light,Never,137
+104393,51,164.5,73.4,27.1,22487,60.0,36.2,97,12,3.4,11.3,6.7,Female,A+,Lawyer,Single,PhD,Singapore,Rural,No,No,No,No,Moderate,Light,Occasionally,126
+103801,53,163.7,70.8,26.4,37096,99.0,36.8,98,15,3.8,8.7,7.4,Female,AB-,Teacher,Married,Bachelor,Japan,Urban,No,Yes,No,No,High,Active,Occasionally,103
+104311,66,168.5,95.5,33.6,191749,72.0,37.3,96,19,1.7,2.1,7.6,Female,A-,Lawyer,Single,High School,Canada,Suburban,Yes,No,No,No,Low,Active,Occasionally,100
+102510,21,145.0,72.0,34.2,103144,75.0,36.3,98,18,3.0,1.8,7.9,Female,O+,Freelancer,Divorced,Master,USA,Urban,No,Yes,No,No,Moderate,Light,Occasionally,118
+102293,66,171.3,47.1,,166498,81.0,36.3,98,21,4.2,9.6,4.9,Female,B-,Freelancer,Single,High School,UAE,Urban,Yes,No,No,No,High,Light,Occasionally,142
+101324,84,180.5,72.2,22.2,158895,94.0,36.6,98,14,3.1,2.7,7.6,Male,A-,Lawyer,Single,Diploma,Australia,Suburban,Yes,Yes,No,No,High,Light,Never,103
+101551,29,157.8,67.2,27.0,97814,73.0,36.2,98,18,1.0,7.1,7.6,Female,AB+,Teacher,Single,Master,Singapore,Urban,No,Yes,No,Yes,High,Sedentary,Never,120
+104648,38,170.3,66.9,23.1,22829,85.0,36.6,97,18,1.5,11.4,5.9,Female,A-,Lawyer,Married,High School,Australia,Suburban,No,No,No,No,High,Light,Never,106
+100316,53,167.7,95.2,33.9,149601,78.0,36.0,95,20,1.7,5.6,8.3,Female,A+,Lawyer,Married,Master,India,Urban,No,No,No,No,Low,Active,Never,115
+101243,20,166.3,60.2,21.8,66652,77.0,36.1,96,19,1.2,2.1,7.0,Male,B-,Freelancer,Single,Master,UK,Urban,No,No,No,No,High,Moderate,Never,122
+102451,88,176.6,60.2,19.3,156076,96.0,37.0,95,14,1.4,3.7,5.6,Male,O-,Designer,Single,Bachelor,Japan,Urban,No,No,No,No,High,Moderate,Occasionally,124
+101579,51,174.4,42.3,13.9,17067,78.0,36.1,95,20,2.6,9.2,6.0,Female,A-,Teacher,Married,Bachelor,UK,Rural,No,Yes,No,No,Moderate,Active,Frequently,114
+104626,52,174.8,76.5,25.0,170619,66.0,36.9,98,18,4.3,4.4,7.1,Female,B+,Government Employee,Married,High School,Australia,Suburban,Yes,No,No,No,High,Light,Never,116
+103117,56,153.8,85.6,36.2,76470,81.0,37.4,97,19,3.6,4.5,7.8,Female,B-,Doctor,Married,High School,USA,Urban,No,Yes,Yes,Yes,Moderate,Moderate,Occasionally,149
+100070,25,169.0,49.7,17.4,35181,85.0,36.2,94,13,2.2,5.9,6.4,Female,A-,Freelancer,Single,Bachelor,USA,Rural,Yes,Yes,No,No,Moderate,Active,Never,102
+100860,38,177.3,49.8,15.8,59170,74.0,37.0,97,16,,5.7,7.5,Female,AB-,Freelancer,Widowed,Master,UK,Urban,Yes,No,No,No,Moderate,Sedentary,Occasionally,132
+102754,88,160.8,72.0,27.8,119280,74.0,36.4,95,18,,6.4,6.3,Male,O+,Software Engineer,Divorced,Bachelor,Japan,Urban,Yes,No,No,Yes,Low,Sedentary,Frequently,142
+101633,69,167.2,89.7,32.1,152628,78.0,36.7,99,17,2.7,4.4,7.2,Male,A-,Lawyer,Married,Diploma,India,Suburban,Yes,No,Yes,No,Moderate,Moderate,Never,139
+101651,78,168.5,55.8,19.7,80982,91.0,36.3,95,12,4.5,7.7,7.3,Female,A+,Lawyer,Single,Diploma,UAE,Urban,No,Yes,No,No,High,Moderate,Occasionally,139
+103861,73,174.6,72.2,23.7,30025,63.0,36.2,95,19,2.9,9.0,6.4,Female,O-,Retired,Married,High School,USA,Urban,No,No,No,No,Moderate,Moderate,Occasionally,130
+103107,30,182.1,75.6,22.8,86400,71.0,36.8,99,17,1.3,6.7,6.8,Male,AB-,Designer,Single,Bachelor,USA,Suburban,No,Yes,No,No,Moderate,Light,Never,124
+101075,38,155.7,72.6,29.9,114478,80.0,36.8,95,16,2.6,5.8,9.0,Male,O+,Nurse,Married,PhD,Japan,Urban,No,No,No,No,Low,Light,Occasionally,122
+104002,75,187.6,90.1,25.6,100430,66.0,36.3,99,14,1.6,10.0,9.0,Female,AB-,Software Engineer,Divorced,Bachelor,Canada,Suburban,Yes,No,Yes,No,Moderate,Light,Frequently,131
+100788,69,159.9,51.2,20.0,184898,73.0,36.0,99,21,2.6,1.6,6.7,Female,O-,Teacher,Single,Master,Pakistan,Suburban,Yes,Yes,No,No,Moderate,Light,Occasionally,116
+102606,38,156.6,65.8,26.8,165616,68.0,36.7,96,15,1.7,5.2,5.4,Male,AB+,Freelancer,Married,Bachelor,Germany,Rural,No,Yes,Yes,No,Moderate,Light,Occasionally,111
+103631,42,145.0,85.7,40.8,136030,50.0,36.6,96,12,,5.8,6.9,Female,B-,Designer,Single,Diploma,Canada,Rural,Yes,No,No,No,Low,Light,Occasionally,116
+102122,74,177.3,63.3,20.1,188514,82.0,36.9,94,15,4.2,4.1,8.0,Male,A-,Retired,Married,Bachelor,Singapore,Suburban,No,Yes,No,Yes,Moderate,Light,Frequently,122
+101875,82,179.0,40.0,12.5,171195,70.0,37.1,94,12,4.3,5.9,6.9,Male,B+,Business,Married,Diploma,UK,Urban,No,Yes,No,No,Low,Light,Never,128
+100812,80,150.9,79.7,35.0,108443,75.0,35.9,97,20,1.7,7.0,7.8,Female,O+,Designer,Single,Bachelor,Australia,Rural,No,No,Yes,Yes,Moderate,Moderate,Frequently,142
+100388,54,196.1,65.6,17.1,99130,85.0,36.8,94,12,3.1,11.0,4.7,Female,A+,Retired,Married,High School,Japan,Suburban,No,No,No,No,Low,Sedentary,Occasionally,131
+102883,20,171.7,67.5,22.9,151790,50.0,36.7,96,17,1.3,8.2,3.7,Female,O-,Designer,Single,Diploma,Pakistan,Rural,No,Yes,No,No,Moderate,Moderate,Frequently,118
+101176,81,157.1,54.8,22.2,114712,67.0,36.7,95,19,1.2,2.6,8.5,Male,A-,Retired,Single,Bachelor,Singapore,Rural,Yes,No,No,Yes,Moderate,Active,Never,108
+103198,69,161.0,48.6,18.7,63729,81.0,37.2,99,18,,5.3,9.5,Female,AB-,Business,Single,Master,Australia,Rural,Yes,Yes,No,No,High,Light,Occasionally,126
+102624,25,176.1,111.0,35.8,125668,82.0,37.5,94,13,4.4,11.7,8.0,Male,O+,Doctor,Single,Bachelor,Germany,Urban,No,No,No,No,High,Sedentary,Occasionally,133
+101352,31,170.9,69.0,23.6,84156,72.0,36.5,96,19,3.2,2.6,7.0,Female,A+,Scientist,Widowed,Master,India,Urban,Yes,No,No,No,Moderate,Light,Never,107
+100411,89,161.5,41.5,15.9,89185,61.0,36.6,99,21,2.3,4.9,,Female,O+,Retired,Married,Bachelor,Pakistan,Urban,No,No,No,No,Moderate,Sedentary,Never,125
+104213,20,163.9,57.8,21.5,121843,74.0,36.0,94,21,4.2,11.5,6.9,Female,B-,Scientist,Married,Bachelor,India,Rural,No,No,No,No,Moderate,Sedentary,Frequently,101
+100110,30,172.2,54.4,18.3,129760,67.0,36.8,99,12,4.0,5.3,5.1,Female,O-,Freelancer,Married,Master,UAE,Urban,No,No,No,No,Low,Light,Never,137
+104996,21,169.0,78.2,27.4,46080,80.0,36.8,99,13,1.4,11.5,5.7,Male,A+,Retired,Single,Bachelor,Canada,Urban,No,No,Yes,No,Low,Active,Occasionally,115
+103430,45,151.9,68.3,29.6,193934,74.0,36.6,97,19,3.5,7.9,6.5,Female,B-,Retired,Married,Master,Germany,Urban,No,Yes,No,No,Moderate,Moderate,Never,105
+102810,51,162.6,66.7,25.2,164571,77.0,36.8,99,20,,2.1,4.8,Female,AB-,Freelancer,Married,Bachelor,Pakistan,Urban,Yes,No,No,No,High,Sedentary,Occasionally,117
+102595,61,158.9,75.4,29.9,29913,68.0,37.0,97,14,2.1,2.2,6.7,Female,O+,Lawyer,Single,Diploma,Pakistan,Urban,Yes,No,Yes,No,Low,Active,Never,125
+102837,38,166.2,46.6,16.9,125702,82.0,37.0,94,19,1.2,8.2,6.5,Male,B+,Government Employee,Single,Bachelor,USA,Urban,No,Yes,No,No,Moderate,Sedentary,Never,135
+102373,33,165.8,84.3,30.7,184670,68.0,37.3,99,21,1.5,9.1,4.1,Male,B+,Student,Married,Master,UAE,Urban,No,No,No,No,Low,Moderate,Occasionally,132
+101236,70,160.7,60.4,23.4,67386,78.0,36.3,98,13,3.3,4.8,5.5,Male,AB-,Lawyer,Single,Bachelor,Germany,Suburban,Yes,No,No,No,Moderate,Sedentary,Occasionally,108
+102147,30,169.1,105.3,36.8,189538,80.0,36.3,95,14,,9.5,5.5,Female,O-,Freelancer,Married,Bachelor,Australia,Rural,No,Yes,No,No,High,Moderate,Occasionally,108
+104976,86,170.9,66.4,22.7,107372,70.0,37.3,98,18,2.9,6.5,5.4,Male,B+,Teacher,Single,Bachelor,Japan,Urban,No,No,Yes,No,Moderate,Light,Never,153
+100600,72,169.0,48.5,17.0,41082,76.0,37.0,98,19,3.8,2.5,5.2,Male,A+,Designer,Married,High School,UK,Urban,No,No,No,No,Moderate,Sedentary,Never,130
+101435,25,159.9,40.0,15.6,144270,67.0,36.3,98,12,1.8,5.0,7.1,Male,B-,Doctor,Married,Master,Canada,Urban,No,Yes,No,Yes,Moderate,Light,Never,135
+104997,40,173.7,58.8,19.5,45574,76.0,37.0,95,19,3.3,5.6,5.6,Female,O-,Business,Single,Bachelor,UAE,Suburban,No,Yes,No,No,Moderate,Light,Frequently,100
+100539,28,173.4,103.8,34.5,169610,84.0,36.5,94,18,4.0,5.2,10.0,Male,O+,Lawyer,Married,Bachelor,India,Urban,No,Yes,No,No,Moderate,Sedentary,Occasionally,151
+100722,46,169.2,57.3,20.0,140595,71.0,36.7,95,18,3.2,10.6,6.5,Male,O-,Teacher,Married,Bachelor,USA,Suburban,No,No,No,No,Low,Light,Never,111
+104411,90,165.2,51.9,19.0,30528,75.0,36.5,95,14,3.2,6.3,9.4,Male,AB-,Retired,Divorced,Diploma,Germany,Suburban,No,No,No,No,High,Light,Occasionally,90
+101873,31,162.0,80.6,30.7,113856,91.0,36.7,95,21,2.4,5.8,7.9,Male,B-,Nurse,Married,Bachelor,Germany,Urban,No,No,Yes,No,High,Sedentary,Never,130
+102846,56,166.8,42.9,15.4,145538,,36.3,94,13,,9.5,5.7,Female,A+,Lawyer,Married,High School,Japan,Urban,No,No,No,Yes,High,Moderate,Occasionally,130
+102054,30,173.8,60.9,20.2,63010,64.0,36.9,98,17,3.0,9.5,7.6,Male,B+,Student,Married,Master,Australia,Urban,No,No,Yes,Yes,Moderate,Light,Occasionally,127
+102908,67,162.9,64.6,24.3,20383,69.0,36.7,98,20,1.8,8.0,6.3,Male,AB+,Designer,Married,Master,Australia,Urban,No,Yes,Yes,No,Moderate,Active,Never,159
+102255,77,162.6,69.5,26.3,25042,69.0,36.9,94,21,4.1,10.2,4.9,Female,B-,Business,Married,High School,Australia,Suburban,No,No,No,No,Low,Light,Never,143
+103913,38,165.6,42.2,15.4,187109,88.0,37.0,99,14,3.1,6.0,7.1,Male,O+,Student,Single,Bachelor,Singapore,Rural,Yes,Yes,No,No,High,Light,Frequently,130
+100178,62,161.5,86.8,33.3,183243,74.0,36.4,94,17,3.8,3.7,6.7,Male,AB-,Retired,Divorced,Diploma,UAE,Suburban,Yes,Yes,Yes,No,Moderate,Active,Occasionally,131
+102891,63,169.6,65.4,22.7,126865,80.0,36.5,98,15,3.6,6.8,8.6,Male,AB+,Government Employee,Widowed,Bachelor,UK,Urban,Yes,No,No,No,Low,Moderate,Never,110
+103674,80,158.1,84.5,33.8,89663,66.0,37.1,96,15,1.5,7.5,5.7,Male,A-,Designer,Single,Diploma,USA,Suburban,No,Yes,No,Yes,Moderate,Light,Never,140
+100081,39,185.4,82.2,23.9,134601,85.0,37.1,98,12,1.3,4.8,7.5,Female,AB-,Doctor,Married,Master,Canada,Urban,No,No,No,Yes,Low,Moderate,Occasionally,131
+102562,81,169.2,71.0,24.8,37950,84.0,37.1,98,18,3.4,10.3,5.5,Female,A-,Government Employee,Married,Master,Canada,Urban,Yes,Yes,No,No,Moderate,Sedentary,Frequently,148
+101724,69,175.2,62.0,20.2,70873,68.0,36.7,98,13,3.9,7.4,7.8,Male,O+,Lawyer,Single,High School,Pakistan,Suburban,Yes,No,No,No,Moderate,Moderate,Occasionally,113
+101618,80,174.1,76.7,25.3,110678,88.0,37.5,95,17,1.6,6.3,7.7,Male,AB-,Teacher,Divorced,Bachelor,Australia,Urban,Yes,No,No,No,High,Light,Never,151
+101655,45,172.9,99.2,33.2,157455,67.0,36.6,96,15,1.9,4.5,6.1,Male,B+,Software Engineer,Single,Diploma,USA,Rural,No,Yes,Yes,No,Moderate,Sedentary,Never,127
+102329,20,163.4,69.3,26.0,87609,78.0,36.1,98,13,2.6,3.0,6.3,Female,O-,Government Employee,Single,Bachelor,UK,Suburban,Yes,Yes,No,No,High,Sedentary,Occasionally,114
+104614,73,170.7,71.1,24.4,197071,53.0,36.7,97,14,4.5,10.6,7.6,Female,A-,Business,Married,Bachelor,USA,Rural,No,No,No,No,Moderate,Light,Never,113
+100222,46,189.2,65.1,18.2,68942,,36.3,94,15,1.7,8.2,5.9,Female,AB-,Designer,Widowed,PhD,India,Suburban,No,Yes,Yes,No,Low,Moderate,Never,158
+100094,73,169.3,85.8,29.9,16919,89.0,37.3,99,21,2.1,10.5,5.9,Male,O+,Designer,Married,Diploma,UK,Urban,No,No,No,No,Moderate,Active,Occasionally,128
+102610,33,165.0,47.9,17.6,49857,72.0,36.9,95,13,1.7,6.0,4.8,Male,B-,Software Engineer,Married,Bachelor,Pakistan,Suburban,No,No,No,No,Moderate,Moderate,Never,139
+103383,47,149.8,74.9,33.4,182577,77.0,36.5,99,16,1.8,4.4,5.9,Female,O-,Retired,Married,High School,Germany,Urban,Yes,Yes,No,No,Low,Moderate,Never,101
+104416,33,186.2,82.1,23.7,102321,85.0,36.4,96,20,3.2,9.7,4.0,Male,B-,Government Employee,Married,Bachelor,Pakistan,Suburban,No,No,No,No,High,Active,Never,117
+101398,85,157.6,85.6,34.5,110322,82.0,36.5,98,17,2.6,4.5,7.2,Female,AB+,Nurse,Married,Bachelor,Australia,Urban,No,No,No,No,Low,Sedentary,Never,137
+104687,44,180.0,58.3,18.0,112260,72.0,37.5,95,21,1.2,5.5,8.3,Female,B+,Student,Married,Bachelor,Canada,Urban,No,No,No,No,Low,Active,Never,105
+101293,45,159.7,80.0,31.4,66871,57.0,36.2,99,21,2.0,10.0,5.2,Male,B+,Lawyer,Married,Diploma,Singapore,Urban,No,Yes,No,No,Moderate,Sedentary,Never,132
+102165,59,159.2,71.1,28.1,51988,93.0,36.3,95,21,3.4,3.8,7.0,Female,A-,Software Engineer,Married,Master,Pakistan,Urban,Yes,No,No,No,High,Light,Occasionally,125
+102940,19,155.3,40.0,16.6,191389,72.0,36.9,98,14,1.8,8.2,5.9,Female,A+,Government Employee,Married,High School,India,Urban,No,No,No,No,Moderate,Light,Frequently,134
+103669,48,171.6,71.8,24.4,169509,88.0,37.1,98,19,1.5,8.4,7.1,Male,B+,Software Engineer,Single,Bachelor,Australia,Rural,No,Yes,No,No,Moderate,Sedentary,Frequently,127
+100813,66,167.8,65.6,23.3,199888,70.0,36.8,98,12,1.3,6.1,8.5,Female,O+,Nurse,Married,Bachelor,Australia,Rural,No,Yes,No,No,Moderate,Active,Frequently,106
+101259,24,173.9,72.2,23.9,156886,83.0,36.7,96,19,4.4,7.7,7.8,Male,O+,Doctor,Single,High School,Germany,Urban,No,No,No,No,Low,Moderate,Never,117
+100890,40,162.9,57.9,21.8,63087,77.0,36.4,94,14,1.2,1.3,7.4,Female,A-,Lawyer,Married,Bachelor,Pakistan,Rural,No,Yes,No,No,Low,Moderate,Never,116
+101452,80,169.4,72.5,25.3,37866,86.0,37.4,98,18,3.1,8.2,8.1,Male,O+,Designer,Single,Bachelor,UAE,Urban,Yes,Yes,No,No,Moderate,Moderate,Occasionally,109
+103317,79,182.2,87.5,26.4,49204,65.0,36.9,99,16,2.9,2.7,,Male,B-,Nurse,Married,Diploma,USA,Urban,No,No,No,No,Low,Light,Never,131
+102560,28,173.4,74.4,24.7,199406,64.0,36.8,98,14,4.4,4.9,,Male,AB+,Nurse,Single,Bachelor,Germany,Urban,No,No,No,No,Moderate,Sedentary,Never,136
+103575,33,174.7,92.4,30.3,29607,57.0,36.9,94,19,2.2,9.2,5.5,Female,O-,Scientist,Divorced,Master,Pakistan,Suburban,No,No,No,No,Moderate,Light,Occasionally,108
+102681,35,153.7,68.8,29.1,155916,80.0,36.4,97,17,3.8,4.2,,Male,O-,Government Employee,Married,Bachelor,UK,Suburban,No,No,No,No,Moderate,,Never,120
+104652,64,178.6,70.2,22.0,185882,104.0,36.6,98,18,2.1,8.3,6.2,Female,A+,Doctor,Single,Bachelor,UK,Urban,No,No,No,No,Low,Moderate,Occasionally,121
+104812,46,169.4,77.7,27.1,192138,77.0,36.9,94,15,2.6,1.9,8.1,Female,B+,Freelancer,Married,Bachelor,Australia,Rural,Yes,No,Yes,No,High,Light,Occasionally,145
+104680,19,163.5,74.1,27.7,12814,69.0,35.6,94,16,2.8,11.4,8.4,Female,B+,Nurse,Married,Bachelor,Singapore,Urban,No,No,No,No,Moderate,Light,Occasionally,101
+102965,81,162.8,49.2,18.6,20380,97.0,36.0,97,18,1.6,4.4,4.5,Female,AB-,Government Employee,Married,Bachelor,UAE,Urban,Yes,Yes,No,No,Low,Active,Occasionally,97
+102673,48,158.0,45.9,18.4,20546,89.0,37.0,99,14,3.9,6.8,7.7,Female,AB+,Retired,Single,Master,Japan,Rural,No,No,No,Yes,Low,Moderate,Occasionally,118
+100562,80,183.2,67.6,20.1,42282,95.0,37.5,95,19,1.3,11.5,6.3,Female,AB-,Lawyer,Married,Diploma,Australia,Urban,No,No,No,No,High,,Occasionally,129
+102779,21,188.3,55.1,15.5,71558,71.0,37.2,99,17,4.1,2.5,6.3,Male,B-,Lawyer,Married,Bachelor,UK,Rural,No,No,No,No,High,Moderate,Occasionally,123
+102949,45,174.3,40.0,,160417,64.0,36.5,98,14,4.0,2.1,6.7,Male,B-,Student,Married,Master,UAE,Rural,No,No,No,No,Low,Light,Occasionally,127
+102818,88,172.9,56.2,18.8,91541,85.0,36.6,97,18,2.3,6.7,6.2,Male,B-,Designer,Single,Bachelor,Japan,Suburban,No,Yes,No,No,High,Active,Occasionally,121
+102759,23,176.5,87.5,28.1,69130,72.0,36.6,94,14,1.4,3.0,4.9,Male,B+,Freelancer,Married,PhD,Singapore,Suburban,No,Yes,Yes,Yes,Moderate,Moderate,Occasionally,144
+101757,71,180.8,52.1,15.9,114510,67.0,37.0,95,13,1.8,6.2,9.6,Female,A+,Doctor,Widowed,High School,USA,Urban,No,Yes,Yes,No,Low,Moderate,Occasionally,153
+100725,76,166.9,96.0,34.5,152962,66.0,36.6,97,17,1.5,1.8,7.4,Male,O+,Scientist,Married,Bachelor,Canada,Suburban,No,No,No,No,Moderate,Light,Occasionally,99
+100220,37,175.2,64.7,21.1,34767,69.0,36.5,97,15,1.6,2.6,5.8,Male,A+,Designer,Married,Bachelor,Pakistan,Suburban,No,Yes,No,No,High,Moderate,Never,125
+104140,28,171.6,65.3,22.2,120993,85.0,36.3,99,15,1.6,6.3,,Male,O+,Government Employee,Married,Master,UK,Suburban,No,Yes,No,No,Moderate,Moderate,Never,109
+103958,41,167.7,58.2,20.7,175558,96.0,37.0,98,15,4.1,2.4,6.8,Female,B-,Designer,Married,Bachelor,Germany,Rural,Yes,Yes,Yes,No,High,Active,Frequently,146
+101589,39,154.2,42.7,18.0,46664,65.0,37.1,99,20,2.2,5.7,6.9,Female,AB-,Government Employee,Single,High School,Germany,Suburban,No,No,No,No,Low,Light,Occasionally,97
+103348,90,163.2,75.7,28.4,110067,82.0,36.4,96,20,3.5,2.2,8.5,Male,B+,Retired,Married,Master,UAE,Suburban,No,No,No,No,Moderate,Sedentary,Never,126
+103971,45,168.7,48.1,16.9,96356,87.0,37.0,98,18,1.5,6.3,5.9,Male,A-,Software Engineer,Married,Bachelor,UAE,Urban,No,No,No,No,High,Light,Occasionally,116
+104708,82,174.4,55.9,18.4,140129,96.0,36.8,96,14,4.2,7.4,6.2,Male,O+,Retired,Single,Master,USA,Rural,Yes,No,No,No,High,Light,Never,125
+100044,34,174.1,77.7,25.6,131237,59.0,37.1,94,12,4.4,6.6,8.4,Male,A+,Teacher,Single,Diploma,Singapore,Urban,No,Yes,No,No,Moderate,Moderate,Frequently,136
+103002,74,162.0,78.3,29.8,151713,72.0,36.3,98,18,3.8,10.9,4.9,Female,A-,Software Engineer,Single,Diploma,Germany,Suburban,Yes,Yes,No,No,High,Light,Occasionally,128
+100211,23,169.2,56.3,19.7,117729,70.0,36.5,94,15,4.5,7.6,8.4,Male,B-,Teacher,Single,High School,Germany,Urban,No,Yes,No,No,Low,Sedentary,Occasionally,134
+100678,86,155.6,77.8,32.1,146609,70.0,37.1,96,12,4.4,6.5,6.6,Male,A+,Scientist,Divorced,Bachelor,Japan,Rural,No,Yes,No,Yes,High,Active,Never,116
+100355,57,165.3,60.1,22.0,193279,60.0,36.8,99,16,3.4,8.8,6.5,Male,B+,Software Engineer,Single,Master,Australia,Suburban,No,No,No,No,Moderate,Sedentary,Frequently,90
+101434,44,168.6,57.3,20.2,132810,76.0,37.5,97,13,1.3,6.5,8.5,Female,AB-,Government Employee,Single,Bachelor,Singapore,Rural,No,No,No,No,Moderate,Moderate,Occasionally,134
+100950,73,175.7,59.0,19.1,74470,77.0,36.8,96,16,1.8,4.2,6.1,Male,B-,Retired,Married,High School,UK,Suburban,Yes,No,No,No,High,Light,Occasionally,144
+102844,44,165.2,84.5,31.0,148433,78.0,37.2,94,16,3.3,6.5,8.5,Male,O+,Retired,Single,Master,Germany,Urban,No,No,No,No,Low,Moderate,Frequently,117
+100578,81,161.0,46.2,17.8,177324,86.0,36.4,96,18,4.0,5.8,8.2,Male,A+,Teacher,Divorced,High School,Singapore,Urban,No,Yes,No,No,Moderate,Active,Occasionally,129
+103929,57,167.9,73.6,26.1,89632,61.0,37.1,99,18,1.1,1.7,6.4,Female,AB-,Doctor,Single,High School,India,Rural,No,No,Yes,No,Moderate,Light,Occasionally,141
+100545,61,174.7,68.8,22.5,46025,75.0,36.4,97,13,1.3,5.3,8.1,Male,AB+,Business,Single,High School,UAE,Urban,No,Yes,No,No,Low,Sedentary,Never,128
+100368,44,173.6,63.2,21.0,84139,85.0,38.0,95,13,4.3,9.2,6.7,Male,B-,Nurse,Single,Master,UK,Rural,No,No,No,No,Moderate,Moderate,Occasionally,134
+101613,90,153.9,64.9,27.4,187702,69.0,36.8,94,16,2.4,10.1,8.2,Female,A-,Government Employee,Married,Bachelor,Germany,Urban,No,Yes,No,No,Low,Light,Occasionally,141
+103551,43,183.4,68.0,20.2,148114,69.0,37.1,95,19,4.3,6.0,7.0,Male,O-,Student,Married,Bachelor,Pakistan,Urban,No,Yes,No,No,High,Moderate,Never,117
+103717,73,176.3,86.6,27.9,49046,76.0,37.2,96,15,3.6,9.7,4.7,Male,B-,Scientist,Single,Bachelor,Japan,Urban,Yes,No,No,Yes,Moderate,Moderate,Occasionally,116
+103780,18,172.3,57.8,19.5,22220,53.0,37.4,99,14,2.5,2.3,6.0,Male,A-,Doctor,Divorced,High School,UK,Suburban,No,Yes,No,No,Moderate,Moderate,Occasionally,129
+100136,31,169.6,64.9,22.6,161452,,36.7,97,15,,4.3,6.6,Female,AB+,Retired,Married,Bachelor,India,Urban,Yes,Yes,Yes,No,Moderate,,Occasionally,141
+104481,33,168.6,71.1,25.0,21980,74.0,37.0,94,18,4.1,3.4,6.4,Male,AB+,Retired,Single,Master,USA,Suburban,No,No,No,No,Moderate,Moderate,Occasionally,104
+101438,30,145.8,56.3,26.5,118674,68.0,36.8,99,20,1.6,2.6,4.8,Male,A-,Freelancer,Widowed,High School,UAE,Urban,Yes,No,No,No,Low,Sedentary,Frequently,131
+100048,60,155.0,61.1,25.4,48611,75.0,37.0,95,16,3.6,7.5,8.9,Male,AB+,Designer,Married,High School,UAE,Suburban,No,No,No,No,Moderate,Light,Occasionally,139
+101361,83,177.6,51.8,16.4,64575,73.0,37.4,95,17,2.9,11.7,6.6,Male,B+,Government Employee,Married,High School,UAE,Urban,No,Yes,No,No,High,Active,Occasionally,127
+100735,47,183.5,59.3,17.6,30827,66.0,36.8,99,17,1.1,1.2,6.9,Male,B-,Freelancer,Divorced,Master,India,Urban,Yes,Yes,No,No,Low,Sedentary,Never,143
+101535,57,159.0,69.0,27.3,106776,88.0,36.7,98,14,2.7,4.6,6.0,Male,A-,Government Employee,Single,Bachelor,UAE,Rural,Yes,No,No,No,Low,Sedentary,Never,96
+102005,19,168.7,86.7,30.5,85602,74.0,36.7,97,18,2.2,4.4,5.7,Male,O+,Student,Single,Bachelor,Singapore,Urban,Yes,No,No,No,Moderate,Moderate,Occasionally,122
+103796,82,167.2,95.4,34.1,174649,82.0,37.3,98,21,4.5,10.8,5.7,Male,A-,Freelancer,Single,Bachelor,Japan,Suburban,Yes,Yes,No,Yes,High,Light,Occasionally,130
+102520,29,150.5,63.6,28.1,156373,80.0,36.9,98,12,3.7,10.0,4.9,Female,AB+,Lawyer,Single,Master,UAE,Rural,Yes,Yes,No,No,Moderate,Active,Never,133
+101973,46,156.9,62.0,25.2,87686,69.0,36.5,96,20,1.4,4.5,7.8,Male,A-,Freelancer,Single,Master,USA,Urban,Yes,No,No,No,Low,Sedentary,Frequently,117
+100997,89,182.0,55.5,16.8,31527,85.0,36.7,99,21,2.7,9.8,5.4,Female,AB+,Freelancer,Married,Bachelor,Japan,Suburban,No,No,No,No,Low,Sedentary,Occasionally,116
+100062,60,160.5,80.4,31.2,146965,73.0,36.8,97,20,2.8,1.4,6.3,Female,O+,Student,Single,Diploma,Australia,Urban,No,Yes,No,Yes,High,Light,Never,111
+101109,33,170.8,85.1,29.2,81939,60.0,36.8,97,14,2.2,5.9,8.7,Male,B+,Designer,Divorced,Bachelor,UK,Urban,No,Yes,No,No,Moderate,Moderate,Never,135
+102406,72,165.6,40.0,14.6,135051,72.0,37.1,94,12,4.1,1.5,7.2,Female,B-,Lawyer,Married,Diploma,Australia,Urban,Yes,Yes,Yes,No,Moderate,Sedentary,Occasionally,128
+100096,39,165.3,40.0,14.6,129035,79.0,36.7,95,17,1.5,8.8,5.0,Female,O+,Designer,Married,Bachelor,Canada,Urban,Yes,No,Yes,No,Low,Sedentary,Frequently,149
+100479,34,161.5,42.0,16.1,68961,78.0,36.5,98,17,1.2,6.5,8.3,Male,A-,Teacher,Widowed,Diploma,Singapore,Urban,No,No,Yes,No,Moderate,Active,Occasionally,148
+104360,45,169.5,98.5,34.3,38301,97.0,36.3,95,12,3.9,3.0,8.6,Female,AB+,Lawyer,Married,Bachelor,Australia,Urban,Yes,Yes,No,No,Low,Active,Never,121
+104113,72,165.6,90.1,32.9,130507,75.0,37.0,96,14,2.9,2.5,7.4,Female,A+,Scientist,Married,Master,UK,Urban,No,No,Yes,Yes,Moderate,Moderate,Occasionally,153
+103708,47,161.1,87.6,33.8,89740,51.0,36.8,97,17,3.0,10.9,6.0,Female,O-,Retired,Single,Bachelor,Australia,Urban,No,No,No,No,Moderate,Active,Never,119
+101102,49,156.6,70.8,28.9,69091,86.0,37.3,97,18,3.8,1.1,7.8,Male,B-,Teacher,Single,Diploma,UK,Suburban,No,No,Yes,No,Moderate,Sedentary,Occasionally,137
+102747,65,162.5,88.5,33.5,196206,71.0,37.2,98,14,2.7,5.0,7.0,Male,A+,Nurse,Single,High School,Singapore,Urban,Yes,No,Yes,Yes,Moderate,Light,Frequently,134
+102171,25,156.8,49.1,20.0,143710,82.0,36.6,96,20,1.0,7.1,7.2,Male,A-,Software Engineer,Married,Diploma,Germany,Urban,No,No,No,Yes,Moderate,Light,Occasionally,118
+100323,34,168.0,66.5,23.6,167169,83.0,36.4,95,15,2.2,4.9,5.4,Male,AB-,Doctor,Married,Bachelor,Australia,Urban,No,No,Yes,No,High,,Frequently,143
+104255,43,184.5,61.3,18.0,39208,73.0,37.2,98,21,3.2,3.7,7.5,Female,O-,Software Engineer,Married,High School,Pakistan,Suburban,No,No,No,No,Moderate,Light,Occasionally,130
+103143,31,182.2,60.4,18.2,74161,69.0,37.1,99,14,4.2,1.3,6.3,Female,O-,Student,Married,Diploma,Australia,Urban,No,Yes,No,No,Low,Moderate,Frequently,134
+103538,57,172.1,59.6,20.1,198599,74.0,37.4,96,14,3.7,1.2,4.8,Female,B-,Freelancer,Divorced,Bachelor,Singapore,Rural,Yes,No,No,Yes,Moderate,Sedentary,Occasionally,90
+104926,55,173.1,55.2,18.4,53947,79.0,37.0,94,19,1.3,8.6,6.1,Female,B+,Government Employee,Married,Master,Japan,Urban,No,No,No,No,High,Sedentary,Occasionally,139
+102925,21,180.5,57.2,17.6,16730,66.0,37.1,95,18,3.8,11.3,7.1,Male,B-,Designer,Single,Bachelor,Singapore,Suburban,Yes,No,No,No,Moderate,Light,Occasionally,126
+101150,45,164.7,57.3,21.1,22066,71.0,36.7,94,13,1.3,5.0,8.4,Male,B+,Scientist,Single,Bachelor,Japan,Suburban,No,No,No,No,Moderate,Moderate,Occasionally,133
+103618,31,162.9,111.7,42.1,119850,74.0,37.2,99,13,4.2,3.6,3.8,Male,A+,Nurse,Married,Bachelor,USA,Suburban,Yes,Yes,No,No,Moderate,Sedentary,Frequently,100
+100292,39,166.1,68.1,24.7,168760,71.0,36.9,98,12,2.0,11.4,5.6,Female,B+,Government Employee,Married,Master,UAE,Rural,Yes,No,No,No,Moderate,Sedentary,Never,127
+103750,76,178.5,84.4,26.5,146255,83.0,36.7,99,12,4.1,1.4,6.3,Female,AB+,Designer,Single,Bachelor,UK,Suburban,No,Yes,Yes,No,Low,Light,Occasionally,139
+103587,52,166.7,70.6,25.4,50122,72.0,36.7,96,19,3.1,7.2,7.2,Male,O+,Retired,Married,Bachelor,Germany,Urban,No,No,No,No,Moderate,Active,Never,128
+100534,22,147.5,81.3,37.4,133006,80.0,36.9,99,15,1.7,1.6,5.8,Male,A+,Software Engineer,Single,Master,Germany,Urban,No,Yes,No,No,High,Light,Occasionally,150
+103608,42,169.9,83.2,28.8,12436,,37.3,99,18,4.1,11.6,6.7,Male,AB-,Lawyer,Single,Diploma,Japan,Urban,No,Yes,No,No,Low,Sedentary,Never,128
+102649,24,165.5,72.5,26.5,41705,73.0,36.7,99,17,2.4,8.8,5.5,Female,AB-,Scientist,Married,Bachelor,Japan,Rural,No,No,No,No,Low,Active,Occasionally,144
+104811,83,168.8,60.4,21.2,155246,83.0,37.5,99,20,4.1,2.5,5.2,Male,B+,Teacher,Single,Diploma,Canada,Urban,Yes,No,No,No,High,Light,Never,124
+101984,64,187.8,62.5,17.7,155246,74.0,36.4,94,21,2.1,8.4,7.300000000000001,Female,O-,Nurse,Married,High School,UK,Rural,No,No,No,No,Moderate,Light,Frequently,117
+102933,53,178.4,52.3,16.4,24229,80.0,36.2,94,15,2.7,5.4,7.5,Female,B-,Nurse,Married,Master,Singapore,Urban,No,No,No,No,Moderate,Active,Occasionally,118
+101537,23,158.2,70.3,28.1,137679,71.0,36.4,97,14,3.7,7.8,6.6,Female,O-,Retired,Single,Master,Pakistan,Urban,No,Yes,Yes,No,Low,Sedentary,Frequently,137
+104535,24,164.5,79.4,29.3,75548,57.0,37.0,98,16,2.9,9.9,7.0,Female,O+,Nurse,Married,Diploma,Japan,Urban,No,Yes,No,No,Moderate,Light,Occasionally,132
+104173,42,151.5,73.5,32.0,75241,75.0,36.4,97,21,3.5,7.7,5.5,Female,AB-,Designer,Married,High School,USA,Suburban,Yes,No,No,No,Moderate,Light,Occasionally,122
+103361,57,178.8,66.4,20.8,127945,61.0,37.1,95,21,2.5,6.5,5.8,Female,AB-,Government Employee,Married,High School,Japan,Suburban,Yes,No,No,Yes,Moderate,Sedentary,Never,141
+103666,87,174.1,69.3,22.9,188760,91.0,37.3,96,16,3.8,10.7,6.5,Female,A+,Nurse,Married,Bachelor,Australia,Urban,No,No,No,No,Low,Moderate,Frequently,142
+104006,79,148.0,54.0,24.7,153417,,36.0,95,15,2.8,1.2,7.8,Male,A+,Student,Divorced,Bachelor,Singapore,Urban,No,No,Yes,No,Low,Moderate,Occasionally,139
+103627,69,155.8,64.5,26.6,177275,65.0,36.7,97,13,4.1,10.4,5.1,Female,A+,Scientist,Single,Diploma,USA,Urban,No,No,No,No,Moderate,Sedentary,Occasionally,114
+100587,75,184.9,70.3,20.6,40223,,37.4,94,17,4.2,2.4,6.1,Male,O+,Retired,Single,Master,Germany,Urban,Yes,No,No,No,Moderate,Moderate,Never,133
+103257,29,189.3,75.6,21.1,153710,55.0,36.7,96,14,1.9,1.2,6.5,Male,AB-,Freelancer,Single,High School,Japan,Rural,Yes,No,No,No,Low,Light,Occasionally,125
+102299,33,177.1,65.7,20.9,108714,50.0,37.6,97,19,1.5,11.0,3.9000000000000004,Female,A-,Designer,Single,Bachelor,Japan,Suburban,No,No,Yes,No,Moderate,Sedentary,Frequently,139
+103989,74,168.2,78.7,27.8,22042,63.0,37.4,95,14,2.5,6.7,4.2,Female,B+,Retired,Single,PhD,Pakistan,Urban,No,No,No,No,Moderate,Light,Occasionally,132
+100585,34,173.4,55.2,18.4,183145,83.0,37.1,99,13,2.1,6.5,8.2,Male,A+,Software Engineer,Married,High School,Canada,Suburban,No,Yes,No,No,Moderate,Light,Occasionally,107
+102424,57,168.6,87.2,30.7,42703,77.0,36.8,97,15,1.1,1.1,7.9,Female,O+,Lawyer,Married,Bachelor,Pakistan,Suburban,No,No,No,No,Moderate,Active,Frequently,124
+101392,22,161.8,74.5,28.5,122887,78.0,36.6,98,16,4.1,5.9,9.4,Male,O+,Teacher,Single,Master,Singapore,Urban,Yes,No,No,No,Moderate,Sedentary,Frequently,100
+104526,22,162.3,40.0,15.2,117015,78.0,37.2,98,18,3.7,9.1,7.6,Female,AB-,Teacher,Married,Bachelor,Canada,Urban,Yes,Yes,No,No,Moderate,Light,Never,129
+104921,86,160.8,75.6,29.2,63556,66.0,36.5,98,12,1.7,6.9,6.9,Female,A+,Nurse,Married,Bachelor,Pakistan,Urban,No,Yes,Yes,No,High,Moderate,Never,131
+104801,23,160.7,56.0,21.7,161415,89.0,37.1,97,17,2.0,4.7,6.9,Male,A+,Business,Divorced,Master,Japan,Urban,No,No,No,No,High,Sedentary,Occasionally,134
+103241,82,163.5,71.2,26.6,135140,72.0,36.6,97,13,1.3,1.8,5.4,Male,O-,Government Employee,Married,Bachelor,Australia,Rural,No,Yes,No,No,Low,Sedentary,Occasionally,143
+104282,68,170.7,84.1,28.9,81641,66.0,36.4,96,19,2.0,7.1,5.1,Female,O-,Nurse,Single,Bachelor,Singapore,Rural,Yes,Yes,No,No,Low,Sedentary,Never,99
+103339,28,169.5,85.8,29.9,30316,84.0,36.6,96,15,1.8,3.1,8.4,Female,A-,Retired,Single,Master,Pakistan,Suburban,No,Yes,No,No,High,Light,Never,114
+103221,23,167.0,79.1,28.4,52503,81.0,37.0,97,12,3.6,9.3,7.199999999999999,Female,O-,Lawyer,Single,Bachelor,Japan,Urban,No,No,No,No,High,Active,Never,141
+102112,73,157.3,61.6,24.9,63853,74.0,36.2,94,18,1.3,5.3,8.1,Female,O+,Scientist,Single,Diploma,Australia,Rural,No,Yes,No,No,Low,Moderate,Occasionally,110
+101175,46,166.8,67.2,24.2,53270,79.0,36.8,94,13,,2.0,6.0,Male,B-,Business,Divorced,PhD,India,Urban,No,No,No,Yes,Moderate,Moderate,Never,111
+104863,38,172.8,74.6,25.0,76924,94.0,36.7,97,12,3.7,9.2,7.0,Male,AB+,Designer,Married,High School,Singapore,Suburban,No,No,No,No,Moderate,Moderate,Occasionally,122
+103812,63,152.3,64.4,27.8,86255,75.0,37.2,94,12,2.2,5.0,8.5,Male,AB+,Designer,Single,Bachelor,Canada,Suburban,No,No,Yes,No,Low,Active,Occasionally,154
+101868,35,162.4,72.5,27.5,178098,81.0,36.9,94,14,3.0,2.6,7.9,Male,O+,Business,Married,Bachelor,Canada,Urban,No,No,No,No,Moderate,Moderate,Never,127
+102615,27,179.1,51.8,16.1,162178,63.0,36.7,99,16,2.3,4.1,6.4,Female,O+,Business,Married,Bachelor,Singapore,Suburban,No,No,No,No,Moderate,Light,Never,122
+103867,25,188.3,83.8,23.6,146877,86.0,36.5,96,16,1.1,10.1,4.9,Female,AB+,Doctor,Married,Diploma,Canada,Urban,No,No,No,No,Moderate,,Never,126
+104886,76,154.4,100.7,42.2,73212,71.0,36.5,99,18,2.0,2.9,8.1,Male,AB-,Lawyer,Single,Master,Pakistan,Suburban,No,No,Yes,Yes,Low,Active,Occasionally,153
+103779,73,169.4,68.8,24.0,81202,82.0,37.2,98,19,3.2,10.8,6.7,Female,B-,Software Engineer,Married,High School,India,Rural,Yes,No,Yes,No,Moderate,Moderate,Occasionally,142
+103847,54,165.9,76.1,27.6,170541,76.0,36.0,96,14,1.8,11.1,5.2,Female,O-,Retired,Single,Bachelor,Singapore,Urban,No,No,Yes,No,High,Moderate,Frequently,139
+102417,82,167.1,85.0,30.4,69751,87.0,36.9,95,21,1.5,2.5,6.9,Female,B-,Retired,Married,Diploma,Germany,Urban,No,No,No,No,High,Active,Occasionally,90
+100071,60,159.7,65.6,25.7,164661,90.0,36.8,97,16,1.4,7.1,7.0,Male,O+,Doctor,Married,Diploma,Australia,Suburban,No,Yes,No,No,High,Active,Occasionally,122
+104881,78,161.0,83.1,32.1,149435,74.0,36.6,95,18,3.8,2.3,6.1,Female,B+,Lawyer,Single,Bachelor,USA,Urban,Yes,No,No,Yes,Low,Moderate,Frequently,108
+101127,26,169.4,89.0,31.0,106640,79.0,37.1,96,20,4.4,5.5,9.3,Male,A-,Business,Married,Master,Germany,Urban,No,No,Yes,Yes,High,Light,Occasionally,134
+104025,75,169.6,90.2,31.4,64349,84.0,36.9,96,12,3.5,11.1,6.2,Male,AB+,Nurse,Married,Diploma,India,Urban,No,Yes,No,No,High,Active,Frequently,125
+103251,84,161.1,62.1,23.9,90989,76.0,36.6,94,19,1.9,7.4,6.2,Male,AB+,Designer,Married,Bachelor,UAE,Suburban,Yes,Yes,No,No,Moderate,Light,Occasionally,120
+103902,76,155.2,60.0,24.9,193800,73.0,37.1,97,20,1.8,2.0,6.2,Female,O-,Scientist,Married,Bachelor,Pakistan,Urban,No,Yes,No,No,Moderate,Sedentary,Occasionally,119
+101096,76,182.0,68.4,20.6,74257,73.0,37.1,99,12,1.7,3.5,6.5,Female,B-,Student,Single,Bachelor,USA,Urban,Yes,Yes,No,No,High,Sedentary,Never,124
+104546,52,155.3,76.1,31.6,157228,67.0,36.2,94,12,3.2,7.0,6.7,Female,AB-,Business,Single,Master,USA,Urban,Yes,No,Yes,No,Moderate,Light,Never,149
+101213,28,159.0,59.0,23.3,193633,71.0,36.5,95,12,1.7,10.9,7.1,Female,A+,Freelancer,Married,Diploma,UAE,Suburban,Yes,No,Yes,No,Moderate,Moderate,Occasionally,146
+103922,88,155.4,56.3,23.3,142262,79.0,36.5,99,21,1.7,11.1,7.6,Female,O+,Designer,Single,Diploma,UK,Urban,No,Yes,No,No,High,Light,Occasionally,102
+101426,29,169.1,69.9,24.4,39979,58.0,37.0,94,14,1.2,5.4,7.2,Female,A+,Doctor,Divorced,PhD,India,Rural,No,No,Yes,Yes,High,Moderate,Occasionally,131
+103067,84,183.8,40.0,11.8,114217,75.0,36.6,94,20,2.0,11.5,5.2,Male,O-,Retired,Single,Bachelor,Pakistan,Rural,No,Yes,No,Yes,Low,Active,Occasionally,129
+104520,68,169.2,81.5,28.5,36794,88.0,36.6,94,14,3.3,9.4,9.0,Female,B-,Business,Single,Bachelor,UAE,Urban,No,Yes,Yes,No,Moderate,Sedentary,Occasionally,139
+102101,72,183.3,54.8,16.3,198581,77.0,36.6,98,14,1.3,3.3,5.9,Female,O+,Doctor,Married,PhD,Australia,Urban,No,No,Yes,No,Low,Sedentary,Occasionally,122
+100808,76,158.9,76.8,30.4,63806,82.0,36.1,97,12,2.6,6.0,6.4,Female,AB-,Student,Single,Bachelor,Germany,Rural,No,Yes,No,Yes,Moderate,Sedentary,Frequently,135
+104744,63,168.6,77.5,27.3,18416,58.0,37.1,98,12,3.1,7.9,7.4,Female,AB-,Designer,Single,Bachelor,Singapore,Urban,No,No,Yes,No,Moderate,Moderate,Occasionally,162
+103751,56,145.0,83.7,39.8,108872,71.0,36.3,98,20,4.0,3.8,7.2,Female,AB-,Software Engineer,Single,PhD,Singapore,Rural,No,No,No,Yes,Moderate,Sedentary,Occasionally,133
+101363,86,157.9,59.1,23.7,196671,79.0,36.9,95,19,,6.0,6.1,Female,B-,Nurse,Single,Diploma,USA,Urban,No,No,No,No,High,Moderate,Never,128
+102318,20,167.2,57.3,20.5,97256,75.0,37.4,99,17,1.5,10.2,7.0,Female,O-,Doctor,Married,High School,UAE,Urban,No,Yes,No,No,High,Moderate,Frequently,122
+104582,38,154.5,67.0,28.1,66495,75.0,36.7,94,18,1.5,6.7,7.5,Female,A-,Freelancer,Widowed,Bachelor,USA,Urban,No,No,No,No,Moderate,,Never,116
+104742,71,155.2,72.8,30.2,80793,64.0,36.6,98,16,1.1,5.6,6.3,Male,A-,Government Employee,Single,Bachelor,India,Urban,No,No,Yes,Yes,Moderate,Active,Occasionally,148
+101026,62,150.4,73.3,32.4,55491,90.0,37.3,99,18,1.1,8.7,5.7,Female,A-,Software Engineer,Single,Diploma,Australia,Rural,No,Yes,No,Yes,Low,Light,Occasionally,136
+103110,62,189.6,77.1,21.4,103344,78.0,36.7,97,18,1.8,1.9,6.0,Female,B-,Doctor,Married,Bachelor,USA,Rural,No,Yes,No,Yes,Moderate,Light,Frequently,139
+102111,45,178.1,43.3,13.7,119911,71.0,37.1,97,12,4.4,10.3,3.3,Male,B-,Doctor,Married,Bachelor,USA,Urban,Yes,No,Yes,No,Moderate,Light,Occasionally,147
+101042,40,180.8,68.4,20.9,138398,77.0,36.9,95,15,3.1,3.2,7.1,Male,AB+,Doctor,Married,Bachelor,Canada,Rural,No,Yes,Yes,Yes,Low,Moderate,Never,144
+101877,19,158.1,55.8,22.3,184789,60.0,37.1,98,14,3.2,1.1,6.7,Female,A+,Designer,Married,Master,Australia,Suburban,Yes,No,No,No,Moderate,Light,Occasionally,114
+100882,32,163.7,76.1,28.4,104914,56.0,37.6,98,18,2.3,8.4,6.5,Female,A-,Doctor,Married,Bachelor,USA,Urban,No,Yes,No,No,Low,Light,Never,98
+104300,45,187.0,61.4,17.6,105417,75.0,37.2,94,12,1.4,5.1,8.6,Female,A+,Software Engineer,Divorced,High School,Australia,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,115
+101193,23,160.8,73.4,28.4,72253,75.0,37.8,99,18,2.7,4.7,6.6,Female,B+,Student,Married,High School,Canada,Urban,No,No,No,No,Moderate,Light,Occasionally,99
+104588,32,172.5,58.4,19.6,159038,89.0,37.1,99,19,3.0,4.9,7.9,Male,AB+,Freelancer,Married,Bachelor,India,Urban,Yes,Yes,No,No,Low,Light,Frequently,133
+104511,18,151.1,40.0,17.5,123611,89.0,37.3,98,21,1.2,5.0,5.4,Female,B-,Freelancer,Single,Master,Japan,Urban,No,No,No,Yes,Moderate,Moderate,Occasionally,134
+103671,18,180.4,73.9,22.7,142156,69.0,36.9,99,14,3.4,10.0,6.4,Female,B-,Freelancer,Divorced,Diploma,UK,Suburban,No,Yes,No,Yes,Moderate,Light,Never,126
+100625,77,145.0,71.9,34.2,86304,55.0,36.8,94,12,3.4,4.5,7.7,Male,AB-,Retired,Widowed,Bachelor,UAE,Suburban,Yes,Yes,Yes,Yes,Low,Sedentary,Never,152
+102797,41,170.5,66.7,22.9,181908,77.0,36.6,97,12,3.4,5.2,7.7,Female,A+,Lawyer,Married,Bachelor,Canada,Urban,No,No,Yes,No,Moderate,Sedentary,Never,124
+104292,67,166.7,68.1,24.5,128064,66.0,36.3,95,14,1.5,6.0,,Female,AB-,Doctor,Married,Master,Pakistan,Urban,Yes,No,No,No,Moderate,Sedentary,Occasionally,128
+104969,55,164.5,77.9,28.8,151518,84.0,37.0,96,12,1.8,7.7,6.0,Male,AB-,Nurse,Single,Bachelor,Canada,Urban,Yes,No,No,No,Moderate,Moderate,Frequently,131
+100234,38,171.1,45.7,15.6,106606,72.0,37.6,99,12,3.8,7.1,5.6,Female,B-,Teacher,Married,Bachelor,Canada,Urban,No,No,No,No,Moderate,Moderate,Frequently,138
+104567,33,161.5,56.7,21.7,125582,73.0,36.6,98,17,1.4,6.8,6.2,Male,AB-,Designer,Married,Bachelor,Germany,Rural,No,Yes,No,No,High,Light,Frequently,104
+101663,21,167.9,68.8,24.4,191728,90.0,36.5,98,12,4.3,7.9,6.0,Male,A-,Retired,Widowed,High School,Singapore,Urban,No,No,No,No,High,Moderate,Occasionally,111
+100416,37,185.5,78.0,22.7,169470,87.0,36.7,96,20,4.1,6.4,8.2,Male,AB-,Doctor,Divorced,Diploma,Australia,Rural,No,No,No,No,Low,Moderate,Occasionally,101
+104247,85,170.5,61.0,21.0,70361,72.0,37.3,98,16,2.8,2.9,7.4,Male,A-,Business,Married,Bachelor,Japan,Suburban,Yes,No,No,No,Moderate,Light,Occasionally,106
+102174,55,173.5,84.6,28.1,151865,92.0,37.9,96,18,3.8,11.4,5.6,Female,A+,Nurse,Single,Master,UK,Suburban,No,No,No,No,High,Light,Occasionally,140
+101457,80,168.2,55.9,19.8,161788,98.0,37.6,99,18,3.0,11.8,5.5,Female,B-,Government Employee,Divorced,Diploma,USA,Suburban,No,No,No,No,Moderate,Light,Never,109
+100747,67,173.2,79.8,26.6,90909,67.0,37.0,95,16,1.6,11.4,6.9,Female,B-,Doctor,Married,Bachelor,Pakistan,Rural,No,No,No,No,Moderate,Moderate,Occasionally,110
+100018,25,176.3,71.7,23.1,35960,72.0,37.3,96,19,2.2,9.0,6.5,Female,B+,Nurse,Single,Diploma,Singapore,Suburban,No,Yes,No,No,High,Moderate,Never,111
+101201,27,161.5,67.8,26.0,141634,78.0,36.3,96,15,1.5,7.5,7.8,Female,O-,Scientist,Married,High School,Pakistan,Urban,No,Yes,No,Yes,High,Light,Occasionally,153
+101700,77,159.7,70.9,27.8,116505,78.0,36.5,99,20,3.2,5.6,8.1,Female,AB+,Doctor,Married,Master,UK,Urban,No,No,No,No,Moderate,Moderate,Never,99
+103254,61,163.0,68.0,25.6,85925,70.0,36.6,97,17,2.7,3.8,8.8,Female,B-,Freelancer,Single,Diploma,Australia,Suburban,No,Yes,No,No,Moderate,Sedentary,Occasionally,112
+100597,70,190.0,57.3,,187357,81.0,36.4,99,20,4.2,10.9,5.9,Female,O-,Designer,Married,Bachelor,Japan,Suburban,No,Yes,No,No,Moderate,Active,Frequently,99
+103227,42,172.9,58.7,19.6,69376,77.0,36.1,96,13,2.4,4.2,6.3,Female,AB-,Lawyer,Married,Master,USA,Urban,No,No,Yes,No,Moderate,,Frequently,127
+104406,25,162.6,97.5,36.9,63213,55.0,36.8,97,20,3.3,11.7,6.4,Male,B-,Nurse,Married,High School,Japan,Suburban,No,No,No,No,Low,Active,Occasionally,126
+104720,83,182.6,61.5,18.4,169096,87.0,36.6,95,18,3.1,1.6,7.2,Male,AB-,Software Engineer,Divorced,Master,India,Urban,No,No,No,No,High,Active,Never,121
+101506,27,179.7,81.0,25.1,96573,83.0,37.0,96,20,2.4,7.6,6.5,Female,AB+,Teacher,Married,Diploma,Japan,Urban,Yes,Yes,No,No,Low,Moderate,Occasionally,139
+101413,30,172.2,78.7,26.5,170198,90.0,36.5,94,19,2.7,8.4,5.2,Male,AB-,Business,Married,Bachelor,Singapore,Urban,No,No,No,No,Moderate,Sedentary,Occasionally,137
+101966,48,153.3,79.5,33.8,128468,95.0,36.9,96,16,2.0,5.2,5.6,Female,AB+,Designer,Divorced,Diploma,India,Suburban,Yes,No,No,No,High,Sedentary,Frequently,119
+100372,63,169.4,72.7,25.3,167610,89.0,37.2,97,14,4.4,3.0,5.5,Female,O-,Lawyer,Married,Bachelor,Singapore,Suburban,No,No,No,No,High,Light,Occasionally,141
+101341,25,169.1,61.6,21.5,163620,83.0,36.6,99,16,1.1,5.0,5.3,Male,AB-,Software Engineer,Married,Master,UK,Urban,No,No,No,No,Low,Light,Frequently,126
+100599,87,184.8,61.6,18.0,176658,75.0,36.7,97,16,4.2,8.8,7.0,Male,O-,Scientist,Single,Bachelor,Germany,Urban,No,No,No,No,Moderate,Active,Occasionally,90
+100239,25,157.1,48.2,19.5,61053,84.0,36.3,97,12,2.9,8.6,5.9,Male,O-,Lawyer,Single,High School,Canada,Suburban,Yes,No,No,No,High,Sedentary,Frequently,139
+103401,57,166.7,48.5,17.5,74415,92.0,36.2,99,20,2.9,9.5,6.9,Female,B-,Teacher,Married,Bachelor,Pakistan,Urban,No,Yes,Yes,No,High,Active,Occasionally,143
+102068,74,158.5,75.7,30.1,65463,70.0,37.4,98,13,1.0,7.8,5.9,Male,A+,Software Engineer,Single,Bachelor,Germany,Suburban,No,No,No,No,Moderate,Moderate,Never,110
+100811,59,188.8,68.2,19.1,99753,72.0,36.9,96,18,4.4,11.3,6.9,Male,AB-,Freelancer,Divorced,High School,Australia,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,138
+101095,63,182.1,78.1,23.6,120229,77.0,36.9,99,15,1.7,3.0,7.4,Male,AB+,Teacher,Married,High School,Japan,Urban,No,Yes,No,No,High,Light,Occasionally,152
+104325,66,179.0,92.7,28.9,129183,70.0,36.5,97,16,3.6,1.7,7.7,Male,B-,Scientist,Single,High School,Australia,Urban,No,Yes,Yes,No,Moderate,Light,Occasionally,112
+104761,73,172.0,69.8,23.6,78908,70.0,37.2,99,17,3.7,9.3,8.6,Female,O-,Doctor,Married,Bachelor,Singapore,Rural,No,No,No,No,High,,Occasionally,112
+103677,30,178.1,53.8,17.0,100329,87.0,36.7,94,12,1.1,3.5,7.6,Male,B+,Retired,Single,PhD,Pakistan,Suburban,No,No,No,No,Low,Sedentary,Never,106
+103465,25,164.7,61.2,22.6,80044,69.0,37.3,95,12,1.7,8.0,7.3,Male,A-,Government Employee,Married,Bachelor,Singapore,Suburban,No,No,No,No,Low,Moderate,Never,115
+103104,37,172.8,59.4,19.9,30818,79.0,36.9,96,17,4.4,2.0,7.2,Female,A-,Software Engineer,Married,Bachelor,Japan,Suburban,No,No,No,No,Moderate,Moderate,Occasionally,140
+102750,82,156.9,77.5,31.5,58762,86.0,36.7,98,15,4.0,8.2,6.7,Female,O+,Government Employee,Single,High School,UK,Rural,No,No,No,Yes,High,Active,Occasionally,109
+102296,88,178.7,65.0,20.4,116786,72.0,37.2,96,16,3.4,2.1,7.1,Female,A-,Government Employee,Married,High School,UK,Urban,No,No,No,No,High,Moderate,Frequently,127
+104193,57,173.7,111.8,37.1,115944,82.0,36.8,99,16,1.0,6.4,4.8,Female,B-,Freelancer,Married,Bachelor,Pakistan,Urban,No,No,No,No,Moderate,Moderate,Occasionally,112
+103709,71,163.8,78.6,,87222,80.0,36.6,96,19,1.8,2.2,5.7,Female,AB+,Government Employee,Married,Bachelor,India,Urban,No,No,Yes,No,Low,Light,Never,132
+103019,37,183.8,60.0,17.8,53996,82.0,36.3,95,14,1.2,2.9,5.4,Male,A+,Software Engineer,Married,Bachelor,UK,Urban,No,No,No,No,High,Moderate,Occasionally,126
+104253,53,171.0,55.1,18.8,94142,85.0,36.3,94,13,1.6,5.0,7.9,Male,B-,Software Engineer,Married,Master,Canada,Urban,No,No,No,No,High,Sedentary,Never,107
+100804,26,150.9,67.6,29.7,157565,99.0,37.5,96,13,1.1,5.3,7.4,Male,O-,Software Engineer,Single,Bachelor,Canada,Urban,No,No,No,No,High,Active,Occasionally,128
+104191,73,184.0,91.8,27.1,180258,73.0,37.0,97,21,3.2,11.1,7.1,Male,O+,Freelancer,Married,Bachelor,Germany,Rural,No,No,No,No,High,Moderate,Never,121
+103706,36,153.3,59.3,25.2,29149,78.0,37.1,95,19,3.9,2.7,7.6,Female,AB-,Student,Single,High School,UK,Urban,No,Yes,No,No,High,Moderate,Occasionally,131
+100752,65,165.1,63.1,23.1,144232,73.0,37.5,97,12,4.5,6.8,6.8,Female,A+,Doctor,Married,Diploma,Canada,Urban,No,No,No,No,Moderate,Active,Occasionally,110
+104645,55,170.5,101.1,34.8,185172,65.0,36.6,95,20,1.8,4.6,7.2,Male,A+,Business,Married,Bachelor,Australia,Rural,No,No,Yes,No,Moderate,Moderate,Never,126
+102532,44,171.6,75.9,25.8,158915,,37.3,99,12,4.0,3.8,6.9,Male,O+,Nurse,Single,Bachelor,Germany,Urban,No,No,No,Yes,Low,Light,Occasionally,108
+100622,74,168.1,74.5,26.4,60895,71.0,37.0,94,14,1.4,3.1,7.6,Female,O-,Teacher,Single,Bachelor,Canada,Urban,No,No,Yes,No,Moderate,Sedentary,Frequently,145
+102298,61,172.8,80.4,26.9,85756,90.0,36.2,98,12,3.4,2.0,5.7,Female,AB+,Scientist,Single,Bachelor,Canada,Suburban,No,Yes,Yes,No,High,Light,Never,161
+103829,23,157.6,81.1,32.7,164254,67.0,36.9,97,12,2.2,1.4,7.3,Female,AB+,Government Employee,Married,Diploma,India,Rural,Yes,No,No,No,High,Sedentary,Occasionally,127
+100567,58,174.3,65.1,21.4,143785,79.0,36.8,96,13,1.3,7.3,7.0,Male,O-,Doctor,Married,Bachelor,India,Urban,No,No,No,Yes,High,Active,Occasionally,123
+101136,48,160.4,68.0,26.4,161132,60.0,36.8,94,14,1.9,7.1,9.0,Female,B-,Retired,Married,Bachelor,Germany,Urban,No,No,No,No,Low,Sedentary,Never,131
+101205,49,159.7,50.3,19.7,147319,67.0,37.1,99,21,4.4,1.0,5.7,Male,A-,Nurse,Single,Bachelor,Singapore,Urban,No,No,No,No,Moderate,Moderate,Occasionally,134
+101048,53,166.3,66.0,23.9,58719,83.0,36.8,94,20,2.4,1.7,9.2,Female,B-,Software Engineer,Married,Master,Singapore,Urban,No,No,No,No,Moderate,,Frequently,149
+100052,59,169.2,75.6,26.4,43242,65.0,36.6,98,20,2.5,9.1,7.199999999999999,Female,AB-,Designer,Married,High School,UK,Suburban,No,No,No,No,Moderate,Light,Occasionally,110
+103652,54,159.3,94.4,37.2,40775,75.0,36.9,98,19,4.2,9.5,,Female,O-,Nurse,Single,Diploma,Japan,Urban,Yes,No,Yes,No,Moderate,Moderate,Occasionally,137
+101045,65,167.9,71.5,25.4,108157,80.0,37.3,96,19,2.3,7.1,8.0,Female,O-,Nurse,Single,Bachelor,UAE,Suburban,No,No,No,No,Low,Light,Occasionally,110
+102182,55,165.1,51.9,19.0,184246,82.0,36.7,94,20,4.1,9.5,6.8,Male,A-,Teacher,Married,Diploma,Japan,Urban,Yes,Yes,No,No,Moderate,Light,Occasionally,131
+102689,81,175.7,55.9,18.1,142496,73.0,36.4,98,19,4.0,9.1,5.9,Female,B+,Scientist,Single,Bachelor,Germany,Rural,No,Yes,No,No,Low,Active,Occasionally,117
+100535,67,163.3,76.7,28.8,145124,60.0,36.8,97,17,4.5,8.9,5.7,Female,A+,Government Employee,Divorced,Bachelor,Japan,Suburban,No,No,Yes,No,Moderate,Moderate,Occasionally,131
+103185,38,152.8,93.2,39.9,188971,88.0,36.8,97,20,1.4,2.6,9.2,Female,O-,Student,Divorced,Master,Canada,Rural,No,No,No,No,Moderate,Moderate,Never,117
+103858,86,169.5,75.3,26.2,175630,67.0,36.4,98,14,1.2,9.0,6.4,Female,A+,Freelancer,Married,Bachelor,USA,Urban,No,No,No,No,Low,Light,Never,135
+100444,63,173.3,65.4,21.8,30341,76.0,36.6,94,14,3.1,2.3,5.7,Male,O-,Retired,Married,High School,USA,Urban,No,No,Yes,No,Low,Moderate,Never,111
+103605,56,175.2,81.4,26.5,198887,73.0,36.7,95,18,2.1,9.1,5.1,Male,O+,Student,Married,High School,Pakistan,Urban,No,Yes,No,No,Moderate,Moderate,Never,117
+100196,69,172.6,78.8,26.5,180405,89.0,36.8,96,13,2.2,2.6,9.3,Female,B-,Lawyer,Married,Bachelor,Germany,Urban,Yes,No,No,No,Moderate,Light,Occasionally,112
+101116,89,174.3,116.2,38.2,58615,83.0,36.4,94,16,3.3,3.5,8.9,Male,O-,Government Employee,Single,Bachelor,India,Urban,No,No,No,Yes,High,Moderate,Occasionally,94
+100766,41,169.4,67.4,23.5,106447,68.0,36.9,94,12,3.3,4.1,7.3,Female,AB+,Student,Married,High School,Singapore,Urban,No,Yes,Yes,No,Low,Light,Never,169
+101946,49,162.0,42.1,16.0,190486,80.0,36.7,98,16,3.6,1.3,7.0,Male,B+,Designer,Single,High School,Canada,Urban,No,No,No,No,Moderate,Moderate,Never,151
+103248,20,145.0,88.0,41.9,147021,72.0,36.4,96,17,4.2,6.7,6.7,Female,AB-,Freelancer,Married,Bachelor,UK,Rural,No,No,No,No,Low,Moderate,Never,103
+103003,30,175.5,94.9,30.8,48481,84.0,36.3,98,20,,9.5,3.5,Male,O+,Software Engineer,Married,Diploma,Australia,Urban,No,No,No,No,High,Sedentary,Occasionally,113
+101433,62,174.0,76.9,25.4,110883,67.0,36.7,95,13,2.1,11.9,6.4,Male,A-,Student,Married,Master,UAE,Urban,No,No,No,No,Moderate,Sedentary,Occasionally,133
+104201,63,177.9,51.2,,68331,,37.1,97,12,1.6,6.8,6.0,Male,O+,Software Engineer,Widowed,Diploma,Japan,Suburban,No,No,No,No,High,Light,Never,132
+103096,32,159.9,82.0,32.1,65204,81.0,36.7,95,19,1.6,1.4,10.0,Female,AB-,Retired,Single,Bachelor,Pakistan,Urban,No,Yes,No,No,High,Light,Never,118
+102923,72,145.0,79.6,37.9,21908,84.0,37.1,94,19,4.1,9.5,5.1,Male,A+,Lawyer,Single,Bachelor,Australia,Urban,No,No,No,No,Moderate,Light,Occasionally,126
+100645,27,159.3,61.8,24.4,28644,68.0,37.0,94,20,3.6,2.7,7.4,Female,B+,Scientist,Single,Master,UK,Suburban,No,No,No,No,Moderate,Sedentary,Occasionally,118
+101050,25,178.4,80.4,25.3,136951,54.0,36.4,95,15,3.9,4.7,5.8,Male,B-,Doctor,Single,Bachelor,Singapore,Urban,No,No,No,Yes,Low,Light,Never,129
+103746,28,157.4,58.4,23.6,39879,82.0,36.3,98,18,3.9,4.2,6.1,Female,O+,Freelancer,Married,Master,USA,Suburban,No,No,No,No,Moderate,Light,Frequently,149
+104094,49,162.0,69.2,26.4,65435,87.0,36.7,95,21,1.1,4.2,7.6,Male,A+,Designer,Single,High School,UK,Suburban,No,Yes,Yes,No,High,Moderate,Never,133
+104404,77,177.1,46.7,14.9,81026,93.0,37.0,99,16,1.7,10.5,4.8,Female,O-,Student,Single,Bachelor,Germany,Urban,Yes,Yes,No,No,Moderate,Light,Occasionally,130
+100121,20,183.1,85.3,25.4,22035,85.0,35.8,98,17,2.8,3.9,6.4,Female,A+,Government Employee,Single,Bachelor,USA,Urban,Yes,No,No,No,High,Moderate,Occasionally,115
+102053,61,192.6,57.6,15.5,23827,79.0,37.6,97,16,3.5,2.4,10.0,Female,O-,Retired,Married,High School,Australia,Urban,No,Yes,No,No,High,Moderate,Occasionally,142
+104259,67,159.1,46.4,18.3,46115,65.0,37.0,94,18,3.5,11.5,6.5,Female,AB+,Student,Married,Bachelor,UAE,Suburban,No,Yes,No,No,Moderate,,Never,112
+104889,89,188.3,85.7,24.2,128788,82.0,37.0,96,16,2.8,1.5,,Male,AB+,Business,Single,Diploma,Pakistan,Suburban,No,No,No,No,High,Moderate,Occasionally,100
+104335,74,175.6,61.9,20.1,197919,80.0,37.3,97,17,1.0,7.1,8.1,Female,O-,Designer,Single,Bachelor,USA,Suburban,No,No,No,No,Moderate,Sedentary,Occasionally,121
+104692,52,169.7,46.5,16.1,34130,73.0,36.5,99,18,1.1,3.0,,Female,AB+,Business,Married,Bachelor,UK,Suburban,No,No,Yes,Yes,Low,Moderate,Never,132
+100135,57,165.0,48.2,17.7,103941,88.0,36.4,97,12,1.7,5.5,6.8,Male,AB-,Business,Single,Bachelor,UAE,Suburban,No,No,No,No,High,Light,Occasionally,97
+102461,54,164.5,62.9,23.2,70151,76.0,37.2,94,21,3.6,10.8,7.0,Female,B-,Government Employee,Divorced,Diploma,Pakistan,Rural,No,Yes,No,No,High,Moderate,Occasionally,124
+101955,71,178.6,67.3,21.1,149172,67.0,36.2,97,17,4.3,6.2,5.5,Female,A+,Software Engineer,Single,Bachelor,Australia,Urban,No,No,No,No,Moderate,Light,Never,126
+102464,50,170.1,58.1,20.1,20613,74.0,36.6,95,19,4.1,4.4,7.4,Male,O-,Freelancer,Single,Diploma,India,Rural,No,No,No,No,Low,Light,Frequently,141
+100185,37,162.1,83.5,31.8,67606,71.0,36.8,95,14,1.1,10.7,5.7,Female,AB+,Doctor,Married,High School,Pakistan,Urban,Yes,Yes,No,Yes,Moderate,Moderate,Occasionally,126
+101393,26,177.0,77.0,24.6,37983,67.0,36.7,95,17,3.4,4.1,7.4,Female,B+,Scientist,Single,Bachelor,India,Urban,No,No,No,No,Moderate,Sedentary,Frequently,132
+102277,71,159.8,57.5,22.5,21267,55.0,37.1,94,17,1.9,3.8,7.1,Female,A+,Teacher,Married,Diploma,USA,Urban,Yes,No,No,No,Moderate,Moderate,Never,140
+100512,42,182.1,61.3,18.5,176013,86.0,37.1,98,20,2.8,10.1,7.300000000000001,Male,A+,Student,Married,Bachelor,Pakistan,Urban,Yes,No,No,No,Low,Moderate,Never,116
+104730,70,190.9,77.4,21.2,91243,72.0,36.6,97,13,1.8,7.6,5.5,Female,A-,Lawyer,Married,High School,Singapore,Urban,No,Yes,Yes,No,Moderate,Moderate,Never,142
+104055,44,155.0,85.5,35.6,114169,78.0,37.8,94,16,2.4,1.2,7.8,Female,B-,Government Employee,Married,Diploma,Japan,Suburban,No,Yes,Yes,No,Moderate,Active,Occasionally,151
+103138,49,161.8,70.4,26.9,181760,80.0,36.6,95,17,2.1,3.4,6.8,Male,A-,Lawyer,Single,Diploma,India,Suburban,No,Yes,No,No,Low,Moderate,Never,136
+102670,75,159.1,71.0,28.0,67200,64.0,36.8,96,13,1.4,1.4,5.8,Female,AB-,Retired,Single,Diploma,Germany,Suburban,Yes,No,No,Yes,Low,Sedentary,Occasionally,122
+104774,80,158.8,80.2,31.8,179490,61.0,36.5,98,21,2.9,10.3,6.7,Female,A+,Nurse,Divorced,High School,USA,Rural,No,No,No,Yes,Moderate,Moderate,Occasionally,130
+104862,33,180.4,64.6,19.8,106342,85.0,36.2,95,14,3.1,5.1,7.5,Female,B+,Lawyer,Divorced,Diploma,UAE,Urban,Yes,Yes,No,No,High,Sedentary,Frequently,106
+102118,87,169.6,81.6,28.4,100294,76.0,37.5,95,13,4.0,10.0,4.7,Male,O-,Designer,Married,Bachelor,UAE,Suburban,No,No,Yes,No,Low,Moderate,Never,137
+100252,46,175.8,47.4,15.3,112211,66.0,36.5,96,20,3.4,6.6,5.7,Female,O-,Student,Married,Diploma,UK,Suburban,Yes,No,No,No,Moderate,Active,Occasionally,119
+103527,59,170.8,73.8,25.3,196079,86.0,36.9,99,20,4.3,11.2,6.2,Female,A-,Designer,Married,High School,Singapore,Rural,No,No,Yes,No,Moderate,Moderate,Occasionally,125
+103560,83,177.8,57.4,18.2,56285,67.0,37.0,99,21,3.4,7.9,7.0,Female,B-,Designer,Married,Diploma,Singapore,Urban,No,No,No,No,High,Active,Never,141
+104012,30,171.6,61.0,20.7,74593,50.0,37.3,96,12,1.3,10.5,7.6,Male,O+,Nurse,Single,Bachelor,Canada,Urban,Yes,Yes,No,No,Low,Light,Occasionally,144
+101508,70,172.3,78.2,26.3,97588,76.0,36.1,95,20,2.0,8.7,7.4,Male,B-,Student,Married,Bachelor,UAE,Suburban,No,No,No,No,Moderate,Moderate,Never,136
+100123,23,179.6,91.6,28.4,126570,71.0,36.6,94,15,4.4,5.0,8.3,Female,O-,Government Employee,Single,Bachelor,Germany,Suburban,No,No,No,No,Moderate,Light,Never,129
+104260,23,160.7,102.0,39.5,126148,70.0,36.8,98,17,3.5,4.3,6.6,Female,AB-,Student,Single,Bachelor,Canada,Urban,No,No,No,No,Low,Moderate,Never,144
+103334,67,184.5,85.2,25.0,190554,89.0,36.5,99,13,3.4,2.8,7.8,Female,AB-,Teacher,Married,Bachelor,USA,Urban,No,No,No,No,High,Sedentary,Frequently,132
+101872,73,166.2,68.6,24.8,150534,66.0,36.9,96,14,3.2,4.6,6.8,Male,B+,Designer,Widowed,High School,Germany,Urban,No,Yes,No,No,Moderate,Sedentary,Never,124
+103693,64,167.0,49.2,17.6,154789,77.0,37.0,98,12,3.5,11.2,7.800000000000001,Female,O+,Business,Married,Bachelor,Japan,Urban,No,No,No,No,High,Active,Never,112
+100568,40,162.1,84.3,32.1,166575,84.0,36.7,94,18,4.4,4.8,5.1,Male,A+,Software Engineer,Divorced,High School,Australia,Urban,No,No,No,No,Moderate,Sedentary,Occasionally,100
+101372,87,167.5,61.0,21.7,128337,71.0,36.5,94,12,2.0,7.2,8.5,Female,B+,Lawyer,Single,High School,Australia,Urban,Yes,Yes,Yes,No,High,Moderate,Occasionally,129
+103186,59,172.6,63.8,21.4,169132,98.0,36.7,98,12,3.2,3.5,6.1,Male,A+,Business,Married,High School,Canada,Rural,Yes,No,No,No,High,Light,Occasionally,151
+103956,50,191.2,87.8,24.0,177586,90.0,36.7,96,19,2.9,5.6,8.6,Female,A+,Scientist,Single,Diploma,USA,Urban,Yes,Yes,No,No,High,Light,Never,125
+101057,76,163.4,69.0,25.8,138991,59.0,37.2,98,17,2.5,4.4,5.8,Male,O-,Nurse,Single,Master,Singapore,Urban,No,No,No,No,Low,Moderate,Occasionally,106
+100857,25,180.9,58.8,18.0,106855,74.0,36.7,95,15,3.5,7.3,7.8,Male,A-,Government Employee,Married,Bachelor,Pakistan,Rural,No,No,No,No,Moderate,Sedentary,Frequently,128
+103839,64,172.2,73.1,24.7,47244,58.0,35.9,95,19,1.0,6.5,5.1,Male,O-,Lawyer,Married,High School,UK,Rural,No,Yes,No,No,Low,Active,Never,119
+102861,48,147.9,51.0,23.3,12529,75.0,37.2,95,17,1.0,9.2,3.8,Male,B-,Teacher,Divorced,PhD,Australia,Urban,No,Yes,No,No,Moderate,Active,Never,110
+104770,82,164.8,64.3,23.7,73861,78.0,36.2,99,20,3.7,10.1,3.5,Female,A-,Business,Married,Bachelor,Japan,Suburban,Yes,Yes,No,No,Low,Sedentary,Occasionally,95
+100777,67,176.4,51.2,16.5,39303,72.0,36.7,98,12,2.6,4.3,6.7,Male,A+,Doctor,Married,High School,Japan,Urban,No,No,No,No,Low,Sedentary,Occasionally,129
+100721,83,166.7,84.8,30.5,182079,63.0,37.2,96,17,2.6,7.9,6.8,Female,B+,Lawyer,Married,Bachelor,India,Urban,No,No,Yes,Yes,Low,Sedentary,Occasionally,151
+102711,87,154.2,71.0,29.9,128893,62.0,37.0,95,12,1.9,10.8,5.0,Female,O-,Doctor,Single,High School,Canada,Urban,No,No,No,No,Low,Sedentary,Occasionally,137
+102655,85,167.7,70.8,25.2,178778,80.0,37.0,99,14,3.6,8.5,6.1,Male,B-,Designer,Married,Bachelor,Pakistan,Urban,No,Yes,No,No,High,Light,Occasionally,135
+104878,56,176.7,102.4,32.8,65121,85.0,36.4,97,13,1.1,11.6,7.199999999999999,Female,O-,Doctor,Married,High School,India,Suburban,No,Yes,Yes,Yes,High,Sedentary,Never,149
+100603,33,161.0,76.7,29.6,111057,74.0,36.5,95,16,1.1,7.8,6.6,Female,A+,Lawyer,Married,Bachelor,Australia,Urban,Yes,Yes,No,No,Moderate,Light,Never,129
+103823,24,165.3,61.1,22.4,38588,57.0,36.2,98,14,3.9,8.8,5.5,Male,A-,Government Employee,Single,High School,Australia,Rural,No,No,No,No,Moderate,Light,Frequently,130
+101245,57,165.3,63.4,23.2,86251,81.0,36.6,94,20,3.8,11.1,6.3,Female,O-,Business,Single,Bachelor,UK,Urban,No,Yes,No,No,Moderate,Moderate,Never,127
+104846,75,145.0,79.1,37.6,174234,67.0,36.8,98,17,3.7,6.6,5.0,Male,AB+,Lawyer,Married,High School,Canada,Urban,No,No,Yes,No,Low,Sedentary,Never,118
+104842,36,159.8,57.4,22.5,186589,94.0,36.9,96,15,1.7,7.5,6.9,Male,B+,Scientist,Married,High School,UK,Urban,No,Yes,No,No,Moderate,Light,Occasionally,134
+100319,22,167.9,76.5,27.1,133435,99.0,36.6,96,13,3.1,5.8,9.3,Female,AB+,Freelancer,Widowed,Bachelor,Pakistan,Urban,No,No,No,No,High,Sedentary,Occasionally,125
+100829,56,173.8,52.8,17.5,35862,97.0,37.1,95,19,3.6,2.7,5.0,Male,AB+,Business,Widowed,Diploma,Pakistan,Urban,Yes,No,No,No,Moderate,Light,Occasionally,107
+103264,36,160.4,56.7,22.0,97110,71.0,37.1,99,15,3.6,3.2,8.0,Female,B+,Designer,Married,Master,Australia,Rural,No,Yes,No,No,Low,Moderate,Frequently,125
+100275,52,176.2,94.2,30.3,164515,83.0,37.1,99,16,2.3,2.9,6.1,Male,O-,Teacher,Single,Diploma,Japan,Urban,No,No,No,No,High,Light,Frequently,113
+102665,86,159.9,68.0,26.6,76343,72.0,35.9,95,15,4.0,9.0,6.4,Female,A-,Teacher,Single,Bachelor,UK,Urban,Yes,No,No,No,Low,Moderate,Never,107
+100550,59,160.4,72.0,28.0,29439,79.0,37.0,97,16,3.3,3.9,6.7,Male,O-,Lawyer,Married,Bachelor,India,Urban,No,No,No,No,Moderate,Light,Occasionally,121
+103642,81,159.8,85.2,33.4,30851,78.0,37.2,99,16,3.5,10.0,6.2,Female,O-,Software Engineer,Married,Master,Pakistan,Rural,No,Yes,Yes,Yes,Moderate,Sedentary,Never,153
+104054,52,177.3,100.6,32.0,166171,66.0,37.5,94,14,4.2,7.9,6.7,Male,A+,Scientist,Single,Master,UK,Urban,No,No,Yes,No,Moderate,Active,Frequently,145
+104893,86,167.6,63.7,22.7,13607,65.0,37.3,96,18,1.0,2.5,7.2,Female,O+,Teacher,Married,High School,Singapore,Rural,No,No,No,No,Moderate,Moderate,Occasionally,111
+102935,43,178.7,94.1,29.5,13500,67.0,36.5,94,15,2.2,5.9,8.2,Male,A+,Software Engineer,Single,Diploma,Singapore,Suburban,No,No,No,No,Moderate,Light,Never,116
+100606,47,174.6,41.3,13.5,66260,59.0,36.2,97,17,1.8,10.7,8.0,Male,B-,Software Engineer,Divorced,Diploma,Pakistan,Rural,No,No,No,No,Moderate,Sedentary,Occasionally,135
+100897,38,173.6,59.6,19.8,141009,66.0,37.0,95,17,1.5,3.5,7.8,Male,O+,Freelancer,Single,Diploma,UAE,Suburban,No,No,No,No,Moderate,Active,Occasionally,131
+100528,70,173.2,59.1,19.7,179849,72.0,36.2,96,14,2.9,1.7,6.1,Male,B-,Doctor,Divorced,Master,Japan,Urban,No,No,No,No,Moderate,Moderate,Occasionally,112
+104608,67,159.6,60.3,23.7,122331,72.0,36.6,94,19,4.2,3.2,6.7,Male,B+,Nurse,Single,Bachelor,India,Rural,No,No,No,No,Moderate,Moderate,Frequently,124
+102348,30,170.5,57.3,19.7,89421,60.0,36.8,95,15,4.0,2.2,4.6,Male,B+,Scientist,Married,Master,Germany,Urban,No,No,No,No,Moderate,Light,Occasionally,106
+103440,42,167.6,68.5,24.4,181376,,37.5,94,17,3.8,7.3,6.6,Male,O-,Lawyer,Married,Bachelor,UK,Urban,Yes,Yes,No,Yes,High,Moderate,Occasionally,127
+104999,70,163.9,60.1,22.4,109988,93.0,37.1,97,15,,3.8,7.7,Male,A-,Business,Divorced,Bachelor,USA,Urban,No,No,No,No,High,Moderate,Never,126
+104827,52,164.0,40.0,14.9,112228,50.0,36.1,94,13,1.4,9.1,6.3,Male,A+,Government Employee,Single,Bachelor,UAE,Urban,Yes,No,No,No,Moderate,Active,Occasionally,130
+103923,48,162.6,81.6,30.9,146349,89.0,36.4,98,17,4.1,2.9,5.0,Female,AB+,Teacher,Married,Bachelor,Japan,Urban,No,No,No,No,High,Moderate,Never,110
+100299,68,161.1,40.0,15.4,193018,68.0,36.7,96,12,2.9,8.6,6.1,Female,O-,Government Employee,Married,Bachelor,Australia,Suburban,No,Yes,No,No,Low,Light,Occasionally,135
+102120,69,165.2,73.5,26.9,180271,,37.0,94,19,2.2,6.3,5.1,Female,A-,Business,Married,Bachelor,Pakistan,Urban,No,No,No,Yes,High,Light,Never,106
+102537,67,165.5,75.3,,181540,90.0,37.3,98,16,1.5,9.7,4.7,Female,AB+,Software Engineer,Married,Bachelor,UAE,Suburban,No,No,No,No,Low,Light,Occasionally,133
+104204,35,167.9,62.4,22.1,169509,89.0,36.9,99,12,2.1,4.2,5.3,Female,B-,Government Employee,Single,Master,Canada,Suburban,No,No,No,No,Moderate,Active,Occasionally,113
+103255,23,170.6,58.6,20.1,183059,81.0,36.4,95,15,1.5,5.6,8.5,Male,AB+,Freelancer,Single,Bachelor,Singapore,Urban,No,Yes,No,No,Low,Sedentary,Occasionally,122
+103726,77,161.6,41.9,16.0,197194,85.0,37.3,94,17,3.1,3.5,7.1,Male,B-,Student,Married,High School,India,Urban,No,Yes,No,No,High,Moderate,Never,122
+101261,51,173.0,51.4,17.2,100732,75.0,36.0,94,17,4.5,5.0,6.6,Male,B-,Government Employee,Single,Bachelor,Germany,Suburban,No,No,No,No,Moderate,Light,Never,91
+101559,73,175.2,58.7,19.1,133724,76.0,36.5,94,16,2.6,11.9,5.1,Female,O+,Doctor,Married,High School,Singapore,Urban,No,No,No,No,High,Light,Frequently,123
+103270,60,166.8,85.0,30.6,81142,75.0,36.5,96,12,3.9,10.5,6.4,Female,B-,Business,Single,Bachelor,Canada,Urban,No,No,No,Yes,High,Moderate,Never,118
+104047,84,170.8,63.9,21.9,12093,69.0,37.0,96,19,4.4,6.8,7.2,Female,B+,Designer,Married,Bachelor,USA,Urban,No,No,No,No,Low,Sedentary,Never,143
+100757,45,176.3,88.1,28.3,61949,62.0,37.0,97,16,3.2,2.7,9.2,Female,O+,Teacher,Married,Bachelor,India,Urban,No,No,No,No,Moderate,Sedentary,Frequently,131
+101011,71,168.4,89.1,31.4,127409,70.0,36.7,96,15,1.6,9.9,5.0,Male,AB+,Teacher,Single,Diploma,UAE,Rural,No,No,No,No,Low,Moderate,Occasionally,115
+102795,30,168.8,76.9,27.0,102226,102.0,37.6,94,19,3.7,5.0,7.5,Female,O-,Nurse,Single,Bachelor,Japan,Urban,No,No,No,No,Low,Light,Never,127
+102906,57,163.2,96.0,36.0,118359,57.0,36.2,97,17,4.0,6.4,6.8,Male,A-,Lawyer,Single,Master,Pakistan,Urban,No,Yes,No,Yes,Moderate,Light,Frequently,137
+101871,74,173.5,77.7,25.8,112227,87.0,36.5,96,16,1.9,4.7,7.0,Male,A-,Teacher,Single,High School,UAE,Rural,No,No,No,No,High,Moderate,Never,122
+102230,43,165.5,80.3,29.3,104062,95.0,36.6,95,19,1.6,3.1,8.0,Male,AB+,Retired,Married,High School,UK,Urban,No,Yes,No,No,Moderate,Sedentary,Occasionally,118
+101174,20,166.2,53.9,19.5,170101,82.0,37.2,99,15,3.5,1.7,,Male,A+,Software Engineer,Single,High School,Australia,Urban,Yes,Yes,No,No,Moderate,Light,Never,124
+101833,89,175.9,68.5,22.1,16923,60.0,36.6,97,21,4.3,8.7,7.0,Male,O+,Business,Single,Diploma,Pakistan,Urban,No,Yes,No,No,Low,Moderate,Occasionally,100
+100377,19,165.7,49.7,18.1,135741,56.0,36.9,97,12,3.8,8.5,7.0,Female,A+,Teacher,Single,Master,Singapore,Urban,Yes,No,No,No,Moderate,Moderate,Occasionally,111
+103854,19,161.2,92.9,35.8,184069,89.0,37.0,99,13,2.1,3.4,7.2,Female,A+,Software Engineer,Married,PhD,UAE,Urban,Yes,Yes,No,No,High,Moderate,Occasionally,116
+103617,40,158.6,40.0,15.9,170273,68.0,36.8,96,16,4.2,1.9,7.7,Male,AB-,Nurse,Married,Diploma,Australia,Rural,No,No,No,No,Low,Sedentary,Occasionally,123
+100799,19,176.5,44.4,14.3,82386,82.0,35.7,98,15,3.3,5.3,6.4,Male,AB-,Government Employee,Married,Bachelor,Canada,Urban,Yes,No,No,No,Low,Moderate,Occasionally,113
+100379,84,158.4,74.1,29.5,68824,85.0,37.1,94,12,1.4,3.7,7.4,Male,B+,Designer,Single,Diploma,Singapore,Suburban,No,Yes,Yes,No,Moderate,Light,Never,113
+101159,43,178.3,73.5,23.1,102878,68.0,36.5,96,14,3.6,11.5,7.0,Female,AB-,Nurse,Married,Master,UK,Urban,No,Yes,Yes,No,Moderate,Light,Never,180
+103820,68,175.0,56.8,,198321,60.0,35.8,98,18,2.2,3.4,5.2,Female,A+,Government Employee,Married,Diploma,UK,Urban,No,Yes,No,Yes,Moderate,Sedentary,Occasionally,134
+102793,54,159.7,69.0,27.1,101880,58.0,36.0,94,12,2.3,11.8,5.1,Female,AB-,Government Employee,Single,Bachelor,Singapore,Urban,No,No,No,Yes,Moderate,Moderate,Occasionally,121
+102241,19,177.6,81.7,25.9,54168,99.0,36.5,96,12,2.1,5.2,8.5,Male,O+,Student,Married,High School,Germany,Suburban,Yes,Yes,Yes,No,High,Light,Never,133
+104036,47,174.6,85.2,27.9,176049,87.0,36.2,95,14,2.5,4.8,7.8,Female,A+,Nurse,Single,Bachelor,USA,Suburban,No,No,No,No,High,Moderate,Occasionally,122
+102663,74,182.9,76.9,23.0,178964,81.0,36.6,95,14,,5.1,6.3,Male,O-,Doctor,Single,Bachelor,Japan,Urban,No,Yes,No,No,Low,Moderate,Never,124
+104013,35,173.8,69.8,23.1,91368,75.0,36.4,99,16,2.2,1.9,7.1,Male,AB-,Student,Married,Diploma,Australia,Suburban,Yes,Yes,No,No,High,Moderate,Occasionally,104
+102958,22,167.1,80.8,28.9,150059,72.0,36.6,99,15,3.5,7.6,5.8,Female,B-,Lawyer,Single,PhD,Canada,Urban,No,No,No,No,Moderate,Sedentary,Never,110
+103928,33,145.0,62.5,29.7,121589,73.0,36.7,99,15,4.1,8.9,6.2,Male,AB-,Teacher,Single,Bachelor,UAE,Urban,Yes,Yes,No,No,Low,Light,Occasionally,149
+101039,41,168.7,66.5,23.4,106950,61.0,36.7,95,13,2.0,6.2,4.2,Male,AB+,Student,Married,Bachelor,UK,Suburban,No,Yes,No,No,Moderate,Moderate,Never,142
+103260,71,167.4,49.9,17.8,182396,63.0,36.1,97,14,3.4,1.2,8.6,Male,AB+,Retired,Married,High School,UK,Urban,No,No,No,No,Moderate,Sedentary,Never,103
+101345,29,154.2,60.7,25.5,97394,85.0,36.8,94,20,3.3,6.9,8.9,Male,AB-,Scientist,Married,Bachelor,Canada,Urban,Yes,No,No,Yes,Low,Moderate,Frequently,123
+102506,74,165.5,68.8,25.1,110625,93.0,37.5,96,12,3.6,7.1,7.7,Male,B-,Teacher,Married,Bachelor,USA,Urban,No,No,No,No,High,Active,Never,122
+101722,28,160.7,68.3,26.4,163372,67.0,36.5,94,19,3.7,11.9,6.6,Male,A-,Business,Single,High School,India,Rural,No,Yes,No,No,Moderate,Light,Never,110
+104664,33,186.0,67.0,19.4,31153,57.0,37.4,96,15,3.2,6.7,8.1,Female,AB-,Retired,Married,Bachelor,India,Rural,No,No,No,No,Moderate,Sedentary,Occasionally,141
+100176,18,162.6,71.2,26.9,115421,75.0,37.1,96,14,1.1,6.7,8.0,Female,AB+,Doctor,Divorced,Bachelor,Canada,Rural,No,No,No,No,High,Light,Occasionally,102
+104894,86,172.1,69.7,23.5,84354,62.0,36.8,97,17,1.9,7.1,5.7,Female,O-,Teacher,Married,Bachelor,Canada,Urban,No,No,No,No,Low,Active,Occasionally,93
+101910,84,181.1,53.2,16.2,77504,77.0,36.9,98,12,2.4,3.4,,Female,O+,Retired,Divorced,Bachelor,Germany,Rural,Yes,No,Yes,No,Low,Moderate,Occasionally,151
+100046,28,171.0,78.8,26.9,147823,89.0,36.4,95,13,2.0,3.9,6.6,Female,A-,Designer,Single,Diploma,Canada,Rural,No,Yes,No,No,Moderate,Light,Frequently,117
+103410,81,153.2,74.0,31.5,45471,67.0,36.4,98,13,2.0,1.8,7.0,Female,AB-,Nurse,Married,Master,Germany,Suburban,No,No,Yes,No,Low,Sedentary,Never,143
+104675,41,187.0,82.5,23.6,58611,69.0,36.5,95,19,,9.6,9.0,Female,B-,Lawyer,Single,High School,USA,Urban,No,No,No,No,Low,Sedentary,Occasionally,104
+101076,26,177.0,67.5,21.5,190231,76.0,37.0,95,18,2.1,6.3,8.0,Male,O-,Software Engineer,Single,Bachelor,India,Urban,No,Yes,Yes,No,Low,Active,Never,131
+102830,44,153.5,63.8,27.1,125942,77.0,36.3,96,18,2.3,3.5,6.3,Female,O+,Retired,Married,Master,Singapore,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,120
+101505,89,161.9,80.0,30.5,110288,70.0,36.6,99,21,1.5,1.6,6.3,Female,B-,Scientist,Married,Master,Canada,Urban,No,No,Yes,No,Moderate,Moderate,Occasionally,157
+102310,43,163.0,50.5,19.0,91884,66.0,37.0,95,13,4.3,5.1,,Male,A-,Retired,Married,Bachelor,UK,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,143
+101437,18,158.0,53.6,21.5,179693,84.0,36.1,94,12,4.5,6.4,6.8,Male,B-,Software Engineer,Single,Bachelor,Australia,Rural,Yes,Yes,No,No,High,Light,Never,117
+102419,38,176.1,66.2,21.3,78797,94.0,37.3,95,18,3.8,3.9,7.1,Male,B+,Retired,Married,Diploma,UAE,Urban,No,No,No,No,Moderate,Moderate,Occasionally,115
+103987,85,160.7,61.2,23.7,198493,88.0,36.8,96,19,4.4,10.7,7.199999999999999,Female,AB-,Doctor,Single,Bachelor,Singapore,Urban,Yes,No,No,No,Moderate,Sedentary,Occasionally,121
+103099,35,175.2,72.1,23.5,173364,72.0,36.7,95,19,1.8,2.6,7.9,Female,B-,Designer,Married,Master,Japan,Urban,No,No,No,No,High,Moderate,Occasionally,128
+104589,60,173.9,88.9,29.4,135062,76.0,37.3,97,17,2.9,10.9,9.0,Female,AB-,Business,Married,Diploma,UK,Suburban,Yes,No,Yes,No,Moderate,Active,Never,108
+100284,88,169.6,81.3,28.3,31100,68.0,36.8,96,19,1.7,4.0,6.3,Female,AB-,Software Engineer,Single,High School,USA,Rural,No,No,No,No,Moderate,Active,Frequently,116
+104919,25,170.9,92.4,31.6,112892,72.0,36.7,95,16,4.3,10.0,4.5,Male,O+,Scientist,Single,Bachelor,Singapore,Urban,No,No,No,No,Moderate,Light,Occasionally,121
+100843,22,166.1,40.0,14.5,55145,91.0,37.0,99,20,1.5,2.7,4.7,Male,B-,Doctor,Single,High School,UK,Rural,No,No,No,Yes,High,Moderate,Never,123
+101514,69,179.9,85.1,26.3,44545,70.0,36.9,94,16,3.2,9.7,7.0,Female,O-,Doctor,Married,Diploma,Singapore,Urban,No,Yes,No,No,Moderate,Light,Occasionally,144
+101169,80,162.1,47.5,,111673,80.0,36.7,94,20,3.9,5.6,7.2,Male,B-,Software Engineer,Single,Bachelor,USA,Urban,No,No,No,No,High,Moderate,Occasionally,100
+101593,88,167.7,81.3,28.9,194150,68.0,36.7,96,15,1.3,8.6,7.4,Female,O-,Doctor,Married,Bachelor,USA,Rural,No,No,No,No,Moderate,Light,Occasionally,121
+103461,47,172.2,67.6,22.8,128074,57.0,37.1,96,12,3.8,8.6,6.5,Female,A+,Lawyer,Widowed,Master,USA,Urban,No,Yes,No,No,Moderate,Light,Occasionally,134
+103166,42,168.1,50.5,17.9,99144,81.0,37.1,95,15,1.8,1.5,6.8,Female,O-,Teacher,Single,Master,UAE,Urban,No,Yes,No,Yes,High,Sedentary,Occasionally,104
+102285,73,166.1,85.2,30.9,136627,88.0,36.8,98,19,,8.4,5.5,Female,A-,Software Engineer,Single,High School,Germany,Urban,No,No,No,Yes,High,Light,Never,102
+103576,39,172.8,59.9,20.1,198650,67.0,36.3,99,20,1.1,5.5,7.1,Male,A+,Software Engineer,Married,High School,Germany,Rural,Yes,No,No,No,Low,Light,Occasionally,142
+104871,57,163.5,56.6,21.2,140246,74.0,36.0,95,17,4.1,11.9,5.5,Male,A+,Government Employee,Single,Master,Japan,Urban,No,Yes,No,No,Moderate,Moderate,Never,120
+102306,51,159.4,59.6,23.5,12344,76.0,36.8,99,13,1.8,1.8,7.8,Female,A+,Doctor,Married,Diploma,Singapore,Urban,No,No,No,No,Moderate,Sedentary,Never,114
+100953,79,156.1,75.3,30.9,161880,77.0,36.3,96,17,4.0,10.5,5.3,Female,A-,Software Engineer,Widowed,Bachelor,Canada,Urban,No,Yes,Yes,No,Moderate,Moderate,Occasionally,135
+104943,33,170.4,82.5,28.4,68208,83.0,36.1,96,15,3.0,3.2,8.9,Female,O-,Scientist,Married,Bachelor,UK,Suburban,Yes,Yes,No,No,Low,Moderate,Never,105
+103054,84,164.1,72.4,26.9,132529,73.0,36.8,96,17,3.2,1.3,7.2,Male,A+,Government Employee,Married,Diploma,India,Urban,Yes,No,No,No,Low,Light,Frequently,101
+104560,87,160.0,66.0,25.8,89653,73.0,36.9,95,16,3.7,7.8,4.9,Male,B-,Freelancer,Single,High School,Canada,Suburban,No,No,No,No,Moderate,Sedentary,Occasionally,129
+102686,40,165.1,72.8,26.7,57738,79.0,37.2,98,19,1.2,3.5,7.6,Male,A+,Doctor,Married,Master,Canada,Suburban,Yes,No,No,No,Low,Light,Occasionally,121
+101490,55,180.7,53.9,16.5,78391,60.0,36.8,99,18,2.9,8.1,,Male,B-,Doctor,Single,Bachelor,Canada,Urban,No,Yes,No,No,Moderate,Active,Occasionally,123
+100928,19,159.1,58.9,23.3,93673,,36.9,95,15,2.1,5.7,8.2,Female,AB-,Designer,Married,Bachelor,Australia,Urban,Yes,No,No,No,Moderate,Light,Occasionally,113
+101210,56,151.5,63.2,27.5,112081,102.0,36.7,99,20,2.2,10.9,6.6,Female,AB+,Teacher,Married,Bachelor,UAE,Suburban,Yes,Yes,No,No,High,Moderate,Never,140
+103974,69,168.7,77.0,27.1,199235,76.0,37.0,99,18,1.7,7.7,8.7,Female,O+,Freelancer,Single,Bachelor,Germany,Urban,No,No,No,No,Low,,Frequently,119
+103546,67,175.7,56.6,18.3,83391,83.0,36.8,95,20,4.1,9.5,6.1,Female,AB-,Lawyer,Married,Master,Singapore,Urban,No,No,No,No,Low,Active,Never,138
+104362,79,173.6,59.8,19.8,53140,86.0,36.6,94,20,1.9,3.3,8.7,Female,B+,Business,Single,Bachelor,Pakistan,Urban,No,No,Yes,No,Low,Light,Occasionally,108
+101922,50,177.9,76.2,24.1,114056,78.0,36.7,94,20,1.1,11.3,4.8,Male,O-,Designer,Married,Master,UAE,Urban,No,Yes,No,No,Moderate,Active,Never,123
+100352,90,157.7,89.4,35.9,103237,73.0,36.9,98,15,,3.6,9.5,Female,O-,Nurse,Single,Bachelor,Singapore,Rural,No,No,Yes,No,Low,Sedentary,Frequently,137
+104899,54,172.9,84.8,28.4,113149,71.0,36.5,95,13,2.5,11.7,7.199999999999999,Female,AB+,Lawyer,Married,Master,Australia,Suburban,No,No,Yes,No,Moderate,Sedentary,Occasionally,151
+103394,88,160.2,57.1,22.2,50287,76.0,36.9,98,18,1.5,7.9,7.5,Male,AB-,Software Engineer,Married,Bachelor,Singapore,Rural,No,No,No,No,Moderate,Moderate,Never,131
+102722,46,181.8,56.2,17.0,111528,91.0,36.6,99,17,4.4,6.2,5.7,Male,A+,Doctor,Single,Bachelor,Singapore,Urban,No,No,No,No,High,Light,Never,133
+104982,22,173.2,57.6,19.2,66414,72.0,36.7,98,20,4.4,4.2,7.7,Male,O+,Freelancer,Married,Master,Japan,Urban,No,Yes,No,No,High,Light,Occasionally,111
+100719,88,177.8,85.0,26.9,154310,74.0,36.8,99,16,4.1,7.4,6.6,Male,B+,Government Employee,Single,Bachelor,Canada,Suburban,No,No,No,Yes,Moderate,Light,Never,128
+102703,82,190.2,81.0,22.4,55974,76.0,37.1,98,17,2.8,2.2,7.7,Female,O-,Scientist,Married,Bachelor,India,Urban,No,Yes,No,No,High,Light,Occasionally,133
+102723,70,154.8,48.4,,82835,77.0,36.9,95,14,2.6,7.5,7.6,Female,A+,Lawyer,Divorced,Bachelor,Australia,Rural,Yes,No,No,No,Moderate,Light,Never,101
+104562,18,171.8,65.1,22.1,190458,83.0,36.7,98,20,2.4,1.7,8.2,Male,O-,Lawyer,Single,Bachelor,Germany,Urban,No,Yes,No,No,Low,Sedentary,Never,128
+100309,36,162.8,62.0,23.4,196614,57.0,36.8,99,12,2.5,11.3,6.0,Male,B-,Doctor,Married,Bachelor,Pakistan,Suburban,No,No,No,No,Low,Active,Occasionally,108
+101676,63,154.8,87.2,36.4,77751,58.0,37.5,99,20,3.1,1.8,7.2,Female,A-,Teacher,Single,Bachelor,India,Suburban,No,No,No,No,High,Light,Frequently,125
+100834,86,166.2,52.7,19.1,129813,102.0,36.1,96,13,,5.4,6.0,Male,O+,Student,Single,Master,Japan,Urban,No,No,No,No,High,Light,Never,138
+100367,49,170.0,51.9,18.0,116170,91.0,36.2,99,13,3.1,7.9,6.1,Female,B-,Scientist,Single,Bachelor,Pakistan,Urban,No,Yes,No,Yes,Low,Active,Frequently,114
+104507,29,154.7,83.5,34.9,133830,73.0,36.5,94,14,1.7,1.5,,Male,O+,Lawyer,Married,Master,UAE,Urban,No,Yes,Yes,No,High,Moderate,Never,133
+102079,88,177.2,60.1,19.1,19709,76.0,36.0,99,18,1.1,3.3,7.5,Female,B-,Government Employee,Married,Bachelor,India,Urban,No,No,No,Yes,Low,Sedentary,Never,131
+104039,68,184.6,77.8,22.8,39185,96.0,36.9,99,17,,1.1,6.3,Male,O+,Retired,Single,Bachelor,Canada,Suburban,No,No,No,No,Low,Active,Occasionally,106
+104847,26,163.5,51.7,19.3,117877,86.0,36.6,98,21,1.6,6.6,,Female,AB-,Retired,Single,Master,Singapore,Urban,No,Yes,No,No,Low,Light,Frequently,109
+104480,40,165.5,71.4,26.1,138158,77.0,37.1,96,14,3.0,10.3,6.5,Female,B+,Freelancer,Married,Bachelor,UK,Urban,No,Yes,No,No,Moderate,Sedentary,Occasionally,105
+101747,42,177.2,99.5,31.7,58738,,36.8,97,21,1.7,11.9,6.5,Male,B+,Scientist,Married,Bachelor,India,Urban,Yes,No,No,No,Moderate,Moderate,Never,116
+100020,53,166.1,81.5,29.5,69941,74.0,37.2,98,21,4.3,6.8,8.5,Female,AB+,Student,Married,High School,USA,Urban,Yes,No,No,No,High,Moderate,Occasionally,128
+101323,32,153.9,71.3,30.1,81209,79.0,37.1,95,15,4.2,6.2,7.1,Male,A+,Business,Married,High School,UAE,Urban,No,No,No,No,Low,Light,Never,90
+103568,40,166.9,67.3,24.2,128875,106.0,36.9,96,13,3.7,5.7,7.4,Male,O+,Freelancer,Single,Bachelor,Canada,Rural,No,Yes,No,No,High,Light,Occasionally,121
+102522,72,169.8,40.0,13.9,104461,61.0,36.5,94,18,2.1,10.4,6.2,Female,B-,Business,Married,Bachelor,Pakistan,Urban,Yes,Yes,No,No,Low,Sedentary,Never,113
+100219,88,164.3,66.4,24.6,96119,88.0,36.5,96,16,2.8,6.8,6.5,Male,AB+,Designer,Widowed,High School,Pakistan,Rural,Yes,No,No,No,High,Light,Occasionally,125
+101488,81,176.1,70.0,22.6,94477,77.0,36.0,99,15,3.3,9.4,6.8,Female,A+,Retired,Single,Master,USA,Rural,No,Yes,No,No,High,Active,Occasionally,116
+100439,66,152.3,76.2,32.9,126595,81.0,36.3,95,17,2.4,7.9,6.0,Male,A+,Retired,Married,Bachelor,Pakistan,Suburban,No,No,Yes,No,Moderate,Light,Occasionally,115
+104175,54,184.3,83.1,24.5,158114,74.0,37.0,99,21,3.5,2.1,7.0,Female,O+,Freelancer,Married,Master,Canada,Rural,No,Yes,No,Yes,High,Sedentary,Never,135
+102751,37,166.9,50.5,18.1,56328,89.0,36.5,94,21,2.1,10.9,5.8,Male,AB-,Retired,Married,Diploma,Japan,Rural,No,Yes,No,No,High,Moderate,Frequently,137
+103289,25,153.3,44.2,18.8,177724,77.0,36.7,97,12,1.1,2.5,8.4,Male,AB-,Retired,Married,Diploma,Australia,Suburban,No,No,No,No,Low,Light,Occasionally,114
+103434,55,147.0,68.6,31.7,182995,75.0,36.9,96,18,4.0,11.4,6.7,Female,O+,Designer,Single,Master,UAE,Suburban,No,No,Yes,No,Moderate,Light,Occasionally,137
+102526,69,160.8,55.9,21.6,173425,64.0,36.8,95,20,4.0,9.4,5.1,Male,A-,Lawyer,Married,Master,Germany,Suburban,No,Yes,Yes,No,Low,Moderate,Occasionally,154
+104651,56,160.0,65.4,25.5,30949,93.0,36.8,96,20,3.1,1.8,7.3,Female,A+,Lawyer,Married,Master,Singapore,Suburban,Yes,No,No,No,High,Light,Never,139
+103689,86,170.1,60.2,20.8,158577,80.0,36.5,95,18,1.7,6.0,8.3,Female,B+,Retired,Single,Bachelor,Japan,Urban,Yes,No,No,No,Low,Light,Never,130
+102764,67,168.4,75.3,26.6,154115,87.0,37.0,99,14,1.3,9.6,7.6,Male,A-,Government Employee,Married,High School,Australia,Suburban,No,No,Yes,No,Moderate,Sedentary,Never,137
+100803,25,166.5,84.3,30.4,179945,73.0,37.4,97,13,2.1,7.1,6.7,Female,A-,Scientist,Married,High School,Singapore,Urban,No,No,No,No,Low,Moderate,Frequently,142
+102998,56,170.9,77.1,26.4,70619,89.0,37.0,98,14,1.0,1.8,7.8,Male,A+,Nurse,Single,High School,USA,Urban,No,No,No,No,High,Moderate,Frequently,132
+102229,27,161.9,40.9,15.6,136640,75.0,36.7,94,17,2.3,10.1,3.4000000000000004,Male,O-,Teacher,Single,High School,UAE,Rural,No,Yes,No,No,Low,Sedentary,Occasionally,125
+104786,85,145.0,75.5,35.9,122171,65.0,36.2,97,19,3.4,1.4,6.7,Female,O-,Software Engineer,Married,Bachelor,Japan,Suburban,No,Yes,Yes,No,High,Moderate,Occasionally,139
+102078,75,166.1,76.5,27.7,115372,88.0,36.8,98,18,2.4,5.0,4.8,Female,O+,Scientist,Single,Bachelor,India,Urban,Yes,No,No,No,Low,Active,Occasionally,139
+100583,20,175.2,88.3,28.8,139496,80.0,36.9,96,16,1.2,5.5,7.9,Male,B-,Designer,Widowed,High School,Australia,Suburban,No,No,No,No,High,,Never,133
+100204,60,178.9,90.5,28.3,199376,,37.0,95,21,2.7,5.1,7.6,Female,AB+,Freelancer,Single,High School,Japan,Urban,No,Yes,Yes,No,Moderate,Sedentary,Never,147
+104347,54,173.8,51.6,17.1,34613,75.0,37.0,98,17,1.5,3.7,7.1,Male,AB-,Nurse,Single,Bachelor,Japan,Urban,No,No,No,No,Low,Sedentary,Never,136
+103479,53,175.7,99.2,32.1,97043,73.0,37.3,98,21,1.4,6.4,7.0,Female,B+,Student,Married,Bachelor,Singapore,Urban,No,Yes,Yes,No,Moderate,Moderate,Occasionally,128
+102930,43,157.8,73.3,29.4,24413,72.0,36.9,99,13,2.4,1.8,4.9,Male,B+,Doctor,Single,Diploma,UK,Urban,Yes,No,No,No,Moderate,Light,Occasionally,118
+103086,37,178.4,53.5,16.8,198991,81.0,36.7,97,17,4.2,4.8,8.2,Female,O+,Lawyer,Single,High School,UK,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,106
+101019,41,184.3,74.2,21.8,38507,80.0,36.7,97,20,3.3,11.6,7.1,Female,O-,Freelancer,Single,Bachelor,Japan,Suburban,No,No,No,No,Moderate,Light,Occasionally,142
+101584,84,173.3,73.5,24.5,147792,66.0,36.7,96,19,4.3,7.9,6.4,Male,AB-,Business,Single,Bachelor,USA,Urban,No,No,No,No,Moderate,Light,Never,104
+101033,39,171.1,51.3,17.5,42389,80.0,37.6,96,16,,6.9,6.2,Male,AB-,Scientist,Married,Bachelor,Australia,Rural,No,Yes,No,No,Low,Light,Occasionally,125
+101719,73,162.0,40.0,15.2,183424,69.0,36.6,94,14,1.6,4.3,6.4,Female,O-,Business,Single,Bachelor,Germany,Urban,Yes,Yes,No,No,Moderate,Light,Occasionally,116
+101282,63,165.6,64.2,23.4,47349,64.0,37.3,96,18,3.6,9.5,7.5,Male,A-,Nurse,Married,Master,Japan,Suburban,No,Yes,No,No,Moderate,Sedentary,Never,116
+102499,36,178.7,44.2,13.8,151153,67.0,36.3,96,14,3.5,6.9,7.2,Male,AB+,Lawyer,Divorced,Bachelor,UAE,Urban,Yes,No,No,No,Low,Moderate,Occasionally,94
+103351,62,168.4,47.5,16.7,111502,86.0,36.5,98,17,4.3,5.5,4.5,Male,B+,Software Engineer,Married,Diploma,Germany,Urban,No,Yes,No,No,Moderate,Light,Never,110
+100518,47,175.8,51.2,16.6,76051,96.0,36.8,94,19,3.7,6.3,,Female,O-,Scientist,Married,High School,UK,Rural,No,No,No,No,Low,Sedentary,Frequently,122
+101748,32,176.2,42.9,13.8,141193,84.0,36.5,95,12,1.4,2.8,7.0,Male,O-,Lawyer,Married,PhD,USA,Rural,Yes,No,No,No,High,Active,Occasionally,121
+104653,63,177.1,64.8,20.7,195255,78.0,36.6,96,15,1.6,3.2,8.8,Male,A-,Scientist,Married,Diploma,USA,Rural,No,No,No,No,Low,Sedentary,Occasionally,126
+103733,80,164.2,97.3,36.1,101678,73.0,36.2,94,12,2.9,8.9,7.9,Female,O+,Government Employee,Married,Master,Germany,Urban,No,Yes,No,No,Low,Active,Never,123
+100669,21,159.8,72.9,28.5,194364,75.0,36.3,99,16,3.6,7.5,7.6,Male,O+,Business,Single,Diploma,Germany,Urban,No,Yes,No,No,High,Moderate,Never,93
+104060,48,174.8,56.9,18.6,32654,66.0,36.9,96,20,1.6,7.6,8.4,Female,O+,Designer,Single,Bachelor,India,Suburban,Yes,No,No,No,Moderate,Light,Occasionally,147
+103027,19,167.4,73.0,26.1,31204,75.0,36.7,97,12,2.3,7.3,6.3,Male,AB-,Software Engineer,Single,Diploma,Japan,Urban,Yes,No,No,No,Moderate,Active,Occasionally,124
+104933,44,174.8,54.9,18.0,21137,73.0,37.7,95,21,3.7,8.8,7.5,Female,B-,Teacher,Single,Diploma,UAE,Suburban,Yes,No,No,No,High,Light,Never,117
+103287,63,179.6,59.5,18.4,114810,67.0,36.6,94,14,2.9,7.7,6.1,Male,O+,Scientist,Married,Bachelor,Canada,Rural,No,No,No,No,Low,Active,Occasionally,112
+102651,74,163.2,74.9,28.1,96409,95.0,36.9,99,14,4.1,5.3,8.7,Female,O-,Scientist,Single,Bachelor,UAE,Urban,No,Yes,Yes,No,High,Moderate,Occasionally,152
+104454,85,156.7,68.8,28.0,149210,74.0,36.7,94,19,3.4,7.1,7.8,Male,B-,Software Engineer,Divorced,High School,Japan,Urban,No,Yes,No,No,Low,Active,Never,106
+103193,19,162.5,88.2,33.4,26822,67.0,36.4,96,12,4.0,4.0,7.7,Female,B+,Student,Married,PhD,UAE,Rural,No,No,Yes,No,Moderate,Moderate,Never,140
+102125,75,155.7,61.1,25.2,199278,73.0,36.7,95,14,2.6,9.5,5.8,Female,A+,Teacher,Married,Master,UK,Urban,No,Yes,No,No,Low,Moderate,Frequently,120
+103376,54,150.4,84.8,37.5,44699,69.0,36.3,96,20,1.6,7.0,6.7,Male,B-,Lawyer,Married,Master,India,Urban,No,Yes,Yes,No,Low,Active,Never,138
+103393,63,157.4,80.9,32.7,177174,77.0,37.3,99,20,2.7,3.8,6.3,Male,B-,Freelancer,Married,Diploma,Pakistan,Rural,No,Yes,No,No,Moderate,Light,Never,129
+103486,25,176.1,57.0,18.4,96442,77.0,37.1,95,12,3.4,11.2,6.1,Female,A+,Business,Single,Bachelor,Singapore,Urban,No,Yes,No,No,Low,Moderate,Occasionally,118
+100760,58,157.5,77.1,31.1,110754,63.0,37.5,96,14,2.6,9.0,4.2,Male,B-,Doctor,Married,PhD,UAE,Suburban,No,Yes,No,Yes,Moderate,Moderate,Occasionally,120
+103380,33,166.4,69.3,25.0,49368,63.0,36.6,97,12,2.8,9.3,6.0,Female,O-,Student,Married,Diploma,Australia,Suburban,No,No,No,Yes,Moderate,Moderate,Never,91
+104441,40,166.2,69.6,25.2,156980,83.0,36.5,97,13,4.1,11.3,4.6,Male,B-,Nurse,Single,Diploma,Singapore,Urban,No,Yes,No,No,High,Light,Occasionally,137
+102527,49,182.8,83.3,24.9,152396,72.0,36.8,96,18,3.9,10.3,4.0,Female,A+,Freelancer,Married,High School,Singapore,Urban,No,No,No,No,Moderate,Active,Occasionally,99
+104859,64,175.3,68.2,22.2,104340,99.0,36.9,99,13,1.8,2.5,7.3,Female,A+,Software Engineer,Married,High School,India,Suburban,No,Yes,No,No,Low,Light,Never,133
+100908,25,157.5,73.3,29.5,169973,84.0,37.2,99,18,1.5,11.1,5.4,Male,O-,Business,Married,Bachelor,Pakistan,Urban,Yes,Yes,No,No,High,Light,Frequently,119
+102684,26,177.0,90.2,28.8,64410,66.0,35.8,98,14,2.8,10.4,3.2,Female,B+,Government Employee,Married,Master,Pakistan,Urban,No,No,No,No,Moderate,Moderate,Never,117
+100215,65,175.3,81.0,26.4,40316,82.0,36.8,96,21,3.7,1.1,7.7,Male,O-,Lawyer,Married,Bachelor,Pakistan,Rural,No,Yes,No,No,High,Moderate,Occasionally,113
+103332,27,168.5,80.1,28.2,33236,90.0,35.9,94,21,1.9,7.0,6.5,Male,A+,Software Engineer,Single,Bachelor,UK,Urban,Yes,No,No,No,Low,Light,Occasionally,90
+104459,44,155.7,80.9,33.4,164104,,37.0,94,14,2.2,6.0,7.3,Male,A+,Student,Single,High School,Germany,Urban,No,No,No,Yes,Low,Active,Never,125
+100694,41,167.0,70.7,25.4,157534,72.0,36.4,96,17,3.9,11.0,5.7,Female,O-,Student,Single,Bachelor,USA,Rural,No,No,Yes,No,Moderate,Moderate,Frequently,149
+101504,43,176.0,81.1,26.2,27397,,36.7,95,16,1.6,6.4,7.6,Female,AB+,Nurse,Married,Bachelor,Australia,Urban,Yes,No,No,No,Moderate,Sedentary,Frequently,145
+102415,84,167.9,77.2,27.4,70918,79.0,37.5,99,15,4.3,5.7,9.9,Female,B-,Lawyer,Married,Bachelor,Australia,Urban,No,Yes,No,No,Low,Moderate,Occasionally,117
+102119,54,161.6,87.6,33.5,80349,61.0,36.5,97,18,2.0,9.5,5.1,Female,O+,Designer,Single,Master,Germany,Rural,No,Yes,Yes,No,Moderate,Moderate,Occasionally,129
+103859,22,168.3,84.0,29.7,124993,,37.2,99,16,1.9,3.7,7.6,Male,O-,Student,Single,Bachelor,Canada,Urban,Yes,No,No,No,Moderate,Light,Occasionally,98
+102463,24,159.8,65.4,25.6,44535,92.0,36.7,94,18,3.2,1.3,7.5,Male,A+,Scientist,Single,High School,Australia,Rural,No,No,Yes,No,Moderate,Active,Occasionally,140
+103636,55,172.7,96.6,32.4,46820,80.0,36.8,98,12,3.3,9.8,6.8,Female,O-,Nurse,Married,PhD,Singapore,Urban,No,Yes,No,Yes,Moderate,Active,Occasionally,123
+104106,38,175.5,65.2,21.2,100650,71.0,37.0,97,12,3.4,3.9,6.6,Male,A+,Software Engineer,Single,High School,Germany,Urban,Yes,Yes,No,No,Moderate,Moderate,Frequently,144
+104479,27,177.8,84.7,26.8,102092,69.0,36.7,96,21,3.1,6.7,6.7,Female,AB-,Government Employee,Divorced,Bachelor,India,Suburban,No,No,Yes,No,Moderate,Sedentary,Occasionally,117
+100197,89,168.7,78.1,27.4,161603,71.0,36.8,97,21,3.8,3.9,5.0,Male,A+,Scientist,Divorced,Diploma,USA,Urban,No,No,No,No,Moderate,Sedentary,Frequently,92
+104668,80,173.1,73.5,24.5,57557,89.0,36.3,97,16,1.6,2.7,5.8,Female,A+,Retired,Married,Master,India,Urban,Yes,Yes,Yes,No,Moderate,Light,Never,159
+101544,34,158.5,67.1,26.7,196033,72.0,36.4,94,14,1.3,3.4,7.2,Male,AB-,Retired,Single,High School,Australia,Urban,No,No,No,No,High,Moderate,Never,127
+101331,55,169.0,88.4,31.0,66319,73.0,36.0,97,17,1.4,1.1,9.3,Female,B-,Freelancer,Single,Master,Canada,Suburban,No,Yes,No,No,Moderate,Moderate,Frequently,127
+100880,82,172.9,40.0,13.4,99923,87.0,37.4,98,13,4.1,11.0,4.1,Male,O-,Government Employee,Single,Bachelor,Germany,Rural,No,No,No,No,Moderate,Moderate,Occasionally,134
+104503,71,149.6,76.8,34.3,92388,62.0,36.4,96,19,3.4,8.6,7.300000000000001,Male,B+,Retired,Married,High School,Germany,Urban,No,No,No,Yes,Low,Active,Frequently,112
+103502,64,154.5,63.2,26.5,133929,69.0,37.3,96,13,4.3,9.9,6.0,Male,O+,Student,Single,Master,Germany,Suburban,Yes,No,No,No,High,Sedentary,Occasionally,115
+103895,68,152.3,92.6,39.9,110122,83.0,36.2,99,13,2.3,6.6,7.9,Female,A-,Doctor,Married,Bachelor,Singapore,Suburban,Yes,Yes,No,No,Moderate,,Frequently,120
+104991,60,168.3,104.1,,178835,64.0,37.2,94,13,2.7,1.2,7.6,Male,O+,Nurse,Married,Diploma,India,Rural,No,Yes,Yes,Yes,Moderate,Active,Frequently,139
+100888,47,162.8,42.8,16.1,48019,69.0,36.6,99,21,3.6,6.9,5.9,Male,B+,Government Employee,Married,Bachelor,Germany,Urban,Yes,No,No,No,High,Sedentary,Occasionally,123
+101346,46,164.9,64.9,23.9,163375,83.0,36.3,98,16,2.8,8.0,6.8,Male,AB-,Nurse,Single,Bachelor,UK,Suburban,No,Yes,No,No,High,Sedentary,Occasionally,90
+100069,20,165.0,85.1,31.3,77633,,36.4,95,20,1.5,12.0,4.9,Female,A-,Business,Married,Bachelor,Pakistan,Suburban,No,Yes,No,No,Moderate,Active,Occasionally,113
+104211,54,170.9,75.4,25.8,48489,88.0,37.3,97,17,2.2,9.4,5.0,Female,A+,Software Engineer,Married,Diploma,Canada,Urban,No,Yes,No,No,Moderate,Moderate,Occasionally,136
+101816,62,149.7,84.4,37.7,143158,74.0,36.6,96,18,2.0,7.1,7.9,Male,A-,Student,Widowed,PhD,Germany,Rural,Yes,No,Yes,Yes,Moderate,Active,Frequently,119
+100569,53,168.0,70.2,24.9,191864,76.0,36.8,97,16,3.5,5.7,7.0,Female,A+,Student,Married,Bachelor,UK,Urban,Yes,No,No,No,Moderate,,Never,115
+102168,62,163.8,70.1,26.1,79475,77.0,37.6,95,20,3.5,11.4,5.8,Female,O+,Freelancer,Married,Master,Pakistan,Rural,No,No,No,No,Low,Active,Frequently,151
+100097,62,145.0,78.1,37.1,141220,,36.1,94,14,2.7,11.2,5.1,Female,AB-,Doctor,Married,Bachelor,India,Urban,No,No,No,No,Low,Light,Never,117
+104182,25,172.0,83.8,28.3,155773,79.0,36.8,98,20,3.7,4.7,7.8,Female,B-,Government Employee,Single,Bachelor,UK,Rural,No,No,Yes,No,Moderate,Moderate,Frequently,166
+103354,22,157.6,81.3,32.7,50948,88.0,36.4,99,15,2.1,10.4,5.6,Female,O-,Nurse,Married,Master,UK,Rural,No,No,No,Yes,Low,Sedentary,Occasionally,118
+100140,39,175.9,91.0,29.4,179989,83.0,36.5,95,18,2.5,10.2,7.199999999999999,Male,O+,Retired,Single,Bachelor,Singapore,Urban,No,Yes,Yes,No,High,Moderate,Never,126
+104955,40,166.7,62.6,22.5,151925,64.0,36.6,95,15,4.1,7.1,5.9,Male,AB-,Doctor,Widowed,Bachelor,Germany,Urban,Yes,No,No,No,High,Moderate,Occasionally,93
+102603,57,178.4,71.3,22.4,120977,73.0,36.4,97,16,1.1,2.0,6.7,Female,AB+,Government Employee,Single,Diploma,USA,Urban,Yes,No,No,No,Moderate,Light,Occasionally,108
+104024,87,161.6,67.1,25.7,40382,71.0,37.0,94,20,1.3,8.3,7.4,Female,B-,Retired,Widowed,Bachelor,Pakistan,Urban,No,No,Yes,Yes,Moderate,Moderate,Occasionally,149
+104773,24,171.5,76.1,25.9,193490,63.0,36.9,98,14,4.3,5.0,7.5,Female,O+,Doctor,Single,Bachelor,UK,Suburban,Yes,No,No,Yes,Moderate,Moderate,Frequently,116
+101607,20,183.1,71.8,21.4,194657,90.0,36.1,94,21,1.5,7.5,6.9,Female,B-,Business,Widowed,Bachelor,Germany,Urban,No,No,No,No,High,Sedentary,Never,128
+101630,87,150.6,89.3,39.4,85686,63.0,36.8,94,16,1.6,11.9,7.800000000000001,Female,B+,Doctor,Widowed,Bachelor,Canada,Suburban,No,No,No,Yes,Moderate,Light,Never,116
+101540,31,165.0,52.5,19.3,181631,87.0,37.1,98,13,4.4,10.9,5.6,Female,A-,Freelancer,Single,Diploma,India,Rural,No,Yes,No,No,Moderate,Sedentary,Frequently,144
+101695,30,157.0,60.6,24.6,66167,91.0,37.0,95,13,4.3,2.7,6.6,Female,A+,Government Employee,Married,Bachelor,India,Urban,No,Yes,Yes,No,High,Active,Occasionally,138
+102060,60,176.5,73.7,23.7,71138,69.0,36.6,96,13,3.3,5.0,8.3,Male,AB-,Freelancer,Married,High School,Germany,Rural,No,Yes,No,No,Moderate,Moderate,Never,117
+100464,78,164.3,87.2,32.3,153914,67.0,37.8,97,21,3.9,5.8,5.6,Female,AB-,Teacher,Single,Bachelor,India,Urban,No,No,No,Yes,Low,Active,Frequently,120
+102331,62,165.9,81.3,29.5,135445,55.0,37.9,95,16,4.0,2.2,6.0,Female,AB-,Designer,Married,High School,Canada,Urban,No,Yes,Yes,No,Low,Sedentary,Never,118
+103044,66,172.2,88.3,29.8,195422,80.0,37.7,96,14,3.7,3.0,5.0,Female,O+,Software Engineer,Married,Bachelor,USA,Urban,No,No,No,No,High,Moderate,Occasionally,123
+104735,30,172.1,94.9,32.0,138489,65.0,36.6,96,18,3.3,2.4,6.4,Male,O-,Retired,Single,Bachelor,UK,Urban,No,No,No,No,Low,Moderate,Never,103
+100595,26,178.5,79.0,24.8,49509,76.0,37.1,99,20,1.7,5.5,6.6,Male,A-,Nurse,Married,Bachelor,USA,Rural,No,No,No,No,Low,Light,Occasionally,125
+103815,40,165.0,53.7,19.7,127879,70.0,37.2,96,18,1.5,2.5,4.4,Female,A+,Student,Married,Bachelor,Singapore,Suburban,Yes,No,No,No,Moderate,Moderate,Occasionally,99
+100626,89,173.9,71.5,23.6,146381,74.0,35.8,97,21,3.2,3.4,6.2,Male,AB-,Scientist,Married,High School,India,Suburban,No,No,No,No,Low,Active,Never,115
+100451,24,177.8,82.3,26.0,55446,82.0,36.8,94,12,4.1,1.3,8.1,Female,A-,Business,Widowed,Master,Pakistan,Urban,Yes,Yes,No,No,Low,Moderate,Never,115
+101500,82,167.1,77.6,27.8,60324,,36.9,94,16,4.0,3.3,6.4,Male,A+,Designer,Married,Master,Japan,Urban,No,Yes,No,No,High,Moderate,Occasionally,128
+102457,29,173.4,53.5,17.8,190796,68.0,37.2,97,20,1.2,3.1,6.7,Female,O-,Nurse,Married,Bachelor,USA,Urban,No,No,No,No,Moderate,Light,Occasionally,149
+104723,66,169.5,70.8,24.6,141607,89.0,36.3,94,12,1.1,4.0,5.4,Female,B+,Doctor,Single,Bachelor,Singapore,Urban,No,Yes,No,Yes,Low,Active,Occasionally,132
+102985,42,169.7,77.6,26.9,22731,84.0,36.7,99,18,3.0,11.6,6.7,Male,A-,Software Engineer,Single,Bachelor,Australia,Suburban,No,No,No,No,High,Sedentary,Occasionally,115
+101570,78,183.6,83.4,24.7,143994,60.0,36.7,96,21,4.2,1.9,6.7,Male,B+,Designer,Married,Master,USA,Suburban,No,Yes,No,Yes,Moderate,Light,Occasionally,120
+101035,81,168.6,76.5,26.9,112875,69.0,36.3,98,20,3.6,10.3,7.699999999999999,Male,A-,Retired,Married,High School,Germany,Suburban,No,No,No,No,Low,Moderate,Occasionally,95
+103519,47,157.9,72.6,29.1,175931,,36.9,94,15,1.8,1.1,6.7,Male,AB-,Student,Married,Master,USA,Urban,No,Yes,No,No,High,Sedentary,Occasionally,142
+101558,65,177.2,79.3,25.3,12110,70.0,37.3,97,17,3.9,6.0,8.8,Female,A+,Scientist,Married,High School,Australia,Suburban,No,No,No,No,Low,Active,Frequently,131
+103625,21,173.1,54.9,18.3,70396,77.0,36.9,95,19,3.9,11.1,7.6,Female,B-,Scientist,Married,Diploma,Canada,Urban,Yes,No,No,No,High,Light,Never,98
+104665,22,169.5,74.6,26.0,118444,65.0,37.0,98,19,4.3,7.0,4.6,Male,B+,Government Employee,Single,Bachelor,Pakistan,Rural,No,No,No,No,Moderate,Active,Occasionally,127
+100151,43,177.1,81.6,26.0,69599,83.0,36.3,97,18,2.1,7.8,6.7,Male,B-,Doctor,Single,Diploma,Singapore,Suburban,No,No,No,No,Moderate,Sedentary,Never,120
+101421,29,160.8,66.6,25.8,159415,73.0,36.5,98,19,2.2,11.3,5.1,Female,AB+,Lawyer,Married,High School,UAE,Suburban,No,No,No,No,Low,Moderate,Frequently,118
+102012,23,170.3,51.9,17.9,102845,91.0,36.6,95,14,4.0,2.1,8.7,Female,AB+,Retired,Married,High School,Australia,Suburban,No,No,No,No,Moderate,Sedentary,Never,145
+102687,87,182.3,73.0,22.0,121989,52.0,37.0,96,20,3.5,10.1,6.6,Male,B+,Nurse,Divorced,High School,India,Urban,Yes,No,No,Yes,Moderate,Moderate,Occasionally,119
+101787,75,167.0,60.8,21.8,195606,87.0,37.4,95,13,2.2,5.0,7.3,Female,B+,Nurse,Married,PhD,India,Urban,No,No,No,No,Low,Active,Never,138
+100089,66,155.1,52.8,,43446,82.0,36.7,94,20,1.3,10.7,6.6,Male,B+,Doctor,Married,Bachelor,Pakistan,Urban,No,Yes,Yes,No,Moderate,Light,Never,140
+100458,48,166.8,86.3,31.0,171215,76.0,36.7,96,18,1.5,1.0,7.7,Male,AB-,Doctor,Single,Bachelor,Canada,Suburban,No,Yes,No,No,Moderate,Moderate,Occasionally,105
+101306,67,162.1,44.1,16.8,70253,69.0,36.9,97,20,3.7,10.0,7.9,Female,AB+,Scientist,Single,Master,Australia,Urban,No,No,No,No,Low,Light,Frequently,135
+102926,37,164.1,84.6,31.4,195512,63.0,37.5,95,17,3.8,1.7,8.1,Female,B+,Scientist,Married,High School,Singapore,Urban,No,Yes,No,No,Low,Moderate,Occasionally,112
+103271,83,162.7,78.9,29.8,13102,73.0,37.5,96,18,1.2,5.0,5.5,Male,AB-,Student,Single,Bachelor,Canada,Rural,Yes,No,Yes,No,Moderate,Moderate,Frequently,148
+103228,76,169.2,88.4,30.9,63410,71.0,36.6,97,15,2.1,10.6,4.0,Female,B-,Scientist,Single,Bachelor,Pakistan,Urban,No,No,No,No,Moderate,Active,Frequently,130
+101989,52,179.5,48.5,15.1,56414,84.0,36.6,97,16,3.6,4.4,8.5,Female,A+,Business,Divorced,High School,USA,Urban,No,No,No,No,Low,Sedentary,Occasionally,142
+103755,42,172.8,85.2,28.5,21171,72.0,36.7,97,16,,7.9,7.2,Male,O-,Designer,Single,Bachelor,Australia,Suburban,No,No,No,No,Moderate,Active,Never,107
+103647,35,155.4,65.2,27.0,47663,61.0,36.3,95,14,3.4,6.8,8.1,Male,AB+,Retired,Married,Master,USA,Suburban,Yes,Yes,No,No,Moderate,Sedentary,Occasionally,119
+100832,46,174.6,45.8,15.0,83609,77.0,36.5,94,20,3.4,7.6,6.2,Female,B+,Student,Single,Master,India,Urban,No,Yes,No,No,High,Light,Frequently,106
+100240,43,178.3,74.9,23.6,190524,80.0,37.1,96,13,1.2,7.0,6.3,Female,O+,Government Employee,Married,Master,UK,Rural,No,No,No,No,High,Sedentary,Frequently,105
+104682,43,146.9,97.3,45.1,151391,69.0,36.9,99,19,2.0,7.0,6.4,Female,A-,Software Engineer,Married,High School,UAE,Urban,Yes,Yes,No,No,Low,Light,Never,121
+103023,47,169.0,65.3,22.9,173206,95.0,36.6,98,12,3.8,11.7,6.3,Female,B-,Teacher,Married,Bachelor,Singapore,Suburban,No,Yes,No,No,High,Sedentary,Never,122
+103149,25,168.2,76.3,27.0,136166,89.0,37.5,95,15,1.7,10.6,5.6,Female,A+,Software Engineer,Single,Master,Canada,Urban,No,Yes,Yes,No,Moderate,Moderate,Occasionally,136
+101947,34,157.4,77.2,31.2,24879,88.0,37.5,95,18,2.9,3.9,6.6,Male,B-,Student,Divorced,High School,UK,Suburban,No,No,No,No,Moderate,Light,Occasionally,146
+102776,73,173.5,61.9,20.6,157243,77.0,36.7,94,13,1.2,10.8,6.7,Female,B+,Designer,Single,Diploma,Pakistan,Suburban,Yes,No,No,No,Moderate,Sedentary,Frequently,123
+100193,68,154.2,65.7,27.6,105879,78.0,37.4,98,15,1.0,6.5,7.1,Male,AB-,Student,Married,Bachelor,Australia,Rural,Yes,No,No,No,High,Active,Occasionally,104
+104850,82,170.6,79.9,27.5,102538,72.0,36.4,97,13,4.4,1.3,6.5,Female,B+,Nurse,Married,High School,Singapore,Urban,No,No,No,No,Low,Moderate,Never,130
+104940,46,165.9,72.1,26.2,154560,76.0,37.1,94,20,3.1,10.9,5.1,Female,B-,Designer,Married,Bachelor,India,Urban,No,No,No,No,Moderate,Light,Frequently,147
+100945,69,167.3,51.0,18.2,161623,76.0,36.4,96,18,4.3,3.5,7.0,Female,B+,Business,Married,Bachelor,Singapore,Urban,Yes,No,No,No,Low,Light,Never,122
+101269,71,154.3,59.0,24.8,137584,63.0,37.1,97,15,3.8,11.1,5.4,Female,A+,Scientist,Married,Diploma,UAE,Suburban,No,No,No,No,Moderate,Moderate,Occasionally,122
+104232,89,170.0,40.4,14.0,121549,87.0,37.4,98,17,2.0,11.7,3.7,Female,O+,Scientist,Single,High School,Canada,Suburban,Yes,No,No,No,Low,Light,Never,137
+102308,29,174.7,65.2,21.4,175908,74.0,37.0,95,14,2.5,7.8,8.2,Male,O+,Doctor,Single,Bachelor,USA,Suburban,No,No,No,No,High,Light,Never,125
+104425,75,179.8,83.7,25.9,158312,84.0,36.8,98,19,3.5,1.7,7.5,Female,A+,Nurse,Married,Master,Germany,Urban,No,No,No,No,Low,Light,Occasionally,120
+104712,77,189.4,75.9,21.2,198855,61.0,37.6,99,18,1.3,7.6,8.1,Male,B-,Lawyer,Single,Bachelor,Germany,Urban,Yes,No,No,No,Moderate,Moderate,Occasionally,130
+102314,72,181.5,73.1,22.2,168692,75.0,37.0,94,14,1.5,1.7,5.6,Female,O+,Freelancer,Single,Master,UAE,Urban,No,No,No,No,Low,Light,Frequently,120
+103215,40,161.7,46.8,17.9,135619,63.0,36.6,97,20,4.4,11.3,7.1,Female,B-,Teacher,Single,PhD,Pakistan,Rural,Yes,Yes,No,No,Low,Sedentary,Occasionally,116
+102733,33,161.3,70.5,27.1,102403,88.0,36.6,98,18,4.0,10.4,8.7,Male,B-,Designer,Single,Bachelor,UAE,Urban,Yes,No,No,No,Low,Light,Occasionally,127
+101927,47,151.9,57.4,24.9,40413,71.0,36.5,94,20,1.2,1.4,6.3,Female,B+,Business,Married,High School,UK,Suburban,No,No,No,No,Low,Active,Occasionally,123

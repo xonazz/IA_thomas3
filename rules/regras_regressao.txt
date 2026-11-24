@@ -1,0 +1,8 @@
+# Base de conhecimento - regressão (target: Blood_Pressure_Systolic, mmHg)
+# Consequentes = média da pressão sistólica no TREINO para cada combinação de diagnósticos.
+# ID | tipo | prioridade | regra
+R1 | relação | prio=1 | SE Hypertension == Yes E Diabetes == No ENTÃO PA = 138.76
+R2 | relação | prio=2 | SE Hypertension == Yes E Diabetes == Yes ENTÃO PA = 137.03
+R3 | relação | prio=3 | SE Hypertension == No E Diabetes == No ENTÃO PA = 121.34
+R4 | relação | prio=4 | SE Hypertension == No E Diabetes == Yes ENTÃO PA = 120.97
+R5 | estratégia | prio=5 | SE VERDADEIRO ENTÃO PA = 124.19

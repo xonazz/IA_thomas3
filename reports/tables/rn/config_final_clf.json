@@ -1,0 +1,20 @@
+{
+  "config": {
+    "neurons": 16,
+    "layers": 3,
+    "activation": "GELU",
+    "optimizer": "AdamW",
+    "lr": 0.00609,
+    "batch": 32,
+    "epochs": 200,
+    "patience": 20,
+    "weight_decay": 0.0001,
+    "dropout": 0.0,
+    "loss": "padrao",
+    "scale": true
+  },
+  "val_media": 0.6123885345832654,
+  "val_desvio": 0.014758944734443316,
+  "treino_media": 0.6305787812575346,
+  "id_busca": 0
+}

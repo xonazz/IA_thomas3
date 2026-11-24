@@ -1,0 +1,9 @@
+# Base de conhecimento - classificação (target: Hypertension; classe positiva = Yes)
+# Elaborada com o conjunto de TREINO e conhecimento de domínio (obesidade e idade elevam o risco de hipertensão).
+# ID | tipo | prioridade | regra
+R1 | relação | prio=1 | SE BMI >= 30 E Age >= 60 ENTÃO Yes
+R2 | relação | prio=2 | SE BMI >= 30 E Age >= 45 ENTÃO Yes
+R3 | relação | prio=3 | SE BMI >= 27.5 E Age >= 60 ENTÃO Yes
+R4 | heurística | prio=4 | SE BMI >= 27.5 E Age >= 45 E Family_History == Yes ENTÃO Yes
+R5 | diretriz | prio=5 | SE BMI < 25 ENTÃO No
+R6 | estratégia | prio=6 | SE VERDADEIRO ENTÃO No

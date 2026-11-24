@@ -1,0 +1,22 @@
+|--- Hypertension_No <= 0.50
+|   |--- Screen_Time_Hours <= 7.65
+|   |   |--- Height_cm <= 177.10
+|   |   |   |--- value: [136.31]
+|   |   |--- Height_cm >  177.10
+|   |   |   |--- value: [142.07]
+|   |--- Screen_Time_Hours >  7.65
+|   |   |--- Heart_Rate <= 84.50
+|   |   |   |--- value: [139.16]
+|   |   |--- Heart_Rate >  84.50
+|   |   |   |--- value: [145.03]
+|--- Hypertension_No >  0.50
+|   |--- Heart_Rate <= 51.50
+|   |   |--- Country_Australia <= 0.50
+|   |   |   |--- value: [131.91]
+|   |   |--- Country_Australia >  0.50
+|   |   |   |--- value: [116.00]
+|   |--- Heart_Rate >  51.50
+|   |   |--- Height_cm <= 196.40
+|   |   |   |--- value: [121.16]
+|   |   |--- Height_cm >  196.40
+|   |   |   |--- value: [136.67]
